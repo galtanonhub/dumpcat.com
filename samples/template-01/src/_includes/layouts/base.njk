@@ -109,7 +109,7 @@
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
     }
 
-    // Contact form: demo-only handler (no backend on the sample). Shows a confirmation.
+    /* DEMO ONLY — remove this block when form action is wired to a real endpoint */
     const quoteForm = document.querySelector('.quote-form');
     if (quoteForm) {
       const status = document.getElementById('form-status');
@@ -119,6 +119,7 @@
         if (status) status.textContent = "Thanks! This is a demo form — on the live site this sends straight to the business.";
       });
     }
+    /* END DEMO ONLY */
   </script>
 
 </body>

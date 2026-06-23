@@ -20,14 +20,36 @@ description: "Your Name Garage Door Repair serves Orlando, Kissimmee, Winter Par
 
   <section class="section">
     <div class="container">
-      <div class="area-cards">
-        {%- for a in areas.list %}
-        <div class="area-card">
-          <h2>{{ a.name }}, FL</h2>
-          <p>{{ a.county }}</p>
-          <a href="tel:{{ site.phoneHref }}" class="link-arrow">Schedule service</a>
+      <div class="map-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=Orlando+FL&t=&z=9&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="480"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Service area map — Central Florida">
+        </iframe>
+      </div>
+
+      <div class="county-grid">
+        <div class="county-card">
+          <h3>Orange County</h3>
+          <p>Orlando, Winter Park, Apopka, Ocoee, Winter Garden, Maitland, Edgewood</p>
         </div>
-        {%- endfor %}
+        <div class="county-card">
+          <h3>Osceola County</h3>
+          <p>Kissimmee, St. Cloud, Poinciana, Celebration, Harmony</p>
+        </div>
+        <div class="county-card">
+          <h3>Seminole County</h3>
+          <p>Sanford, Lake Mary, Longwood, Oviedo, Casselberry, Altamonte Springs</p>
+        </div>
+        <div class="county-card">
+          <h3>Lake County</h3>
+          <p>Clermont, Leesburg, Tavares, Eustis, Mount Dora, Groveland</p>
+        </div>
       </div>
 
       <div class="callout center">

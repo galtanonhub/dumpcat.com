@@ -19,13 +19,20 @@ description: "Full-service garage door repair and installation in Central Florid
   </section>
 
   <section class="section">
-    <div class="container container--narrow">
-      {%- for s in services.list %}
-      <article class="service-detail" id="{{ s.slug }}">
-        <h2>{{ s.name }}</h2>
-        <p>{{ s.body }}</p>
-      </article>
-      {%- endfor %}
+    <div class="container">
+      <div class="service-detail-grid">
+        {%- for s in services.list %}
+        <article class="service-detail-card" id="{{ s.slug }}">
+          <div class="service-detail-top">
+            <span class="service-detail-icon" aria-hidden="true">{{ s.icon }}</span>
+            <span class="service-detail-num">0{{ loop.index }}</span>
+          </div>
+          <h2>{{ s.name }}</h2>
+          <p>{{ s.body }}</p>
+          <a href="{{ '/contact/' | url }}" class="btn btn--outline">Get a Free Estimate</a>
+        </article>
+        {%- endfor %}
+      </div>
 
       <div class="callout">
         <h3>Not sure what's wrong with your door?</h3>

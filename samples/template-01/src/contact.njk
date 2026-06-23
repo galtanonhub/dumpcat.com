@@ -21,27 +21,38 @@ description: "Contact Your Name Garage Door Repair for fast, free garage door es
   <section class="section">
     <div class="container contact-grid">
       <div class="contact-info">
-        <h2>Talk to a real local person</h2>
-        <a href="tel:{{ site.phoneHref }}" class="contact-phone">{{ site.phone }}</a>
-        <p class="contact-hours">{{ site.hours }}<br><strong>{{ site.hoursNote }}</strong></p>
+        <div class="contact-info-card">
+          <h2>Talk to a real local person</h2>
+          <a href="tel:{{ site.phoneHref }}" class="contact-phone">{{ site.phone }}</a>
+          <p class="contact-hours">{{ site.hours }}<br><strong>{{ site.hoursNote }}</strong></p>
 
-        <ul class="contact-list">
-          <li><span class="contact-label">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          <li><span class="contact-label">Office</span>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
-          <li><span class="contact-label">Service area</span>All of {{ site.areaServed }}</li>
-        </ul>
+          <ul class="contact-list">
+            <li><span class="contact-label">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li><span class="contact-label">Office</span>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
+            <li><span class="contact-label">Service area</span>All of {{ site.areaServed }}</li>
+          </ul>
 
-        <div class="contact-promise">
-          <strong>Our promise:</strong> a fair, upfront price and respect for your home and your time.
+          <div class="contact-promise">
+            <strong>Our promise:</strong> a fair, upfront price and respect for your home and your time.
+          </div>
         </div>
       </div>
 
       <div class="contact-form-wrap">
-        <form class="quote-form" novalidate>
+        <!-- FORM ACTION: replace action="#" with your endpoint before launch.
+             Formspree: action="https://formspree.io/f/YOUR_ID"
+             Web3Forms: action="https://api.web3forms.com/submit" (add hidden name="access_key") -->
+        <form class="quote-form" method="POST" action="#" novalidate>
+          <!-- Honeypot: bots fill this; real users never see it -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <h2>Request Service</h2>
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
           </div>
           <div class="field-row">
             <div class="field">

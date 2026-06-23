@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "q": "How much does garage door repair cost?",
+      "a": "Most repairs fall between $150–$400 depending on the part and labor involved. Spring replacements and opener repairs are our most common calls. We always give you an upfront, written price before any work begins — no surprises."
+    },
+    {
+      "q": "Can you fix my door the same day I call?",
+      "a": "Yes, in most cases. We keep our trucks fully stocked so we can complete the majority of repairs — springs, cables, rollers, openers — in a single visit. Same-day and next-day appointments are available throughout Central Florida."
+    },
+    {
+      "q": "My spring broke and the door won't open. What should I do?",
+      "a": "Do not try to force the door open manually — a door without a working spring is very heavy and can be dangerous. Leave it closed and call us. We handle broken-spring calls every day and can usually have someone out the same day."
+    },
+    {
+      "q": "Do you work on all brands of garage doors and openers?",
+      "a": "Yes. We service and repair all major brands — Clopay, Wayne Dalton, Amarr, LiftMaster, Chamberlain, Genie, Craftsman, and more. If your door was made in the last 30 years, we can work on it."
+    },
+    {
+      "q": "Is my new door or repair covered by a warranty?",
+      "a": "Every repair and installation we do is backed by our workmanship guarantee. New doors and openers also carry manufacturer warranties. We'll walk you through the coverage when we quote the job."
+    },
+    {
+      "q": "Do you offer emergency service after hours?",
+      "a": "Yes. We offer 24/7 emergency service for situations where your door is stuck open (a security risk) or your car is trapped inside. Call us any time — nights, weekends, and holidays included."
+    }
+  ]
+}

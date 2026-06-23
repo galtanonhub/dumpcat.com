@@ -14,26 +14,15 @@ title: Your Name Garage Door Repair — Central Florida Garage Door Repair & Ins
           <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--lg">Call {{ site.phone }}</a>
           <a href="{{ '/contact/' | url }}" class="btn btn--ghost btn--lg">Get a Free Estimate</a>
         </div>
-        <ul class="hero-badges">
-          <li>★★★★★ {{ site.rating }} rating</li>
-          <li>Same-day service</li>
-          <li>Licensed &amp; insured</li>
-          <li>24/7 emergencies</li>
-        </ul>
       </div>
-      <div class="hero-card" aria-hidden="false">
-        <div class="hero-card-head">
-          <strong>Fast, honest service</strong>
-          <span>{{ site.areaServed }}</span>
-        </div>
-        <ul class="hero-card-list">
-          <li><span>✓</span> Free, no-obligation estimates</li>
-          <li><span>✓</span> Upfront, written pricing</li>
-          <li><span>✓</span> Same-day &amp; emergency repair</li>
-          <li><span>✓</span> All makes &amp; models</li>
-          <li><span>✓</span> Workmanship guaranteed</li>
-        </ul>
-        <a href="{{ '/contact/' | url }}" class="btn btn--accent btn--block">Request Service</a>
+      <div class="hero-img-wrap">
+        <img
+          src="{{ '/img/garage-door-template-pic-01.jpg' | url }}"
+          alt="New garage door installation on a modern home"
+          class="hero-img"
+          width="700"
+          height="500"
+          loading="eager">
       </div>
     </div>
   </section>
@@ -107,12 +96,31 @@ title: Your Name Garage Door Repair — Central Florida Garage Door Repair & Ins
         </figure>
         {%- endfor %}
       </div>
-      <div class="center"><a href="{{ '/reviews/' | url }}" class="btn btn--outline">Read more reviews</a></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Answers Before You Call</h2>
+        <p>The questions we hear most — answered straight.</p>
+      </div>
+      <div class="faq-grid">
+        {%- for item in faq.list %}
+        <div class="faq-card">
+          <span class="faq-num" aria-hidden="true">0{{ loop.index }}</span>
+          <h3>{{ item.q }}</h3>
+          <p>{{ item.a }}</p>
+        </div>
+        {%- endfor %}
+      </div>
     </div>
   </section>
 
   <!-- AREAS -->
-  <section class="section section--alt">
+  <section class="section section--navy">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Service Area</span>

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yournamegaragedoor.com/services/</loc>
+    <loc>https://yournamegaragedoor.com/reviews/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://yournamegaragedoor.com/service-areas/</loc>
+    <loc>https://yournamegaragedoor.com/contact/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yournamegaragedoor.com/services/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19,13 +25,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://yournamegaragedoor.com/reviews/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://yournamegaragedoor.com/contact/</loc>
+    <loc>https://yournamegaragedoor.com/service-areas/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -1,26 +1,61 @@
 ---
-layout: layouts/page.njk
+layout: layouts/base.njk
 title: About Us
 permalink: /about/
-eyebrow: Our Story
-heading: Locally Owned, Florida Proud
-lead: "Family-owned garage door specialists serving Central Florida homeowners and businesses since 2009."
 description: "Learn about Your Name Garage Door Repair — a locally owned, licensed and insured garage door company serving Central Florida since 2009."
 ---
 
-When our family started {{ site.name }} back in {{ site.founded }}, the goal was simple: treat every customer's home like our own and charge a fair, honest price for great work. More than fifteen years later, that hasn't changed.
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">About Us</span>
+      </nav>
+      <span class="eyebrow">Our Story</span>
+      <h1>Locally Owned, Florida Proud</h1>
+      <p class="page-lead">Family-owned garage door specialists serving Central Florida homeowners and businesses since {{ site.founded }}.</p>
+    </div>
+  </section>
 
-We've grown into one of {{ site.areaServed }}'s most trusted garage door teams — but we're still locally owned, and you'll still talk to a real person who knows your area when you call.
+  <section class="section">
+    <div class="container about-grid">
 
-## Why people keep calling us back
+      <div class="about-left">
+        <div class="about-card">
+          <h2>Who We Are</h2>
+          <p>When our family started {{ site.name }} back in {{ site.founded }}, the goal was simple: treat every customer's home like our own and charge a fair, honest price for great work. More than fifteen years later, that hasn't changed.</p>
+          <p>We've grown into one of {{ site.areaServed }}'s most trusted garage door teams — but we're still locally owned, and you'll still talk to a real person who knows your area when you call.</p>
+        </div>
 
-- **We show up when we say we will.** Your time matters. We give real appointment windows and keep them.
-- **We fix the actual problem.** We won't upsell you a whole new system when a $20 roller will do. Honest diagnosis, every time.
-- **We know Florida.** Heat, humidity, salt air, and hurricane season are hard on garage doors. We use corrosion-resistant parts and install wind-rated doors built for our climate.
-- **We stand behind our work.** Every repair and installation is backed by our workmanship guarantee.
+        <div class="about-card">
+          <h2>Why People Keep Calling Us Back</h2>
+          <ul class="about-list">
+            <li><strong>We show up when we say we will.</strong> Your time matters. We give real appointment windows and keep them.</li>
+            <li><strong>We fix the actual problem.</strong> We won't upsell you a whole new system when a $20 roller will do. Honest diagnosis, every time.</li>
+            <li><strong>We know Florida.</strong> Heat, humidity, salt air, and hurricane season are hard on garage doors. We use corrosion-resistant parts and install wind-rated doors built for our climate.</li>
+            <li><strong>We stand behind our work.</strong> Every repair and installation is backed by our workmanship guarantee.</li>
+          </ul>
+        </div>
+      </div>
 
-## Licensed, insured, and local
+      <aside class="about-right">
+        <div class="about-card about-card--accent">
+          <h2>Licensed, Insured &amp; Local</h2>
+          <p>{{ site.name }} is fully licensed and insured for your protection. We're based right here in {{ site.city }}, and the technician who pulls into your driveway is a trained professional — never a subcontractor we just met.</p>
+          <ul class="cred-list">
+            <li>State-licensed contractor</li>
+            <li>Fully insured — liability &amp; workers' comp</li>
+            <li>Background-checked technicians</li>
+            <li>All major brands serviced</li>
+            <li>Workmanship guarantee on every job</li>
+            <li>Free, no-obligation estimates</li>
+          </ul>
+          <a href="{{ '/contact/' | url }}" class="btn btn--accent btn--block" style="margin-top:24px">Request a Free Estimate</a>
+        </div>
+      </aside>
 
-{{ site.name }} is fully licensed and insured for your protection. We're based right here in {{ site.city }}, and the technician who pulls into your driveway is a trained professional — never a subcontractor we just met.
+    </div>
+  </section>
 
-Whether it's a midnight emergency or a planned upgrade to a beautiful new door, we'd be honored to earn your trust.
+{% include "partials/cta.njk" %}
