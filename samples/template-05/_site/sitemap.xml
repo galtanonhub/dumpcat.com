@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://yournameplumbing.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://yournameplumbing.com/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  
+  <url><loc>https://yournameplumbing.com/services/drain-cleaning/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://yournameplumbing.com/services/water-heater/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://yournameplumbing.com/services/leak-repair/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://yournameplumbing.com/services/pipe-repair/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://yournameplumbing.com/services/fixtures/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://yournameplumbing.com/services/sewer/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://yournameplumbing.com/service-areas/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yournameplumbing.com/about/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yournameplumbing.com/reviews/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yournameplumbing.com/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

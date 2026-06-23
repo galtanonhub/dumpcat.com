@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+  {% if schema %}
+  <script type="application/ld+json">{{ schema | safe }}</script>
+  {% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "{{ site.name }}",
+    "telephone": "{{ site.phone }}",
+    "url": "{{ site.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {% for city in areas.list %}"{{ city }}"{% if not loop.last %},{% endif %}{% endfor %}
+    ],
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  {% include "partials/nav.njk" %}
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script>
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    }
+
+    document.querySelectorAll('.contact-form').forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const status = form.querySelector('.form-status');
+        if (status) status.textContent = 'Message sent! We will call you back within 2 hours.';
+        form.querySelectorAll('input, select, textarea').forEach(el => { el.disabled = true; });
+      });
+    });
+  </script>
+</body>
+</html>

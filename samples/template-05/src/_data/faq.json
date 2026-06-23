@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "q": "Do you charge extra for emergency calls?",
+      "a": "After-hours emergency calls carry a service fee above our standard rates — we'll tell you the exact amount before we dispatch. There are no surprise charges when we arrive. For standard appointments during business hours, our normal rates apply."
+    },
+    {
+      "q": "How quickly can you get here?",
+      "a": "For standard appointments, usually within 1–2 business days. For emergencies — active leaks, no water, sewage backup — we dispatch same day, typically within 2–4 hours depending on current call volume."
+    },
+    {
+      "q": "Are your plumbers licensed?",
+      "a": "Yes. All of our plumbers hold Florida state plumbing licenses and are fully insured. We pull permits for all work that requires them and schedule all required inspections. We'll provide license numbers before any job if you ask."
+    },
+    {
+      "q": "Do you work on older homes with galvanized or polybutylene pipes?",
+      "a": "Absolutely — this is a significant portion of our work in the Orlando area. We've repiped hundreds of older Central Florida homes. If you have galvanized steel or poly-b pipes, we can inspect them and tell you honestly whether repair or full replacement makes more sense."
+    },
+    {
+      "q": "Do you give free estimates?",
+      "a": "We provide free estimates for larger project work like repiping, sewer line replacement, and water heater replacement. For service calls (leaks, drain clearing, fixture repair), there's a standard diagnostic fee that's applied toward the repair cost if you proceed."
+    }
+  ]
+}

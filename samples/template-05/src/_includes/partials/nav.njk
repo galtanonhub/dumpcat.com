@@ -1,0 +1,44 @@
+<nav class="nav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="{{ '/' | url }}" class="brand" aria-label="{{ site.name }} home">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4h4v8H6V4zm12 0h4v8h-4V4zM4 14h20v2H4v-2zm3 4h14v6H7v-6z" fill="currentColor"/>
+            <circle cx="14" cy="7" r="3" fill="currentColor" opacity="0.35"/>
+          </svg>
+        </span>
+        <span class="brand-name">
+          <span>{{ site.name.split(' ')[0] }}</span>
+          <em>Plumbing</em>
+        </span>
+      </a>
+
+      <div class="nav-links" role="list">
+        <a href="{{ '/services/' | url }}" role="listitem">Services</a>
+        <a href="{{ '/service-areas/' | url }}" role="listitem">Service Areas</a>
+        <a href="{{ '/about/' | url }}" role="listitem">About</a>
+        <a href="{{ '/reviews/' | url }}" role="listitem">Reviews</a>
+        <a href="{{ '/contact/' | url }}" role="listitem">Contact</a>
+      </div>
+
+      <a href="tel:{{ site.phoneHref }}" class="nav-emergency" aria-label="Emergency — call {{ site.phone }}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Emergency: {{ site.phone }}
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="{{ '/services/' | url }}">Services</a>
+    <a href="{{ '/service-areas/' | url }}">Service Areas</a>
+    <a href="{{ '/about/' | url }}">About</a>
+    <a href="{{ '/reviews/' | url }}">Reviews</a>
+    <a href="{{ '/contact/' | url }}">Contact</a>
+    <a href="tel:{{ site.phoneHref }}" class="btn btn--orange btn--block">Emergency: {{ site.phone }}</a>
+  </div>
+</nav>

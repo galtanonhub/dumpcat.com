@@ -1,0 +1,28 @@
+---
+layout: layouts/page.njk
+title: Service Areas
+lead: We serve homeowners across Central Florida — from the heart of Orlando to the surrounding suburbs and communities.
+eyebrow: Where We Work
+permalink: /service-areas/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Cities We Serve</span>
+      <h2>Central Florida Service Area</h2>
+      <p>Not sure if we cover your neighborhood? Call us — if we can get there, we will.</p>
+    </div>
+    <div class="area-card-grid">
+      {% for city in areas.list %}
+      <div class="area-card">{{ city }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="callout">
+      <h3>Don't see your city?</h3>
+      <p>Give us a call and we'll let you know if we can make it out. We try to say yes.</p>
+      <a href="tel:{{ site.phoneHref }}" class="btn btn--orange btn--lg">Call {{ site.phone }}</a>
+    </div>
+  </div>
+</section>

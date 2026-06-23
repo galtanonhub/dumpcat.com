@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "name": "Robert M.",
+      "city": "Winter Park",
+      "stars": 5,
+      "text": "Slab leak under my kitchen — found and fixed in one day. The leak detection tech knew exactly where to look without tearing up half my floor. Final repair was clean and the price matched the estimate. This is the only plumber I'm calling from now on."
+    },
+    {
+      "name": "Angela T.",
+      "city": "Oviedo",
+      "stars": 5,
+      "text": "Called at 7 PM on a Thursday with a busted pipe flooding my utility room. They had someone here by 9 PM. Stopped the water, fixed the pipe, and were gone by midnight. The tech was calm and professional the whole time. Exactly what you need in an emergency."
+    },
+    {
+      "name": "David L.",
+      "city": "Lake Mary",
+      "stars": 5,
+      "text": "Water heater died on a Saturday morning. They came out the same day, confirmed it was done, and replaced it before noon. No upsell, no drama — they just brought the right unit and installed it. Great communication start to finish."
+    },
+    {
+      "name": "Patricia N.",
+      "city": "Altamonte Springs",
+      "stars": 5,
+      "text": "Had a slow drain in the master bath that two other plumbers couldn't fix permanently. These guys camera'd the line, found a partial root intrusion, and cleared it properly. Six months later, still draining perfectly."
+    }
+  ]
+}

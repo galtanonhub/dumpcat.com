@@ -1,0 +1,46 @@
+{
+  "list": [
+    {
+      "slug": "drain-cleaning",
+      "name": "Drain Cleaning & Unclogging",
+      "icon": "🔩",
+      "short": "Slow drain or full blockage — we clear it fast with professional hydro-jetting and snaking equipment.",
+      "long": "From a sluggish kitchen sink to a completely backed-up main line, we diagnose and clear the blockage properly. We use professional-grade drain snakes and hydro-jetting equipment — not the off-the-shelf stuff that just pokes a hole through the clog. If your drains keep backing up, we'll camera-inspect the line and tell you why."
+    },
+    {
+      "slug": "water-heater",
+      "name": "Water Heater Repair & Replacement",
+      "icon": "🌡️",
+      "short": "No hot water, rusty water, or a puddle under your tank — we repair or replace same day in most cases.",
+      "long": "We service all major brands of tank and tankless water heaters. If repair makes sense, we'll tell you. If the unit is past its useful life, we'll give you straight options — tank, tankless, hybrid — with honest cost comparisons. Same-day replacement available on most jobs."
+    },
+    {
+      "slug": "leak-repair",
+      "name": "Leak Detection & Repair",
+      "icon": "💧",
+      "short": "Hidden slab leaks, under-sink drips, or pipe sweating — we find it and fix it before it becomes a flood.",
+      "long": "Water leaks hide in slabs, walls, and crawl spaces — and your water bill gives them away before your eyes do. We use electronic leak detection and thermal imaging to pinpoint the source without tearing apart your home unnecessarily. Once we find it, we fix it."
+    },
+    {
+      "slug": "pipe-repair",
+      "name": "Pipe Repair & Repiping",
+      "icon": "🔧",
+      "short": "Corroded, cracked, or outdated pipes? We repair sections or repipe entire homes with PEX or CPVC.",
+      "long": "Older Central Florida homes often have galvanized steel or polybutylene pipes that have reached end of life. We repair individual sections or replace the entire supply system, typically with PEX for its flexibility and longevity. We permit every repipe job and schedule the inspection so you have documentation for insurance and resale."
+    },
+    {
+      "slug": "fixtures",
+      "name": "Toilet, Faucet & Fixture Install",
+      "icon": "🚿",
+      "short": "Running toilets, dripping faucets, new fixture upgrades — fast installation with no damage to your finishes.",
+      "long": "Whether you're upgrading to a new fixture you bought at the hardware store or dealing with a toilet that won't stop running, we handle all residential fixture work. Supply your own or we'll supply ours. We're careful with your tile, cabinetry, and finishes — no gouges, no mess left behind."
+    },
+    {
+      "slug": "sewer",
+      "name": "Sewer Line Services",
+      "icon": "🏗️",
+      "short": "Camera inspection, root clearing, line repair, and full sewer line replacement when the situation calls for it.",
+      "long": "Sewer problems announce themselves with odors, slow drains in multiple fixtures, or wet spots in the yard. We start with a camera inspection to see exactly what's happening, then recommend the right fix — whether that's root removal, spot repair, or full line replacement. We handle the permits and the inspection."
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+---
+layout: layouts/base.njk
+title: Home
+description: Licensed residential plumbing in Orlando and Central Florida. Drain cleaning, leak repair, water heaters, pipe repiping. 24/7 emergency response.
+---
+
+<!-- HERO: typographic-only, giant headline, teal phone number -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Central Florida's Trusted Plumber</div>
+      <h1>We Fix<br><em>Plumbing</em><br>Problems</h1>
+      <div class="hero-divider"></div>
+      <a href="tel:{{ site.phoneHref }}" class="hero-phone">{{ site.phone }}</a>
+      <p class="hero-avail">Available 24/7 for emergencies &nbsp;·&nbsp; Same-day service in most cases</p>
+      <div class="hero-actions">
+        <a href="{{ '/contact/' | url }}" class="btn btn--teal btn--lg">Get a Free Estimate</a>
+        <a href="{{ '/services/' | url }}" class="btn btn--outline-white btn--lg">See All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY STRIP -->
+<div class="emergency-strip">
+  <div class="emergency-inner">
+    <span class="emergency-dot" aria-hidden="true"></span>
+    <strong>BURST PIPE? SEWAGE BACKUP? FLOODING?</strong>
+    <a href="tel:{{ site.phoneHref }}">24/7 Emergency Line: {{ site.phone }}</a>
+  </div>
+</div>
+
+<!-- SERVICES: horizontal bars -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Residential Plumbing Services</h2>
+      <p>We handle every plumbing problem a homeowner runs into — from a dripping faucet to a full repipe.</p>
+    </div>
+    <div class="service-bars">
+      {% for svc in services.list %}
+      <div class="service-bar">
+        <span class="service-bar-icon" aria-hidden="true">{{ svc.icon }}</span>
+        <div class="service-bar-body">
+          <h3>{{ svc.name }}</h3>
+          <p>{{ svc.short }}</p>
+        </div>
+        <div class="service-bar-action">
+          <a href="{{ ('/services/' + svc.slug + '/') | url }}" class="btn btn--outline-teal">Learn More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WHY US: 2x2 dark stat grid + copy -->
+<section class="section section--slate">
+  <div class="container">
+    <div class="why-grid">
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Emergency response</span>
+          <span class="stat-sub">Every day including holidays</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">2 hr</span>
+          <span class="stat-label">Average arrival time</span>
+          <span class="stat-sub">For emergency calls</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Years in business</span>
+          <span class="stat-sub">Central Florida</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Licensed &amp; insured</span>
+          <span class="stat-sub">FL state plumbing license</span>
+        </div>
+      </div>
+      <div class="why-copy">
+        <span class="eyebrow eyebrow--teal">Why Homeowners Choose Us</span>
+        <h2 style="color:#fff;">Straight talk. Fair prices. We show up.</h2>
+        <ul class="why-list">
+          <li>We give you a price before we start — no surprises on the invoice</li>
+          <li>Same technician who diagnoses the problem does the repair</li>
+          <li>We pull permits and schedule inspections for work that requires them</li>
+          <li>Fully stocked trucks — most repairs completed in one trip</li>
+          <li>We'll tell you honestly if something doesn't need to be fixed yet</li>
+        </ul>
+        <a href="{{ '/about/' | url }}" class="link-arrow link-arrow--white">More about us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL-QUOTE REVIEWS -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Customer Reviews</span>
+      <h2>Real Customers. Real Jobs.</h2>
+    </div>
+
+    {% set featured = reviews.list[0] %}
+    <div class="pull-quote-wrap">
+      <div class="pull-quote">
+        <p class="pull-quote-text">{{ featured.text }}</p>
+        <div class="pull-quote-attr">
+          <span class="pull-quote-stars" aria-label="{{ featured.stars }} stars">{% for i in range(0, featured.stars) %}★{% endfor %}</span>
+          <div>
+            <div class="pull-quote-name">{{ featured.name }}</div>
+            <div class="pull-quote-city">{{ featured.city }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-reviews">
+      {% for review in reviews.list %}
+      {% if not loop.first %}
+      <div class="mini-review">
+        <div class="mini-stars" aria-label="{{ review.stars }} stars">{% for i in range(0, review.stars) %}★{% endfor %}</div>
+        <p class="mini-text">"{{ review.text }}"</p>
+        <div class="mini-name">{{ review.name }}</div>
+        <div class="mini-city">{{ review.city }}</div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <div style="text-align:center;margin-top:32px;">
+      <a href="{{ '/reviews/' | url }}" class="link-arrow">Read all reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="section section--teal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow--teal" style="color:rgba(255,255,255,0.7)">Where We Work</span>
+      <h2>Serving Central Florida</h2>
+      <p>We cover Orlando and the surrounding communities across Orange, Seminole, Lake, and Osceola counties.</p>
+    </div>
+    <div class="area-list-grid">
+      {% for city in areas.list %}
+      <div class="area-list-item">{{ city }}</div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center;">
+      <a href="{{ '/service-areas/' | url }}" class="btn btn--slate">Full Service Area</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Common Questions</span>
+      <h2>What People Ask Before They Call</h2>
+    </div>
+    <div class="faq-cols">
+      {% for item in faq.list %}
+      <div class="faq-item">
+        <h3 class="faq-q">{{ item.q }}</h3>
+        <p class="faq-a">{{ item.a }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

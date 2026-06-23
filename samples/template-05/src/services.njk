@@ -1,0 +1,26 @@
+---
+layout: layouts/page.njk
+title: Plumbing Services
+lead: Residential plumbing repair and installation across Central Florida. Licensed, insured, and stocked to fix most problems in one trip.
+eyebrow: What We Do
+permalink: /services/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="service-bars">
+      {% for svc in services.list %}
+      <div class="service-bar" id="{{ svc.slug }}">
+        <span class="service-bar-icon" aria-hidden="true">{{ svc.icon }}</span>
+        <div class="service-bar-body">
+          <h2 style="font-size:1.2rem;margin-bottom:6px;">{{ svc.name }}</h2>
+          <p>{{ svc.long }}</p>
+        </div>
+        <div class="service-bar-action">
+          <a href="{{ '/contact/' | url }}" class="btn btn--orange">Get Estimate</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

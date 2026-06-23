@@ -1,0 +1,25 @@
+---
+layout: layouts/page.njk
+title: Customer Reviews
+lead: What Central Florida homeowners say about our work.
+eyebrow: Testimonials
+permalink: /reviews/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="review-list">
+      {% for review in reviews.list %}
+      <div class="review-full">
+        <div class="review-full-stars" aria-label="{{ review.stars }} out of 5 stars">
+          {% for i in range(0, review.stars) %}★{% endfor %}
+        </div>
+        <p class="review-full-text">"{{ review.text }}"</p>
+        <div class="review-full-attr">
+          {{ review.name }} <span>— {{ review.city }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">{{ site.name.split(' ')[0] }}<em>Plumbing</em></div>
+        <p class="footer-tagline">Licensed, insured plumbing services across Central Florida. Emergency response 24 hours a day, 7 days a week.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          {% for svc in services.list %}
+          <li><a href="{{ ('/services/' + svc.slug + '/') | url }}">{{ svc.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ '/about/' | url }}">About Us</a></li>
+          <li><a href="{{ '/service-areas/' | url }}">Service Areas</a></li>
+          <li><a href="{{ '/reviews/' | url }}">Reviews</a></li>
+          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li>Orlando, FL &amp; surrounding areas</li>
+          <li>24/7 Emergency Service</li>
+          <li>Licensed &amp; Insured — FL Lic.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+        <p><a href="{{ '/sitemap.xml' | url }}">Sitemap</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
