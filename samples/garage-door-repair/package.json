@@ -1,0 +1,13 @@
+{
+  "name": "garage-door-repair-sample",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DragonWorkflows sample site — Your Name Garage Door Repair (Central Florida). Built with Eleventy (static HTML output, no framework runtime).",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

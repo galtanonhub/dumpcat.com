@@ -1,0 +1,11 @@
+# Per-sample dependencies (each sample is its own Eleventy project)
+node_modules/
+samples/*/node_modules/
+
+# NOTE: each sample's _site/ build output IS committed on purpose — cPanel git
+# deploy copies it to public_html/samples/<niche>/. Rebuild with `npm run build`
+# inside the sample and commit it alongside source changes.
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

@@ -1,0 +1,9 @@
+# robots.txt for Your Name Garage Door Repair
+# PRE-LAUNCH NOTE: while this is a sample staged under /samples/, the noindex meta
+# tag in base.njk keeps it out of search. When the site sells and goes live on its
+# own domain, remove that meta tag — this file already allows crawling.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://yournamegaragedoor.com/sitemap.xml

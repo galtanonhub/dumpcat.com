@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "name": "Maria S.",
+      "city": "Winter Park, FL",
+      "stars": 5,
+      "text": "Our spring snapped on a Sunday morning and the car was trapped inside. They had a tech out within two hours and fixed it for a fair price. Lifesaver — literally couldn't get to work without them."
+    },
+    {
+      "name": "David R.",
+      "city": "Kissimmee, FL",
+      "stars": 5,
+      "text": "Replaced our ancient opener with a quiet Wi-Fi one and I can finally check if the garage is closed from my phone. Clean install, on time, no surprise charges. Highly recommend."
+    },
+    {
+      "name": "Jennifer T.",
+      "city": "Lake Mary, FL",
+      "stars": 5,
+      "text": "We needed a hurricane-rated door before the season and they walked us through every option without any pressure. The new door completely transformed the front of the house."
+    },
+    {
+      "name": "Carlos M.",
+      "city": "Orlando, FL",
+      "stars": 5,
+      "text": "Honest and fast. Another company tried to sell me a whole new system — these guys fixed the actual problem (a bad roller and loose cable) for a fraction of the price."
+    }
+  ]
+}

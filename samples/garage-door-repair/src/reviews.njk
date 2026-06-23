@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Reviews
+permalink: /reviews/
+description: "Read reviews from Central Florida homeowners who trust Your Name Garage Door Repair for fast, honest garage door repair and installation."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Reviews</span>
+      </nav>
+      <span class="eyebrow">Reviews</span>
+      <h1>What {{ site.areaServed }} Says About Us</h1>
+      <p class="page-lead">A {{ site.rating }}-star average across {{ site.reviewCount }}+ reviews from real local customers. Here's a sample of what your neighbors have shared.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="review-grid review-grid--page">
+        {%- for r in reviews.list %}
+        <figure class="review-card">
+          <div class="stars" aria-label="{{ r.stars }} out of 5 stars">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+          <blockquote>{{ r.text }}</blockquote>
+          <figcaption>{{ r.name }} <span>— {{ r.city }}</span></figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+
+      <div class="callout center">
+        <h3>Had a great experience with us?</h3>
+        <p>We'd love to hear about it — and so would your neighbors. Reviews help local families find honest garage door service they can trust.</p>
+        <a href="{{ '/contact/' | url }}" class="btn btn--accent btn--lg">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

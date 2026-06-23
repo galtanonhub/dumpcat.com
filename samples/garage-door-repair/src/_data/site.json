@@ -1,0 +1,23 @@
+{
+  "name": "Your Name Garage Door Repair",
+  "shortName": "Your Name Garage Door",
+  "title": "Your Name Garage Door Repair — Central Florida Garage Door Repair & Installation",
+  "description": "Fast, reliable garage door repair and installation across Central Florida. Broken springs, opener repair, new doors, and 24/7 emergency service. Call (407) 555-0142 for a free estimate.",
+  "url": "https://yournamegaragedoor.com",
+  "phone": "(407) 555-0142",
+  "phoneHref": "+14075550142",
+  "email": "service@yournamegaragedoor.com",
+  "themeColor": "#14253b",
+  "streetAddress": "100 Example Blvd, Suite 5",
+  "city": "Orlando",
+  "state": "FL",
+  "zip": "32801",
+  "areaServed": "Central Florida",
+  "hours": "Mon–Sat: 7:00 AM – 7:00 PM",
+  "hoursNote": "24/7 emergency service available",
+  "founded": "2009",
+  "priceRange": "$$",
+  "rating": "4.9",
+  "reviewCount": "187",
+  "geo": { "lat": "28.5383", "lng": "-81.3792" }
+}

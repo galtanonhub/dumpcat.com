@@ -1,0 +1,19 @@
+---
+deployment:
+  tasks:
+    # cPanel runs these on "Update from Remote -> Deploy HEAD Commit".
+    # dumpcat.com is a holding domain: a coming-soon page at the root, plus each
+    # sample site served from /samples/<niche>/ (the committed Eleventy _site/ build).
+    - export DEPLOYPATH=/home/dumpcat/public_html/
+    - /bin/mkdir -p $DEPLOYPATH
+
+    # --- Root: coming-soon page + crawler/icon files ---
+    - /bin/cp index.html robots.txt favicon.svg $DEPLOYPATH
+
+    # --- Sample: garage-door-repair ---
+    # Built static HTML lives in samples/garage-door-repair/_site/ (committed).
+    - /bin/mkdir -p ${DEPLOYPATH}samples/garage-door-repair/
+    - /bin/cp -R samples/garage-door-repair/_site/. ${DEPLOYPATH}samples/garage-door-repair/
+
+    # When a sample graduates to its own domain, delete its source folder AND remove
+    # its two copy lines above so it stops deploying to dumpcat.com.

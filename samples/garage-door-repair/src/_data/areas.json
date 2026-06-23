@@ -1,0 +1,16 @@
+{
+  "list": [
+    { "name": "Orlando", "county": "Orange County" },
+    { "name": "Kissimmee", "county": "Osceola County" },
+    { "name": "Winter Park", "county": "Orange County" },
+    { "name": "Lake Mary", "county": "Seminole County" },
+    { "name": "Sanford", "county": "Seminole County" },
+    { "name": "Apopka", "county": "Orange County" },
+    { "name": "Oviedo", "county": "Seminole County" },
+    { "name": "Winter Garden", "county": "Orange County" },
+    { "name": "Clermont", "county": "Lake County" },
+    { "name": "Altamonte Springs", "county": "Seminole County" },
+    { "name": "St. Cloud", "county": "Osceola County" },
+    { "name": "Ocoee", "county": "Orange County" }
+  ]
+}

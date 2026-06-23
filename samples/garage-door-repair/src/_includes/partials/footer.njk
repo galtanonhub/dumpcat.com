@@ -1,0 +1,47 @@
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand brand--footer">
+          <span class="brand-text">Your Name<strong>Garage Door</strong></span>
+        </div>
+        <p class="footer-about">{{ site.areaServed }}'s trusted garage door repair &amp; installation team since {{ site.founded }}. Locally owned, licensed, and insured.</p>
+        <p class="footer-rating">★★★★★ {{ site.rating }} average from {{ site.reviewCount }}+ local reviews</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          {%- for s in services.list %}
+          <li><a href="{{ '/services/' | url }}#{{ s.slug }}">{{ s.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ '/about/' | url }}">About Us</a></li>
+          <li><a href="{{ '/service-areas/' | url }}">Service Areas</a></li>
+          <li><a href="{{ '/reviews/' | url }}">Reviews</a></li>
+          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <ul class="footer-contact">
+          <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
+          <li class="footer-hours">{{ site.hours }}<br><strong>{{ site.hoursNote }}</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+        <p class="footer-credit">Licensed &amp; Insured · Free Estimates · {{ site.areaServed }}</p>
+      </div>
+    </div>
+  </footer>

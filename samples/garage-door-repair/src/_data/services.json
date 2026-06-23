@@ -1,0 +1,46 @@
+{
+  "list": [
+    {
+      "slug": "garage-door-repair",
+      "icon": "wrench",
+      "name": "Garage Door Repair",
+      "short": "Off-track doors, broken cables, worn rollers, noisy operation — diagnosed and fixed same day.",
+      "body": "A garage door that won't close, hangs crooked, or grinds loudly isn't just annoying — it's a security and safety risk. Our technicians arrive in a fully stocked truck and repair off-track doors, frayed or snapped cables, bent tracks, worn rollers, and damaged panels on the spot. We service every major brand and most doors built in the last 30 years."
+    },
+    {
+      "slug": "spring-replacement",
+      "icon": "spring",
+      "name": "Broken Spring Replacement",
+      "short": "Torsion and extension springs replaced fast — the #1 garage door failure in Florida's heat.",
+      "body": "Garage door springs carry the entire weight of your door, and Central Florida's heat and humidity wear them out faster than the national average. A snapped spring will leave your door stuck shut (or dangerously heavy). We replace torsion and extension springs with high-cycle, corrosion-resistant springs and always replace them in matched pairs so your door stays balanced for years."
+    },
+    {
+      "slug": "opener-repair-installation",
+      "icon": "remote",
+      "name": "Opener Repair & Installation",
+      "short": "Repair or upgrade to a quiet, Wi-Fi smart opener with battery backup.",
+      "body": "From dead motors and stripped gears to finicky remotes and safety-sensor faults, we repair every type of opener. Ready for an upgrade? We install quiet belt-drive and smart Wi-Fi openers with smartphone control and battery backup — so a Florida power outage never traps your car inside."
+    },
+    {
+      "slug": "new-door-installation",
+      "icon": "door",
+      "name": "New Garage Door Installation",
+      "short": "Hurricane-rated steel, insulated, and custom doors that boost curb appeal and home value.",
+      "body": "A new garage door is one of the highest-return home upgrades you can make. We install insulated steel, carriage-house, and modern aluminum-and-glass doors — including Florida hurricane-rated, wind-load-certified models that help protect your home and may lower your insurance. Free in-home design consultations and upfront pricing."
+    },
+    {
+      "slug": "cable-roller-replacement",
+      "icon": "gear",
+      "name": "Cables, Rollers & Tracks",
+      "short": "Worn rollers and frayed cables replaced to keep your door smooth and quiet.",
+      "body": "The small parts do the hard work. Frayed lift cables, cracked nylon rollers, loose hinges, and bent tracks make a door noisy, jerky, and unsafe. We replace these wear items with heavy-duty components and re-balance the door so it glides quietly again."
+    },
+    {
+      "slug": "maintenance-tune-ups",
+      "icon": "check",
+      "name": "Maintenance & Tune-Ups",
+      "short": "Annual 25-point tune-ups that prevent breakdowns and extend door life.",
+      "body": "The cheapest repair is the one you never need. Our 25-point tune-up lubricates and adjusts every moving part, tightens hardware, tests the safety reverse, and re-balances the door. Ideal before hurricane season — and a smart move for any door over a few years old."
+    }
+  ]
+}

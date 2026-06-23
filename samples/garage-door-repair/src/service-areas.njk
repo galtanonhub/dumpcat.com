@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Service Areas
+permalink: /service-areas/
+description: "Your Name Garage Door Repair serves Orlando, Kissimmee, Winter Park, Lake Mary, Sanford, Apopka, Oviedo, and all of Central Florida with same-day garage door service."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Service Areas</span>
+      </nav>
+      <span class="eyebrow">Where We Work</span>
+      <h1>Garage Door Service Across {{ site.areaServed }}</h1>
+      <p class="page-lead">Based in {{ site.city }} and serving the entire region, we provide fast, same-day garage door repair and installation throughout Orange, Seminole, Osceola, and Lake counties.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="area-cards">
+        {%- for a in areas.list %}
+        <div class="area-card">
+          <h2>{{ a.name }}, FL</h2>
+          <p>{{ a.county }}</p>
+          <a href="tel:{{ site.phoneHref }}" class="link-arrow">Schedule service</a>
+        </div>
+        {%- endfor %}
+      </div>
+
+      <div class="callout center">
+        <h3>Don't see your town?</h3>
+        <p>We cover most of the greater Orlando metro. If you're nearby, give us a call — chances are we serve your area too.</p>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--lg">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

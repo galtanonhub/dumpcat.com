@@ -1,0 +1,131 @@
+---
+layout: layouts/base.njk
+title: Your Name Garage Door Repair — Central Florida Garage Door Repair & Installation
+---
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow eyebrow--light">Serving {{ site.areaServed }} since {{ site.founded }}</span>
+        <h1>Garage Door Repair &amp; Installation You Can Count On</h1>
+        <p class="hero-lead">Broken spring? Door off its tracks? Opener acting up? Our local technicians fix it fast — most repairs done same day, with upfront pricing and no surprises.</p>
+        <div class="hero-actions">
+          <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--lg">Call {{ site.phone }}</a>
+          <a href="{{ '/contact/' | url }}" class="btn btn--ghost btn--lg">Get a Free Estimate</a>
+        </div>
+        <ul class="hero-badges">
+          <li>★★★★★ {{ site.rating }} rating</li>
+          <li>Same-day service</li>
+          <li>Licensed &amp; insured</li>
+          <li>24/7 emergencies</li>
+        </ul>
+      </div>
+      <div class="hero-card" aria-hidden="false">
+        <div class="hero-card-head">
+          <strong>Fast, honest service</strong>
+          <span>{{ site.areaServed }}</span>
+        </div>
+        <ul class="hero-card-list">
+          <li><span>✓</span> Free, no-obligation estimates</li>
+          <li><span>✓</span> Upfront, written pricing</li>
+          <li><span>✓</span> Same-day &amp; emergency repair</li>
+          <li><span>✓</span> All makes &amp; models</li>
+          <li><span>✓</span> Workmanship guaranteed</li>
+        </ul>
+        <a href="{{ '/contact/' | url }}" class="btn btn--accent btn--block">Request Service</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container trust-inner">
+      <div><strong>15+ yrs</strong><span>Serving Central FL</span></div>
+      <div><strong>Same Day</strong><span>Most Repairs</span></div>
+      <div><strong>{{ site.rating }}★</strong><span>{{ site.reviewCount }}+ Reviews</span></div>
+      <div><strong>Licensed</strong><span>&amp; Fully Insured</span></div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Garage Door Services in {{ site.areaServed }}</h2>
+        <p>From a single broken spring to a brand-new hurricane-rated door, we handle it all — for homeowners and businesses across the region.</p>
+      </div>
+      <div class="service-grid">
+        {%- for s in services.list %}
+        <article class="service-card">
+          <h3>{{ s.name }}</h3>
+          <p>{{ s.short }}</p>
+          <a href="{{ '/services/' | url }}#{{ s.slug }}" class="link-arrow">Learn more</a>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section section--alt">
+    <div class="container why-grid">
+      <div class="why-copy">
+        <span class="eyebrow">Why Homeowners Choose Us</span>
+        <h2>Local, Reliable, and Straight With You</h2>
+        <p>We're not a national call center — we're your neighbors. When you call {{ site.shortName }}, you reach real people who know {{ site.areaServed }}, and a technician who shows up on time in a stocked truck.</p>
+        <ul class="why-list">
+          <li><strong>Upfront pricing.</strong> You approve the price before any work begins. No bait-and-switch.</li>
+          <li><strong>Fast response.</strong> Most repairs completed the same day you call.</li>
+          <li><strong>Built for Florida.</strong> Corrosion-resistant parts and hurricane-rated doors made for our heat and storms.</li>
+          <li><strong>Guaranteed work.</strong> Every repair and installation is backed by our workmanship guarantee.</li>
+        </ul>
+      </div>
+      <aside class="emergency-box">
+        <h3>Garage Door Emergency?</h3>
+        <p>Door stuck open and can't secure your home? Car trapped inside before work? We offer 24/7 emergency service across {{ site.areaServed }}.</p>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--block btn--lg">Call {{ site.phone }}</a>
+        <span class="emergency-note">Available nights, weekends &amp; holidays</span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Reviews</span>
+        <h2>What Your Central Florida Neighbors Say</h2>
+      </div>
+      <div class="review-grid">
+        {%- for r in reviews.list %}
+        <figure class="review-card">
+          <div class="stars" aria-label="{{ r.stars }} out of 5 stars">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+          <blockquote>{{ r.text }}</blockquote>
+          <figcaption>{{ r.name }} <span>— {{ r.city }}</span></figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+      <div class="center"><a href="{{ '/reviews/' | url }}" class="btn btn--outline">Read more reviews</a></div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Service Area</span>
+        <h2>Proudly Serving All of {{ site.areaServed }}</h2>
+        <p>Same-day garage door repair and installation throughout the greater Orlando metro and surrounding counties.</p>
+      </div>
+      <ul class="area-chips">
+        {%- for a in areas.list %}
+        <li>{{ a.name }}</li>
+        {%- endfor %}
+      </ul>
+      <div class="center"><a href="{{ '/service-areas/' | url }}" class="link-arrow">See all service areas</a></div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

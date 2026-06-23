@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: Garage Door Services
+permalink: /services/
+description: "Full-service garage door repair and installation in Central Florida — broken springs, opener repair, new door installation, cables, rollers, and tune-ups. Free estimates."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Services</span>
+      </nav>
+      <span class="eyebrow">What We Do</span>
+      <h1>Garage Door Services in {{ site.areaServed }}</h1>
+      <p class="page-lead">Whatever your garage door needs — a quick fix, a worn-out part, or a complete new installation — our local team has it covered. Every job comes with a free estimate and upfront pricing.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      {%- for s in services.list %}
+      <article class="service-detail" id="{{ s.slug }}">
+        <h2>{{ s.name }}</h2>
+        <p>{{ s.body }}</p>
+      </article>
+      {%- endfor %}
+
+      <div class="callout">
+        <h3>Not sure what's wrong with your door?</h3>
+        <p>That's what we're here for. Call us and describe what's happening — most of the time we can tell you what it likely is and give a ballpark before we ever roll a truck.</p>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--lg">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

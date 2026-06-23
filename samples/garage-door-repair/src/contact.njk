@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+title: Contact / Free Estimate
+permalink: /contact/
+description: "Contact Your Name Garage Door Repair for fast, free garage door estimates in Central Florida. Call (407) 555-0142 or request service online."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Contact</span>
+      </nav>
+      <span class="eyebrow">Get in Touch</span>
+      <h1>Request Your Free Estimate</h1>
+      <p class="page-lead">Call now for same-day service, or send us a few details and we'll get right back to you. No obligation, ever.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>Talk to a real local person</h2>
+        <a href="tel:{{ site.phoneHref }}" class="contact-phone">{{ site.phone }}</a>
+        <p class="contact-hours">{{ site.hours }}<br><strong>{{ site.hoursNote }}</strong></p>
+
+        <ul class="contact-list">
+          <li><span class="contact-label">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><span class="contact-label">Office</span>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
+          <li><span class="contact-label">Service area</span>All of {{ site.areaServed }}</li>
+        </ul>
+
+        <div class="contact-promise">
+          <strong>Our promise:</strong> a fair, upfront price and respect for your home and your time.
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <form class="quote-form" novalidate>
+          <h2>Request Service</h2>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" autocomplete="address-level2">
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option value="">Select a service…</option>
+              {%- for s in services.list %}
+              <option value="{{ s.slug }}">{{ s.name }}</option>
+              {%- endfor %}
+              <option value="emergency">Emergency / Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Tell us what's going on</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent btn--block btn--lg">Send Request</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>

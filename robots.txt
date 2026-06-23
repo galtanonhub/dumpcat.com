@@ -1,0 +1,7 @@
+# robots.txt for dumpcat.com
+# This is a temporary holding domain for unsold sample sites. Nothing here should be
+# indexed — every page also carries a noindex meta tag as a belt-and-suspenders measure.
+# When a sample graduates to its own domain, it gets its own crawl-friendly robots.txt there.
+
+User-agent: *
+Disallow: /
