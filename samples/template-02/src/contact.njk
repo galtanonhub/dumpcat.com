@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+title: Contact & Free Estimate — Your Name Electric Central Florida
+description: Contact Your Name Electric for a free electrical estimate in Central Florida. Call or fill out our online quote request form for a fast response.
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Get in Touch</span>
+    <h1>Request a Free Estimate</h1>
+    <p>Call us directly or fill out the form and we'll follow up within one business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <div class="about-card">
+        <div class="contact-block">
+          <h3>Phone</h3>
+          <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+        </div>
+        <div class="contact-block">
+          <h3>Email</h3>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </div>
+        <div class="contact-block">
+          <h3>Hours</h3>
+          <p>{{ site.hours }}<br><strong style="color:var(--yellow)">{{ site.hoursNote }}</strong></p>
+        </div>
+        <div class="contact-block">
+          <h3>Address</h3>
+          <p>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM SETUP: replace action="#" with your endpoint when going live.
+         Formspree: action="https://formspree.io/f/YOUR_FORM_ID"
+         Web3Forms: action="https://api.web3forms.com/submit" (add hidden input access_key)
+         Also remove the demo JS handler in base.njk (search: quoteForm). -->
+    <form class="quote-form" method="POST" action="#" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First name</label>
+          <input type="text" id="fname" name="fname" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last name</label>
+          <input type="text" id="lname" name="lname" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="service">Service needed</label>
+        <select id="service" name="service">
+          <option value="">Select a service…</option>
+          {%- for s in services.list %}
+          <option value="{{ s.slug }}">{{ s.name }}</option>
+          {%- endfor %}
+          <option value="other">Other / Not sure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell us more (optional)</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+      <!-- Honeypot: catches bots — keep hidden, never remove -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn btn--primary btn--lg">Send Request</button>
+      <p id="form-status"></p>
+    </form>
+  </div>
+</section>

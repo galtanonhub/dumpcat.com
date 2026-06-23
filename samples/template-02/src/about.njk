@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+title: About Us — Your Name Electric Central Florida
+description: Your Name Electric is a licensed, family-owned electrical contractor serving Central Florida since 2011. Learn about our team, credentials, and commitment to permitted, inspected work.
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Our Story</span>
+    <h1>Licensed, Local, and Built on Referrals</h1>
+    <p>{{ site.name }} has been serving {{ site.areaServed }} since {{ site.founded }}.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-col-main">
+
+        <div class="about-card">
+          <span class="eyebrow">Who We Are</span>
+          <p>Your Name Electric was founded in {{ site.founded }} by a master electrician who was tired of seeing homeowners get burned by unlicensed work that failed inspection — or worse, created a fire hazard. The mission from day one: pull permits, pass inspections, and stand behind the work.</p>
+          <p>Today we're a team of licensed journeymen and master electricians handling everything from a single GFCI outlet to full-home rewires and commercial tenant build-outs across {{ site.areaServed }}.</p>
+        </div>
+
+        <div class="about-card">
+          <span class="eyebrow">How We Work</span>
+          <p>Every job starts with a written estimate. No work begins until you've approved the scope and price. We pull the city permit, schedule the inspection, and give you the signed paperwork when the job is done. That documentation protects your homeowner's insurance and your resale value.</p>
+          <p>Our emergency line is answered by a licensed electrician 24/7 — not a call center, not an answering machine. If you have a burning smell, a sparking panel, or a total outage, call us at <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
+        </div>
+
+      </div>
+
+      <div class="about-col-side">
+        <div class="about-card">
+          <span class="eyebrow">Our Credentials</span>
+          <ul class="cred-list">
+            <li>Florida Electrical Contractor License (EC-000000)</li>
+            <li>$2M general liability insurance</li>
+            <li>Workers compensation — all employees covered</li>
+            <li>BBB Accredited, A+ rating</li>
+            <li>All technicians background-checked</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

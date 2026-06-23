@@ -10,10 +10,13 @@ deployment:
     # --- Root: coming-soon page + crawler/icon files ---
     - /bin/cp index.html robots.txt favicon.svg $DEPLOYPATH
 
-    # --- Sample: garage-door-repair ---
-    # Built static HTML lives in samples/garage-door-repair/_site/ (committed).
-    - /bin/mkdir -p ${DEPLOYPATH}samples/garage-door-repair/
-    - /bin/cp -R samples/garage-door-repair/_site/. ${DEPLOYPATH}samples/garage-door-repair/
+    # --- Template 01 (Clean Light — garage door reference) ---
+    - /bin/mkdir -p ${DEPLOYPATH}samples/template-01/
+    - /bin/cp -R samples/template-01/_site/. ${DEPLOYPATH}samples/template-01/
+
+    # --- Template 02 (Bold Dark — electrician reference) ---
+    - /bin/mkdir -p ${DEPLOYPATH}samples/template-02/
+    - /bin/cp -R samples/template-02/_site/. ${DEPLOYPATH}samples/template-02/
 
     # When a sample graduates to its own domain, delete its source folder AND remove
     # its two copy lines above so it stops deploying to dumpcat.com.

@@ -1,0 +1,15 @@
+{
+  "name": "template-01",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DragonWorkflows Template 01 — Clean Light. Reference implementation: garage door repair. Built with Eleventy.",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "preview": "cross-env PATH_PREFIX=/ eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "cross-env": "^10.1.0"
+  }
+}

@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Customer Reviews — Your Name Electric Central Florida
+description: Read verified reviews from Central Florida homeowners and businesses who hired Your Name Electric for panel upgrades, EV chargers, rewiring, and more.
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">What Customers Say</span>
+    <h1>{{ site.rating }}★ from {{ site.reviewCount }}+ Reviews</h1>
+    <p>Verified reviews from homeowners and businesses across {{ site.areaServed }}.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="review-grid">
+      {%- for r in reviews.list %}
+      <figure class="review-card">
+        <div class="stars" aria-label="{{ r.stars }} out of 5 stars">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+        <blockquote>{{ r.text }}</blockquote>
+        <figcaption>{{ r.name }} <span>— {{ r.city }}</span></figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

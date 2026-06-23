@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+title: Service Areas — Your Name Electric Central Florida
+description: Your Name Electric serves Orlando and surrounding cities including Kissimmee, Winter Park, Lake Mary, Sanford, Apopka, Oviedo, Winter Garden, and more.
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Where We Work</span>
+    <h1>Serving All of {{ site.areaServed }}</h1>
+    <p>Licensed electricians dispatched to homes and businesses across Orange, Osceola, Seminole, and Lake counties.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="map-embed">
+      <iframe
+        src="https://maps.google.com/maps?q=Orlando+FL&t=&z=9&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="480"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="{{ site.name }} service area map">
+      </iframe>
+    </div>
+
+    <div class="county-grid">
+      <div class="county-card">
+        <div class="county-icon">🏙️</div>
+        <h3>Orange County</h3>
+        <p>Orlando, Winter Park, Apopka, Ocoee, Winter Garden, Maitland</p>
+      </div>
+      <div class="county-card">
+        <div class="county-icon">🌴</div>
+        <h3>Osceola County</h3>
+        <p>Kissimmee, St. Cloud, Poinciana, Celebration</p>
+      </div>
+      <div class="county-card">
+        <div class="county-icon">🏡</div>
+        <h3>Seminole County</h3>
+        <p>Sanford, Lake Mary, Oviedo, Altamonte Springs, Longwood</p>
+      </div>
+      <div class="county-card">
+        <div class="county-icon">🌿</div>
+        <h3>Lake County</h3>
+        <p>Clermont, Leesburg, Tavares, Minneola, Groveland</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

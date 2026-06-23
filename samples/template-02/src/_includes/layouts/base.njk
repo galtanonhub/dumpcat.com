@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- PRE-LAUNCH: keeps search engines from indexing this sample. REMOVE at launch. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta name="theme-color" content="{{ site.themeColor }}">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ ogTitle or title or site.title }}">
+  <meta property="og:description" content="{{ ogDescription or description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogTitle or title or site.title }}">
+  <meta name="twitter:description" content="{{ twitterDescription or description or site.description }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "{{ site.url }}/#business",
+    "name": "{{ site.name }}",
+    "image": "{{ site.url }}/favicon.svg",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.phoneHref }}",
+    "email": "{{ site.email }}",
+    "priceRange": "{{ site.priceRange }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.streetAddress }}",
+      "addressLocality": "{{ site.city }}",
+      "addressRegion": "{{ site.state }}",
+      "postalCode": "{{ site.zip }}",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "{{ site.geo.lat }}",
+      "longitude": "{{ site.geo.lng }}"
+    },
+    "areaServed": [
+      {%- for a in areas.list %}
+      { "@type": "City", "name": "{{ a.name }}, FL" }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "08:00",
+        "closes": "16:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ site.rating }}",
+      "reviewCount": "{{ site.reviewCount }}"
+    },
+    "makesOffer": [
+      {%- for s in services.list %}
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{ s.name }}" } }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+{% include "partials/nav.njk" %}
+
+  <main id="main">
+{{ content | safe }}
+  </main>
+
+{% include "partials/footer.njk" %}
+
+  <script>
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      const setMenu = (open) => {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    }
+
+    /* DEMO ONLY — remove this block when form action is wired to a real endpoint */
+    const quoteForm = document.querySelector('.quote-form');
+    if (quoteForm) {
+      const status = document.getElementById('form-status');
+      quoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        quoteForm.reset();
+        if (status) status.textContent = "Thanks! This is a demo form — on the live site this sends straight to the business.";
+      });
+    }
+    /* END DEMO */
+  </script>
+
+</body>
+</html>

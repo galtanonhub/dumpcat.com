@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Electrical Services — Your Name Electric Central Florida
+description: Licensed electrical services in Central Florida including panel upgrades, EV charger installation, whole-home rewiring, outlets, generators, and 24/7 emergency service.
+pageTitle: Electrical Services
+pageIntro: From a single outlet to a full panel upgrade — licensed, permitted, and inspected work across Central Florida.
+eyebrow: What We Do
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">What We Do</span>
+    <h1>Electrical Services in {{ site.areaServed }}</h1>
+    <p>Licensed residential and commercial electrical work — permitted, inspected, and backed by our workmanship guarantee.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
+      {%- for s in services.list %}
+      <div id="{{ s.slug }}" class="service-detail-card">
+        <div class="service-detail-header">
+          <span class="service-detail-num">{{ loop.index | padStart(2, "0") }}</span>
+          <span class="service-detail-icon" aria-hidden="true">{{ s.icon }}</span>
+        </div>
+        <h2>{{ s.name }}</h2>
+        <p>{{ s.body }}</p>
+        <a href="{{ '/contact/' | url }}" class="btn btn--primary">Request a Quote</a>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

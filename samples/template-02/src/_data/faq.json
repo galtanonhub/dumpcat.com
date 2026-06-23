@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "q": "Do you pull permits for every job?",
+      "a": "Yes — always. Every electrical job we do is pulled with the appropriate city or county permit and scheduled for inspection. That paperwork protects your homeowner's insurance, your mortgage, and your resale value. We never skip this step."
+    },
+    {
+      "q": "How long does a panel upgrade take?",
+      "a": "Most panel upgrades are completed in a single day. We arrive in the morning, swap the panel, coordinate the utility company if a meter pull is needed, and schedule the inspection. You'll have power back the same day in almost every case."
+    },
+    {
+      "q": "Are your estimates really free?",
+      "a": "Yes. We come to the job, assess the scope, and give you a written price at no charge. No work begins until you approve the estimate in writing. No surprises on the invoice."
+    },
+    {
+      "q": "What areas of Central Florida do you serve?",
+      "a": "We serve all of Orange, Osceola, Seminole, and Lake counties — including Orlando, Kissimmee, Winter Park, Lake Mary, Oviedo, Apopka, Sanford, Winter Garden, Clermont, and surrounding communities."
+    },
+    {
+      "q": "Do you handle both residential and commercial work?",
+      "a": "Yes. We work on single-family homes, condos, multi-unit residential, and light commercial properties. For larger commercial projects, call us directly to discuss scope and scheduling."
+    },
+    {
+      "q": "Is your emergency line available 24/7?",
+      "a": "Yes — a licensed electrician answers 24 hours a day, 7 days a week, including holidays. If you have a burning smell, a sparking outlet, or a complete power outage, call us immediately. Don't wait."
+    }
+  ]
+}

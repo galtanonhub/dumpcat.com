@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "name": "Tanya B.",
+      "city": "Winter Park, FL",
+      "stars": 5,
+      "text": "Had them install a Level 2 charger for our new EV. They were on time, pulled the permit, and finished in about three hours. Everything passed inspection on the first visit. Couldn't ask for more."
+    },
+    {
+      "name": "Marcus W.",
+      "city": "Lake Mary, FL",
+      "stars": 5,
+      "text": "Our panel was an old Federal Pacific that our insurance threatened to drop us over. They replaced the whole thing in a day, coordinated the permit inspection, and now our insurance is happy. Fair price for a big job."
+    },
+    {
+      "name": "Lena K.",
+      "city": "Oviedo, FL",
+      "stars": 5,
+      "text": "Called at 11pm when I smelled burning near an outlet. Someone actually answered, talked me through shutting off the circuit, and had a tech here by 8am. Found a loose connection that could have been a fire. Worth every penny."
+    }
+  ]
+}

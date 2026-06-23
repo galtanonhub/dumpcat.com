@@ -1,0 +1,65 @@
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand brand--footer">
+          <span class="brand-bolt" aria-hidden="true" style="width:28px;height:28px;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </span>
+          Your Name <em>Electric</em>
+        </div>
+        <p class="footer-about">Licensed electricians serving {{ site.areaServed }} since {{ site.founded }}. Residential, commercial, and emergency work done right the first time.</p>
+        <nav class="social-links" aria-label="Social media">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--dark)"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.259 5.636L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Google Business">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 11h8.533c.044.385.067.78.067 1.184 0 2.734-.98 5.042-2.678 6.61C16.38 20.294 14.34 21 12 21c-4.97 0-9-4.03-9-9s4.03-9 9-9c2.395 0 4.537.899 6.162 2.368L16.1 7.43A6.545 6.545 0 0 0 12 6a6 6 0 0 0-6 6 6 6 0 0 0 6 6c2.424 0 4.12-1.098 4.944-2.594H12V11z"/></svg>
+          </a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          {%- for s in services.list %}
+          <li><a href="{{ '/services/' | url }}#{{ s.slug }}">{{ s.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ '/about/' | url }}">About Us</a></li>
+          <li><a href="{{ '/service-areas/' | url }}">Service Areas</a></li>
+          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <ul class="footer-contact">
+          <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
+          <li class="footer-hours">{{ site.hours }}<br><strong>{{ site.hoursNote }}</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+        <p>Licensed &amp; Insured · Free Estimates · {{ site.areaServed }}</p>
+      </div>
+    </div>
+  </footer>

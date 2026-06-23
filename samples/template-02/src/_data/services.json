@@ -1,0 +1,46 @@
+{
+  "list": [
+    {
+      "slug": "panel-upgrades",
+      "icon": "⚡",
+      "name": "Panel Upgrades & Replacements",
+      "short": "Outdated 100A panel? We upgrade to 200A or 400A — safer, code-compliant, and ready for modern loads.",
+      "body": "An undersized or aging electrical panel is one of the most common causes of home fires and failed inspections. We replace Federal Pacific, Zinsco, and outdated fuse boxes with modern breaker panels from Square D and Eaton. Every panel upgrade is pulled with a city permit, inspected, and signed off — protecting your home and your resale value."
+    },
+    {
+      "slug": "ev-charger-installation",
+      "icon": "🔌",
+      "name": "EV Charger Installation",
+      "short": "Level 2 home charging installed and permitted — charge overnight, wake up full.",
+      "body": "We install Level 2 (240V) EV chargers for all vehicle brands including Tesla, Ford, Chevy, and Rivian. Our electricians handle the dedicated circuit, the charger mount, and the city permit. Most installs are complete in under four hours. We also handle commercial charging stations for multi-unit properties and businesses."
+    },
+    {
+      "slug": "whole-home-rewiring",
+      "icon": "🏠",
+      "name": "Whole-Home Rewiring",
+      "short": "Aluminum or knob-and-tube wiring? We rewire safely with minimal drywall disruption.",
+      "body": "Homes built before 1990 often have aluminum branch wiring or knob-and-tube that no longer meets code and poses a real fire risk. Our crews rewire from the panel out using copper, with fish-tape techniques that keep drywall damage to a minimum. We work with your insurance company and provide all documentation for coverage reinstatement."
+    },
+    {
+      "slug": "outlets-switches-fixtures",
+      "icon": "💡",
+      "name": "Outlets, Switches & Fixtures",
+      "short": "GFCI outlets, dimmer switches, ceiling fans, recessed lighting — done right.",
+      "body": "From a single dead outlet to a whole-house lighting redesign, we handle all device and fixture work. GFCI and AFCI outlets for kitchens, baths, and garages. Dimmer upgrades for LED compatibility. Ceiling fan installation with proper bracing. Recessed lighting layouts that actually look good. Small job or large — no service call is too small."
+    },
+    {
+      "slug": "generator-installation",
+      "icon": "🔋",
+      "name": "Standby Generator Installation",
+      "short": "Whole-home standby generators wired, permitted, and ready before the next outage.",
+      "body": "Florida's hurricane season makes a standby generator one of the smartest investments a Central Florida homeowner can make. We install Generac and Kohler whole-home generators with automatic transfer switches, gas line coordination, and city permits. When the power goes out, your generator kicks on in seconds — protecting your HVAC, fridge, medical equipment, and sump pump."
+    },
+    {
+      "slug": "emergency-electrical",
+      "icon": "🚨",
+      "name": "24/7 Emergency Electrical",
+      "short": "Burning smell, sparking outlets, or total outage? We're on call around the clock.",
+      "body": "Electrical emergencies don't wait for business hours. Burning smells, sparking breakers, outlets that shock, or a full panel trip are all situations that need immediate attention. Our emergency line is answered 24/7 — nights, weekends, and holidays. We dispatch a licensed electrician, not an answering service."
+    }
+  ]
+}

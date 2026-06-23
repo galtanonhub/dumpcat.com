@@ -1,0 +1,175 @@
+---
+layout: layouts/base.njk
+title: Your Name Electric — Licensed Electrician Central Florida
+---
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-split">
+
+      <!-- LEFT: spinning electrical widget (desktop only) -->
+      <div class="hero-widget" aria-hidden="true">
+        <div class="elec-widget">
+          <div class="elec-ring elec-ring--outer"></div>
+          <div class="elec-ring elec-ring--mid"></div>
+          <div class="elec-ring elec-ring--inner"></div>
+          <div class="elec-node elec-node--n"></div>
+          <div class="elec-node elec-node--e"></div>
+          <div class="elec-node elec-node--s"></div>
+          <div class="elec-node elec-node--w"></div>
+          <div class="elec-center">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="elec-arc elec-arc--1"></div>
+          <div class="elec-arc elec-arc--2"></div>
+          <div class="elec-arc elec-arc--3"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: hero content -->
+      <div class="hero-content">
+        <div class="hero-badge">⚡ Serving {{ site.areaServed }} since {{ site.founded }}</div>
+        <h1>Central Florida's <em>Trusted</em> Licensed Electrician</h1>
+        <p class="hero-lead">Panel upgrades, EV chargers, whole-home rewiring, and 24/7 emergency service. Permitted, inspected, and done right the first time.</p>
+        <div class="hero-actions">
+          <a href="tel:{{ site.phoneHref }}" class="btn btn--primary btn--lg">Call {{ site.phone }}</a>
+          <a href="{{ '/contact/' | url }}" class="btn btn--outline btn--lg">Free Estimate</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <ul class="trust-items">
+        <li class="trust-item">Licensed &amp; Insured</li>
+        <li class="trust-item">Free Estimates</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section section--yellow">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Electrical Services in {{ site.areaServed }}</h2>
+        <p>From a single outlet to a whole-home rewire, we handle residential and commercial electrical work across the greater Orlando area.</p>
+      </div>
+      <div class="service-cards">
+        {%- for s in services.list %}
+        <a href="{{ '/services/' | url }}#{{ s.slug }}" class="service-card">
+          <div class="service-card-icon">{{ s.icon }}</div>
+          <h3>{{ s.name }}</h3>
+          <p>{{ s.short }}</p>
+          <span class="service-card-link">Learn more →</span>
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section section--alt">
+    <div class="container why-grid">
+      <div>
+        <span class="eyebrow">Why Choose Us</span>
+        <blockquote class="pullquote">"We pull permits, pass inspections, and guarantee the work — no shortcuts."</blockquote>
+        <ul class="why-list">
+          <li><strong>Permitted on every job.</strong><span>We pull city permits and schedule the inspection so your work is on record — protecting your insurance and resale value.</span></li>
+          <li><strong>Upfront estimates.</strong><span>You get a written price before any work begins. No surprises on the invoice.</span></li>
+          <li><strong>Real 24/7 emergency line.</strong><span>A licensed electrician answers, not a call center. Burning smell or sparking outlet? Call us.</span></li>
+          <li><strong>Clean, respectful crews.</strong><span>We protect your floors, clean up after ourselves, and treat your home like our own.</span></li>
+        </ul>
+        <a href="{{ '/about/' | url }}" class="btn btn--outline">About our team</a>
+      </div>
+      <div class="license-card">
+        <h3>⚡ By the Numbers</h3>
+        <div class="license-items">
+          <div class="license-item">
+            <span>Years in Business</span>
+            <span>13+</span>
+          </div>
+          <div class="license-item">
+            <span>Customer Rating</span>
+            <span>{{ site.rating }}★ avg</span>
+          </div>
+          <div class="license-item">
+            <span>Jobs Completed</span>
+            <span>1,400+</span>
+          </div>
+          <div class="license-item">
+            <span>Emergency Response</span>
+            <span>Under 2 hours</span>
+          </div>
+          <div class="license-item">
+            <span>Service Area</span>
+            <span>{{ site.areaServed }}</span>
+          </div>
+          <div class="license-item">
+            <span>Free Estimates</span>
+            <span>Always</span>
+          </div>
+        </div>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--primary btn--block" style="margin-top:1.5rem">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Reviews</span>
+        <h2>What {{ site.areaServed }} Homeowners Are Saying</h2>
+      </div>
+      <div class="review-grid">
+        {%- for r in reviews.list %}
+        <figure class="review-card">
+          <div class="stars" aria-label="{{ r.stars }} out of 5 stars">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+          <blockquote>{{ r.text }}</blockquote>
+          <figcaption>{{ r.name }} <span>— {{ r.city }}</span></figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        {%- for item in faq.list %}
+        <details class="faq-item">
+          <summary>{{ item.q }}</summary>
+          <div class="faq-body">{{ item.a }}</div>
+        </details>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Service Area</span>
+        <h2>Proudly Serving All of {{ site.areaServed }}</h2>
+        <p>Licensed electricians dispatched to homes and businesses across Orange, Osceola, Seminole, and Lake counties.</p>
+      </div>
+      <ul class="area-chips">
+        {%- for a in areas.list %}
+        <li>{{ a.name }}</li>
+        {%- endfor %}
+      </ul>
+      <div class="center"><a href="{{ '/service-areas/' | url }}" class="btn btn--outline">See all service areas</a></div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

@@ -21,11 +21,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("src/404.html");
 
   return {
-    // SAMPLE STAGING: served from a subfolder while it's inventory
-    // (dragonworkflows.com/samples/garage-door-repair/).
+    // TEMPLATE STAGING: served from a subfolder on dumpcat.com.
     // pathPrefix + the `| url` filter keeps every internal link correct.
     // AT LAUNCH on its own domain: change this one line to "/".
-    pathPrefix: "/samples/garage-door-repair/",
+    pathPrefix: process.env.PATH_PREFIX || "/samples/template-01/",
     dir: {
       input: "src",
       includes: "_includes",
