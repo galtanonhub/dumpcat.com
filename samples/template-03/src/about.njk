@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+title: About Us
+permalink: /about/
+description: "Learn about Your Name Screen & Enclosure — a locally owned, licensed and insured screen enclosure company serving Central Florida since 2004."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">About Us</span>
+      </nav>
+      <span class="eyebrow">Our Story</span>
+      <h1>{{ site.areaServed }}'s Screen Enclosure Specialists</h1>
+      <p class="page-lead">Family-owned and permit-pulling since {{ site.founded }} — we've been building screen enclosures in Central Florida long enough to know what works and what doesn't.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="about-story">
+        <p>When we started {{ site.name }} back in {{ site.founded }}, screen enclosures were already a staple of Florida life — but good ones weren't always easy to find. Permits getting skipped. Aluminum too light for the wind load. Screen installed without knowing the difference between 18×14 and 18×16. We built this company to do it right.</p>
+        <p>Over twenty years later, we've built hundreds of pool enclosures, screen rooms, and porch enclosures across {{ site.areaServed }}. We've rescreened enclosures we didn't build, and we've rebuilt ones that weren't done correctly the first time. We've seen what fails after five years — and we don't build that way.</p>
+        <p>Every job we take is permitted and inspected. That's not just a legal requirement — it protects you when you sell your home, file an insurance claim, or ride out a storm. We won't skip that step, and you shouldn't want us to.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why Homeowners Choose Us</span>
+        <h2>How We Approach Every Job</h2>
+      </div>
+      <div class="about-values-grid">
+        <div class="about-value">
+          <span class="about-value-icon">📋</span>
+          <h3>Permits, Every Time</h3>
+          <p>We handle the permit application, county submission, and inspection scheduling for every structural job. No exceptions.</p>
+        </div>
+        <div class="about-value">
+          <span class="about-value-icon">🏗️</span>
+          <h3>Built for Florida's Weather</h3>
+          <p>We use aluminum and screen rated for Florida's wind load requirements. Your enclosure needs to handle a storm, not just a sunny day.</p>
+        </div>
+        <div class="about-value">
+          <span class="about-value-icon">🔍</span>
+          <h3>Honest Estimates</h3>
+          <p>Written quotes before any work starts. No scope surprises. If something changes mid-job, we talk to you first.</p>
+        </div>
+        <div class="about-value">
+          <span class="about-value-icon">🕐</span>
+          <h3>We Show Up When We Say</h3>
+          <p>We give you a real appointment time and keep it. Your backyard isn't a low priority just because the job is routine for us.</p>
+        </div>
+        <div class="about-value">
+          <span class="about-value-icon">🧵</span>
+          <h3>We Know Screen</h3>
+          <p>Not all screen is equal. We stock standard, no-see-um, Super Screen, and solar mesh — and we'll tell you which is right for your situation.</p>
+        </div>
+        <div class="about-value">
+          <span class="about-value-icon">🛡️</span>
+          <h3>Workmanship Guarantee</h3>
+          <p>If something isn't right with our work, we come back and fix it. That's not a marketing line — it's how we've kept customers for twenty years.</p>
+        </div>
+      </div>
+
+      <div class="about-creds">
+        <span class="about-cred">Fully Licensed &amp; Insured</span>
+        <span class="about-cred">Florida Building Code Compliant</span>
+        <span class="about-cred">Workmanship Guarantee</span>
+        <span class="about-cred">Free Estimates</span>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

@@ -1,0 +1,60 @@
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand brand--footer">
+          <span class="brand-text">Your Name<strong>Screen &amp; Enclosure</strong></span>
+        </div>
+        <p class="footer-about">{{ site.areaServed }}'s trusted screen enclosure and pool cage specialists since {{ site.founded }}. Locally owned, licensed, and fully insured — every job permitted and inspected.</p>
+        <nav class="social-links" aria-label="Social media">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Google Business">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1H12.18V13.83H18.69C18.36 17.64 15.19 19.27 12.19 19.27C8.36 19.27 5 16.25 5 12C5 7.9 8.2 4.73 12.2 4.73C15.29 4.73 17.1 6.7 17.1 6.7L19 4.72C19 4.72 16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12C2.03 17.05 6.16 22 12.25 22C17.6 22 21.5 18.33 21.5 12.91C21.5 11.76 21.35 11.1 21.35 11.1Z"/></svg>
+          </a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          {%- for s in services.list %}
+          <li><a href="{{ '/services/' | url }}#{{ s.slug }}">{{ s.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ '/about/' | url }}">About Us</a></li>
+          <li><a href="{{ '/service-areas/' | url }}">Service Areas</a></li>
+          <li><a href="{{ '/reviews/' | url }}">Reviews</a></li>
+          <li><a href="{{ '/contact/' | url }}">Free Estimate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <ul class="footer-contact">
+          <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
+          <li class="footer-hours">{{ site.hours }}<br><strong>{{ site.hoursNote }}</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+        <p class="footer-credit">Licensed &amp; Insured · Permitted Work Only · {{ site.areaServed }}</p>
+      </div>
+    </div>
+  </footer>

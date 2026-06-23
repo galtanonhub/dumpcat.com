@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# NOTE: _site/ (the Eleventy build output) IS committed on purpose for cPanel
+# Git deploy. Rebuild it with `npm run build` and commit it alongside source.
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

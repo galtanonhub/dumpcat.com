@@ -1,0 +1,23 @@
+{
+  "name": "Your Name Screen & Enclosure",
+  "shortName": "Your Name Screen",
+  "title": "Your Name Screen & Enclosure — Central Florida Pool Enclosures & Screen Rooms",
+  "description": "Central Florida's trusted screen enclosure company. Pool enclosures, screen rooms, porch enclosures, and rescreening — permitted, Florida Building Code compliant, and built to last. Call (407) 555-0194.",
+  "url": "https://yournamescreen.com",
+  "phone": "(407) 555-0194",
+  "phoneHref": "+14075550194",
+  "email": "info@yournamescreen.com",
+  "themeColor": "#0d8bc0",
+  "streetAddress": "200 Sunshine Blvd, Suite 10",
+  "city": "Orlando",
+  "state": "FL",
+  "zip": "32801",
+  "areaServed": "Central Florida",
+  "hours": "Mon–Sat: 7:00 AM – 6:00 PM",
+  "hoursNote": "Free estimates — no obligation",
+  "founded": "2004",
+  "priceRange": "$$",
+  "rating": "4.8",
+  "reviewCount": "214",
+  "geo": { "lat": "28.5383", "lng": "-81.3792" }
+}

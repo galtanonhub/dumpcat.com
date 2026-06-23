@@ -1,0 +1,20 @@
+{
+  "counties": [
+    {
+      "name": "Orange County",
+      "cities": ["Orlando", "Winter Park", "Apopka", "Ocoee", "Winter Garden", "Belle Isle"]
+    },
+    {
+      "name": "Seminole County",
+      "cities": ["Sanford", "Lake Mary", "Longwood", "Altamonte Springs", "Oviedo", "Casselberry"]
+    },
+    {
+      "name": "Osceola County",
+      "cities": ["Kissimmee", "St. Cloud", "Celebration", "Poinciana"]
+    },
+    {
+      "name": "Lake County",
+      "cities": ["Clermont", "Leesburg", "Tavares", "Eustis", "Mount Dora"]
+    }
+  ]
+}

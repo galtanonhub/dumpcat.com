@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+title: Screen Enclosure Services
+permalink: /services/
+description: "Pool enclosures, screen rooms, porch enclosures, rescreening, sunroom conversions, and hurricane screen systems across Central Florida. Free estimates — permits handled."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Services</span>
+      </nav>
+      <span class="eyebrow">What We Build</span>
+      <h1>Screen Enclosure Services in {{ site.areaServed }}</h1>
+      <p class="page-lead">From a brand-new pool cage to a single torn screen panel — we handle the full range of screen enclosure work, and we pull every required permit so you don't have to.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="service-detail-grid">
+        {%- for s in services.list %}
+        <article class="service-detail-card" id="{{ s.slug }}">
+          <div class="service-detail-top">
+            <span class="service-detail-icon" aria-hidden="true">{{ s.icon }}</span>
+            <span class="service-detail-num">0{{ loop.index }}</span>
+          </div>
+          <h2>{{ s.name }}</h2>
+          <p>{{ s.long }}</p>
+          <a href="{{ '/contact/' | url }}" class="btn btn--sky-outline">Get a Free Estimate</a>
+        </article>
+        {%- endfor %}
+      </div>
+
+      <div class="callout">
+        <h3>Not sure which service you need?</h3>
+        <p>That's completely normal — screen enclosures can get complicated. Give us a call, describe your situation, and we'll tell you exactly what makes sense and what it'll cost.</p>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--lg">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

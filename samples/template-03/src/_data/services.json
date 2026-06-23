@@ -1,0 +1,46 @@
+{
+  "list": [
+    {
+      "slug": "pool-enclosures",
+      "name": "Pool & Lanai Enclosures",
+      "icon": "🏊",
+      "short": "Keep bugs, debris, and UV rays out while keeping the fun in. Aluminum-framed, Florida Building Code compliant pool cages built to outlast the weather.",
+      "long": "A pool enclosure does more than keep out mosquitoes — it extends your swim season, reduces chemical use, and protects your investment. We build aluminum-framed birdcage and hip-roof enclosures designed for Florida's wind load requirements, using 18×16 no-see-um screen or heavier Super Screen where privacy matters. Every enclosure is permitted and inspected."
+    },
+    {
+      "slug": "screen-rooms",
+      "name": "Screen Rooms",
+      "icon": "🌿",
+      "short": "Turn an open patio or slab into a fully screened living space — perfect for entertaining, pets, and enjoying Florida evenings without the bugs.",
+      "long": "A screen room transforms an underused patio or concrete slab into a year-round outdoor living area. We frame in aluminum, screen it floor to ceiling, and can add a roof system to keep it dry. Choose from standard screen, privacy screen, or solar screen depending on your sun exposure and preference."
+    },
+    {
+      "slug": "porch-enclosures",
+      "name": "Porch & Patio Enclosures",
+      "icon": "🏡",
+      "short": "Enclose your existing covered porch or patio with durable aluminum framing and long-lasting screen.",
+      "long": "If you have a covered porch or lanai slab, enclosing it is one of the fastest ways to add usable square footage to your home. We tie into your existing roofline, frame in aluminum columns and screen panels, and handle the permit so you don't have to."
+    },
+    {
+      "slug": "rescreening",
+      "name": "Rescreening & Repairs",
+      "icon": "🔧",
+      "short": "Torn screens, storm damage, or just old and saggy? We rescreen individual panels or full enclosures — fast turnaround, fair price.",
+      "long": "Florida's weather is hard on screen. UV degradation, flying debris, and curious pets all take a toll. We replace screen in individual panels or rescreen entire enclosures, and we stock the same gauge and mesh pattern your existing structure uses so repairs blend seamlessly."
+    },
+    {
+      "slug": "sunroom-conversions",
+      "name": "Sunroom Conversions",
+      "icon": "☀️",
+      "short": "Upgrade from screen to glass and turn your screen room into a true three- or four-season sunroom.",
+      "long": "Already have a screen enclosure and want more? We can convert it into a 3-season or 4-season sunroom by adding acrylic or glass panels, insulated roof panels, and optional mini-split HVAC. The result is a fully conditioned bonus room that adds real value to your home."
+    },
+    {
+      "slug": "hurricane-screens",
+      "name": "Hurricane Screen Systems",
+      "icon": "🌀",
+      "short": "Motorized roll-down hurricane screens that protect your enclosure and openings — Florida Product Approval rated.",
+      "long": "Florida homeowners increasingly choose motorized roll-down hurricane screens as an alternative to plywood or accordion shutters. They protect enclosure openings, lanai areas, and windows — and when not in use, they roll away cleanly. We install systems that meet Florida Product Approval requirements."
+    }
+  ]
+}

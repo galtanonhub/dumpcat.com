@@ -1,0 +1,173 @@
+---
+layout: layouts/base.njk
+title: "Your Name Screen & Enclosure — Central Florida Pool Enclosures & Screen Rooms"
+description: "Central Florida's trusted screen enclosure company. Pool enclosures, screen rooms, porch enclosures, and rescreening — permitted, Florida Building Code compliant, and built to last. Call (407) 555-0194."
+---
+
+  <!-- HERO: light mesh-texture bg, copy left + quote form card right -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">Serving {{ site.areaServed }} since {{ site.founded }}</span>
+        <h1>Screen Enclosures Built for Florida Living</h1>
+        <p class="hero-lead">Pool cages, screen rooms, porch enclosures, and rescreening — all permitted, Florida Building Code compliant, and installed by a crew that shows up on time.</p>
+        <div class="hero-actions">
+          <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--lg">Call {{ site.phone }}</a>
+          <a href="{{ '/services/' | url }}" class="btn btn--outline btn--lg">View Our Services</a>
+        </div>
+        <ul class="hero-badges">
+          <li>Permits handled for you</li>
+          <li>{{ site.rating }}★ from {{ site.reviewCount }}+ reviews</li>
+          <li>Licensed &amp; insured</li>
+          <li>Free estimates</li>
+        </ul>
+      </div>
+
+      <div class="hero-form-card">
+        <h3>Get a Free Estimate</h3>
+        <p class="form-subhead">We'll contact you within one business day.</p>
+        <form class="hero-form" method="POST" action="#" novalidate>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="field">
+            <label for="h-name">Your Name</label>
+            <input type="text" id="h-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="h-phone">Phone Number</label>
+            <input type="tel" id="h-phone" name="phone" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="h-service">What are you looking for?</label>
+            <select id="h-service" name="service">
+              <option value="">Select a service…</option>
+              {%- for s in services.list %}
+              <option value="{{ s.slug }}">{{ s.name }}</option>
+              {%- endfor %}
+              <option value="other">Not sure yet</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--accent btn--block btn--lg">Request Free Estimate</button>
+          <p class="hero-form-note">No obligation · No spam · Just a real call from a local crew</p>
+          <p role="status" aria-live="polite" style="text-align:center;color:var(--sky-dark);font-weight:600;min-height:1.5em;margin:0;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container trust-inner">
+      <div><strong>20+ yrs</strong><span>Serving Central FL</span></div>
+      <div><strong>{{ site.rating }}★</strong><span>{{ site.reviewCount }}+ Reviews</span></div>
+      <div><strong>Permitted</strong><span>Every Job</span></div>
+      <div><strong>Licensed</strong><span>&amp; Fully Insured</span></div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Build</span>
+        <h2>Screen Enclosure Services in {{ site.areaServed }}</h2>
+        <p>From a new pool cage to rescreening a single torn panel, we handle the full range — and we pull the permits so you don't have to think about it.</p>
+      </div>
+      <div class="service-grid">
+        {%- for s in services.list %}
+        <article class="service-card">
+          <span class="service-card-icon" aria-hidden="true">{{ s.icon }}</span>
+          <h3>{{ s.name }}</h3>
+          <p>{{ s.short }}</p>
+          <a href="{{ '/services/' | url }}#{{ s.slug }}" class="link-arrow">Learn more</a>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (unique to T03) -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Process</span>
+        <h2>Simple From First Call to Final Inspection</h2>
+        <p>We handle the complicated part — permits, inspections, and code compliance — so you just enjoy the result.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <h3>Free On-Site Estimate</h3>
+          <p>We come to you, measure the space, discuss options and screen types, and give you a written quote the same day — no vague ballparks.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <h3>We Handle the Permits</h3>
+          <p>We submit the permit application, handle the back-and-forth with the county, and schedule inspections. You don't lift a finger.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <h3>Installation &amp; Inspection</h3>
+          <p>Our crew installs your enclosure, and we schedule the final county inspection. When it passes, you're done — and protected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Reviews</span>
+        <h2>What {{ site.areaServed }} Homeowners Are Saying</h2>
+      </div>
+      <div class="review-grid">
+        {%- for r in reviews.list %}
+        <figure class="review-card">
+          <div class="stars" aria-label="{{ r.stars }} out of 5 stars">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+          <blockquote>{{ r.text }}</blockquote>
+          <figcaption>{{ r.name }} <span>— {{ r.city }}</span></figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+      <p class="center" style="margin-top:28px;"><a href="{{ '/reviews/' | url }}" class="link-arrow">See all reviews</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Things People Ask Before They Call</h2>
+      </div>
+      <div class="faq-list">
+        {%- for item in faq.list %}
+        <div class="faq-item">
+          <h3 class="faq-q">{{ item.q }}</h3>
+          <p class="faq-a">{{ item.a }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="section section--sky">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Service Area</span>
+        <h2>Proudly Serving {{ site.areaServed }}</h2>
+        <p>Based in Orlando and covering four counties — if you're in the greater Central Florida area, we come to you.</p>
+      </div>
+      <ul class="area-chips">
+        {%- for county in areas.counties %}
+        {%- for city in county.cities %}
+        <li>{{ city }}</li>
+        {%- endfor %}
+        {%- endfor %}
+      </ul>
+      <div class="center"><a href="{{ '/service-areas/' | url }}" class="link-arrow" style="color:#fff;">See all service areas</a></div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

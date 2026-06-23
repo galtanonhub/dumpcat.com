@@ -1,0 +1,13 @@
+{
+  "name": "screen-enclosure-sample",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DragonWorkflows sample site — Your Name Screen & Enclosure (Central Florida). Built with Eleventy (static HTML output, no framework runtime).",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

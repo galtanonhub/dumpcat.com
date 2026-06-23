@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+title: Contact / Free Estimate
+permalink: /contact/
+description: "Contact Your Name Screen & Enclosure for a free estimate on pool enclosures, screen rooms, porch enclosures, and rescreening in Central Florida. Call (407) 555-0194."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Contact</span>
+      </nav>
+      <span class="eyebrow">Get in Touch</span>
+      <h1>Request Your Free Estimate</h1>
+      <p class="page-lead">Call now or fill out the form — we'll follow up within one business day with a real quote, not a vague ballpark.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <div class="contact-info-card">
+          <h2>Talk to a real person!</h2>
+          <a href="tel:{{ site.phoneHref }}" class="contact-phone">{{ site.phone }}</a>
+          <p class="contact-hours">{{ site.hours }}<br><strong>{{ site.hoursNote }}</strong></p>
+
+          <ul class="contact-list">
+            <li><span class="contact-label">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li><span class="contact-label">Office</span>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
+            <li><span class="contact-label">Service area</span>Orange, Seminole, Osceola &amp; Lake Counties</li>
+          </ul>
+
+          <div class="contact-promise">
+            <strong>Our promise:</strong> every estimate is written, every job is permitted, and your price won't change after we shake hands.
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <!-- FORM ACTION: replace action="#" with your endpoint before launch.
+             Formspree: action="https://formspree.io/f/YOUR_ID"
+             Web3Forms: action="https://api.web3forms.com/submit" (add hidden name="access_key") -->
+        <form class="quote-form" method="POST" action="#" novalidate>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <h2>Request Service</h2>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" autocomplete="address-level2">
+            </div>
+            <div class="field">
+              <label for="service">Service needed</label>
+              <select id="service" name="service">
+                <option value="">Select…</option>
+                {%- for s in services.list %}
+                <option value="{{ s.slug }}">{{ s.name }}</option>
+                {%- endfor %}
+                <option value="other">Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" name="message" rows="4" placeholder="Pool size, existing structure, type of screen you're interested in…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent btn--block btn--lg">Send Request</button>
+          <p role="status" aria-live="polite" class="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
