@@ -5,6 +5,15 @@ title: Your Name Garage Door Repair — Central Florida Garage Door Repair & Ins
 
   <!-- HERO -->
   <section class="hero">
+    <img
+      class="hero-bg"
+      src="{{ '/img/garage-door-template-pic-01.jpg' | url }}"
+      alt=""
+      aria-hidden="true"
+      width="1536"
+      height="1024"
+      loading="eager">
+    <div class="hero-overlay"></div>
     <div class="container hero-inner">
       <div class="hero-copy">
         <span class="eyebrow eyebrow--light">Serving {{ site.areaServed }} since {{ site.founded }}</span>
@@ -14,15 +23,6 @@ title: Your Name Garage Door Repair — Central Florida Garage Door Repair & Ins
           <a href="tel:{{ site.phoneHref }}" class="btn btn--accent btn--lg">Call {{ site.phone }}</a>
           <a href="{{ '/contact/' | url }}" class="btn btn--ghost btn--lg">Get a Free Estimate</a>
         </div>
-      </div>
-      <div class="hero-img-wrap">
-        <img
-          src="{{ '/img/garage-door-template-pic-01.jpg' | url }}"
-          alt="New garage door installation on a modern home"
-          class="hero-img"
-          width="700"
-          height="500"
-          loading="eager">
       </div>
     </div>
   </section>
@@ -132,7 +132,7 @@ title: Your Name Garage Door Repair — Central Florida Garage Door Repair & Ins
         <li>{{ a.name }}</li>
         {%- endfor %}
       </ul>
-      <div class="center"><a href="{{ '/service-areas/' | url }}" class="link-arrow">See all service areas</a></div>
+      <div class="center"><a href="{{ '/service-areas/' | url }}" class="link-arrow">See where we go</a></div>
     </div>
   </section>
 

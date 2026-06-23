@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "garage-door-sample",
+      "name": "template-01",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
       "port": 8080
