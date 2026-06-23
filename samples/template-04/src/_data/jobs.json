@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "name": "Indoor",
+      "icon": "🏠",
+      "items": [
+        "Drywall repair & patching",
+        "Leaky faucets & running toilets",
+        "Door & window adjustments",
+        "Light fixtures & ceiling fans",
+        "Tile & grout repair",
+        "Cabinet doors & hardware",
+        "Shelf & furniture assembly",
+        "Caulking & weatherstripping",
+        "Attic access & pull-down stairs",
+        "Bathroom & kitchen caulk"
+      ]
+    },
+    {
+      "name": "Outdoor",
+      "icon": "🌿",
+      "items": [
+        "Deck & fence repair",
+        "Pressure washing",
+        "Gutter cleaning & repair",
+        "Exterior caulking & painting touch-ups",
+        "Screen door & window screen repair",
+        "Gate & latch fixes",
+        "Wood rot repair",
+        "Minor concrete & masonry",
+        "Mailbox & address number install",
+        "Outdoor lighting & fixtures"
+      ]
+    }
+  ]
+}

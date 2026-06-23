@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Reviews
+permalink: /reviews/
+description: "Read reviews from East Orlando homeowners who hire Your Name Handyman for honest home repairs at a fair price."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Reviews</span>
+      </nav>
+      <span class="eyebrow">Reviews</span>
+      <h1>What the Neighbors Say</h1>
+      <p class="page-lead">A {{ site.rating }}-star average from {{ site.reviewCount }}+ East Orlando homeowners. Most of my work comes from referrals — here's why.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="review-stack">
+        {%- for r in reviews.list %}
+        <div class="review-item">
+          <div class="review-stars" aria-label="{{ r.stars }} out of 5">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+          <p class="review-text">"{{ r.text }}"</p>
+          <div class="review-byline">{{ r.name }} <span>— {{ r.city }}</span></div>
+        </div>
+        {%- endfor %}
+      </div>
+
+      <div class="callout" style="margin-top:40px;">
+        <h3>Had a good experience?</h3>
+        <p>Word-of-mouth is how I built this business. If I did right by you, I'd be grateful if you'd pass my name along.</p>
+        <a href="{{ '/contact/' | url }}" class="btn btn--rust btn--lg">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

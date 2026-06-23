@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "q": "Do you charge by the hour or by the job?",
+      "a": "Both, depending on the work. Small repairs are usually by the job — you get a flat price upfront. Longer or less predictable projects (like a full deck repair where I won't know the extent until I start) are hourly. I'll tell you which applies before I start, always."
+    },
+    {
+      "q": "How far in advance do I need to book?",
+      "a": "Usually 3–5 days for non-urgent jobs. If something's an emergency — a broken door that won't lock, a leak — call me and I'll do my best to get there sooner. I work Monday through Saturday so there's usually flexibility."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. I carry general liability insurance and maintain my handyman registration. I'll provide proof before any job if you need it — most people ask, and I understand why."
+    },
+    {
+      "q": "Do you do electrical or HVAC work?",
+      "a": "Light fixtures, ceiling fans, outlet covers, switches — yes. Full rewiring or panel work — no, that needs a licensed electrician and I'll tell you so. Same with HVAC: filter swaps and basic stuff yes, compressor work no. I won't take a job I can't do right."
+    },
+    {
+      "q": "What if the job turns out to be bigger than expected?",
+      "a": "I call you before I go further. You decide whether to proceed, adjust scope, or stop — no surprise charges on your invoice. I'd rather have that conversation than have you unhappy at the end."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# robots.txt for Your Name Handyman
+# PRE-LAUNCH NOTE: noindex meta tag in base.njk keeps search engines out while staging.
+# When the site goes live on its own domain, remove the noindex meta tag.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://yournamehandyman.com/sitemap.xml

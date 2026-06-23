@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "name": "Carol B.",
+      "city": "Conway",
+      "stars": 5,
+      "text": "Mike fixed a door that's been sticking for two years, patched three drywall holes, and installed a new ceiling fan — all in one visit. Charged exactly what he quoted. I already have his number saved for next time."
+    },
+    {
+      "name": "Tom & Linda R.",
+      "city": "Dover Shores",
+      "stars": 5,
+      "text": "We had a list of about ten small things that had been piling up. Mike knocked them all out in a day and a half. Fair hourly rate, no surprise charges, and he cleaned up after himself. This is exactly what you want in a handyman."
+    },
+    {
+      "name": "Diane M.",
+      "city": "Azalea Park",
+      "stars": 5,
+      "text": "As a single homeowner I'm always nervous about hiring someone I don't know. Mike came recommended by my neighbor and he did not disappoint. Replaced two exterior door locks and fixed a leaky bathroom faucet. Professional and respectful of my home."
+    },
+    {
+      "name": "Greg S.",
+      "city": "Curry Ford West",
+      "stars": 5,
+      "text": "Called on a Tuesday, he was here Thursday. Fixed a rotted section of deck board and replaced two fence pickets. Price was fair, the work looks great, and he was done by noon. Exactly what I needed."
+    }
+  ]
+}

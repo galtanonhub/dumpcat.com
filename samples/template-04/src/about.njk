@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+title: About Me
+permalink: /about/
+description: "Meet Mike — East Orlando handyman with 18 years of residential repair experience. Licensed, insured, and one guy who still answers his own phone."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">About Me</span>
+      </nav>
+      <span class="eyebrow">About Me</span>
+      <h1>{{ site.yearsExp }} Years of This Work. Still Just Me.</h1>
+      <p class="page-lead">No crews, no office, no runaround. When you hire me, you get me — from the first call to the final cleanup.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-split">
+        <div>
+          <div class="about-photo">
+            <div class="about-photo-placeholder">
+              <span class="ph-icon">👷</span>
+              <p>Your photo<br>goes here</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-copy">
+          <div class="about-story">
+            <p>I got into this work in {{ site.founded }} after spending years on construction crews — framing, tile, rough plumbing, all of it. I liked the work but didn't love the scale. Big builds are about speed; what I wanted was to do smaller jobs well.</p>
+            <p>Handyman work turned out to be the right fit. Homeowners have real problems — a door that won't close right, a bathroom faucet that's dripped for two years, drywall damage from a doorknob that needs to be patched before the painter comes. These things matter. I like fixing them.</p>
+            <p>Over the years I've built most of my business from referrals. A neighbor tells a neighbor. That's how it works when you do honest work at a fair price and don't disappear after the job is done.</p>
+            <p>I'm not the cheapest guy in town. But I'm also not the guy who gives you a low quote and pads the invoice at the end. You'll know the price before I start. If something changes, you'll hear from me before I go further.</p>
+          </div>
+          <div class="cred-chips" style="margin-top:28px;">
+            <span class="cred-chip">Licensed &amp; Insured</span>
+            <span class="cred-chip">{{ site.yearsExp }} Years Experience</span>
+            <span class="cred-chip">{{ site.rating }}★ Rated</span>
+            <span class="cred-chip">Free Estimates</span>
+            <span class="cred-chip">No Weekend Surcharge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

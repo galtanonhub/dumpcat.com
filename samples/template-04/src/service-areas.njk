@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+title: Where I Work
+permalink: /service-areas/
+description: "Your Name Handyman serves Conway, Azalea Park, Dover Shores, Curry Ford West, Belle Isle, Edgewood, and surrounding East Orlando neighborhoods."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Where I Work</span>
+      </nav>
+      <span class="eyebrow">Where I Work</span>
+      <h1>{{ site.areaServed }} &amp; the Neighborhoods I Know</h1>
+      <p class="page-lead">I'm based in {{ site.city }} and stay close to home. Keeping my service area tight means I can usually get to you within a few days — and I'm not charging extra for a long drive.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="map-embed" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-bottom:32px;">
+        <iframe
+          src="https://maps.google.com/maps?q=Conway+Orlando+FL&t=&z=11&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="420"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Service area map — East Orlando">
+        </iframe>
+      </div>
+
+      <div class="neighborhood-grid">
+        {%- for a in areas.list %}
+        <div class="neighborhood-item">{{ a }}</div>
+        {%- endfor %}
+      </div>
+
+      <div class="callout">
+        <h3>Not on the list?</h3>
+        <p>If you're close by, give me a call. I may be able to make it work — especially if you've got a few jobs that justify the trip.</p>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--rust btn--lg">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

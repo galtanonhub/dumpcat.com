@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: What I Fix
+permalink: /what-i-fix/
+description: "East Orlando handyman services — drywall, plumbing, tile, doors, ceiling fans, deck repair, pressure washing, and more. Call (407) 555-0217 for a free estimate."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">What I Fix</span>
+      </nav>
+      <span class="eyebrow">What I Fix</span>
+      <h1>The To-Do List I Can Take Off Your Hands</h1>
+      <p class="page-lead">Most of the repairs I do are the kind that pile up — individually not worth calling a big contractor, but together they're a real headache. I handle them all, one visit if I can.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="job-grid">
+        {%- for cat in jobs.categories %}
+        <div class="job-category">
+          <div class="job-cat-head">
+            <span class="job-cat-icon" aria-hidden="true">{{ cat.icon }}</span>
+            <h3>{{ cat.name }} Jobs</h3>
+          </div>
+          <ul class="job-list">
+            {%- for item in cat.items %}
+            <li>{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endfor %}
+      </div>
+
+      <div class="callout">
+        <h3>Don't see your job on the list?</h3>
+        <p>The list is a sample, not the limit. Give me a call — if it's something I can do right, I'll take it. If it's not in my wheelhouse, I'll tell you that too.</p>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--rust btn--lg">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

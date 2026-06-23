@@ -1,0 +1,168 @@
+---
+layout: layouts/base.njk
+title: "Your Name Handyman — East Orlando Home Repair"
+description: "East Orlando's go-to handyman for home repairs big and small. Drywall, plumbing, tile, decks, doors, and more. One guy, 18 years experience, licensed and insured. Call (407) 555-0217."
+---
+
+  <!-- HERO: rust left panel / cream right panel — personal two-column split -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="container" style="padding-right:0;">
+          <span class="hero-greeting">Hi, I'm {{ site.firstName }}.</span>
+          <h1>I Fix Things Around Your Home.</h1>
+          <p class="hero-lead">{{ site.yearsExp }} years of repairs, one guy who shows up on time, charges a fair price, and doesn't disappear after the job.</p>
+          <div class="hero-actions">
+            <a href="tel:{{ site.phoneHref }}" class="btn btn--cream btn--lg">Call {{ site.phone }}</a>
+            <a href="{{ '/contact/' | url }}" class="btn btn--ghost btn--lg">Send a Message</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <h3>Some of what I fix:</h3>
+        <ul class="quick-list">
+          <li>Drywall &amp; patching</li>
+          <li>Leaky faucets</li>
+          <li>Ceiling fans</li>
+          <li>Deck &amp; fence repair</li>
+          <li>Tile &amp; grout</li>
+          <li>Door adjustments</li>
+          <li>Pressure washing</li>
+          <li>Gutter cleaning</li>
+          <li>Cabinet hardware</li>
+          <li>Screen doors</li>
+        </ul>
+        <div class="hero-cred">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Licensed &amp; insured · <strong>{{ site.rating }}★</strong> from {{ site.reviewCount }}+ neighbors</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL STATS ROW -->
+  <div class="stats-row">
+    <div class="container stats-inner">
+      <div class="stat"><strong>{{ site.yearsExp }} yrs</strong><span>doing this work</span></div>
+      <div class="stat"><strong>1</strong><span>person — me, always</span></div>
+      <div class="stat"><strong>{{ site.rating }}★</strong><span>{{ site.reviewCount }}+ neighbor reviews</span></div>
+      <div class="stat"><strong>Same week</strong><span>most bookings</span></div>
+    </div>
+  </div>
+
+  <!-- WHAT I FIX — job checklist -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What I Fix</span>
+        <h2>If It's Broken, I Can Probably Help</h2>
+        <p>I handle most small-to-medium home repairs — the stuff that piles up on the to-do list. If something falls outside my wheelhouse, I'll tell you upfront and point you to the right person.</p>
+      </div>
+      <div class="job-grid">
+        {%- for cat in jobs.categories %}
+        <div class="job-category">
+          <div class="job-cat-head">
+            <span class="job-cat-icon" aria-hidden="true">{{ cat.icon }}</span>
+            <h3>{{ cat.name }} Jobs</h3>
+          </div>
+          <ul class="job-list">
+            {%- for item in cat.items %}
+            <li>{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endfor %}
+      </div>
+      <p class="job-note">Don't see your job on the list? <strong>Give me a call anyway</strong> — the list is a sample, not the limit.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT ME — personal -->
+  <section class="section section--tan">
+    <div class="container">
+      <div class="about-split">
+        <div>
+          <div class="about-photo">
+            <div class="about-photo-placeholder">
+              <span class="ph-icon">👷</span>
+              <p>Your photo<br>goes here</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">A Little About Me</span>
+          <h2>One Guy. {{ site.yearsExp }} Years. I Still Pick Up the Phone.</h2>
+          <p>I started doing handyman work in {{ site.founded }} after spending years in construction. I wanted to do smaller jobs — the kind that matter to homeowners but aren't worth calling a big contractor for. Turns out, there's a lot of that work out there.</p>
+          <p>When you hire me, you get me. Not a crew I dispatched, not a sub I've never met — me. I'll look at your project, tell you what I think it'll take, and give you a price before I start. If something changes mid-job, I call you. No surprises on the invoice.</p>
+          <ul class="about-facts">
+            <li>{{ site.yearsExp }} years of hands-on experience — residential repairs, not just new builds</li>
+            <li>Fully insured — happy to provide proof before any job</li>
+            <li>I work Monday through Saturday, no weekend surcharge</li>
+            <li>I don't take on jobs I can't do right — I'll tell you if something needs a specialist</li>
+          </ul>
+          <a href="{{ '/about/' | url }}" class="link-arrow">More about me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THE NEIGHBORS SAY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Reviews</span>
+        <h2>What the Neighbors Say</h2>
+        <p>A {{ site.rating }}-star average from {{ site.reviewCount }}+ East Orlando homeowners.</p>
+      </div>
+      <div class="review-stack">
+        {%- for r in reviews.list | slice(0, 3) %}
+        <div class="review-item">
+          <div class="review-stars" aria-label="{{ r.stars }} out of 5">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+          <p class="review-text">"{{ r.text }}"</p>
+          <div class="review-byline">{{ r.name }} <span>— {{ r.city }}</span></div>
+        </div>
+        {%- endfor %}
+      </div>
+      <p class="center" style="margin-top:24px;"><a href="{{ '/reviews/' | url }}" class="link-arrow">See all reviews</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--tan">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions I Get a Lot</h2>
+      </div>
+      <div class="faq-list">
+        {%- for item in faq.list %}
+        <div class="faq-item">
+          <h3 class="faq-q">{{ item.q }}</h3>
+          <p class="faq-a">{{ item.a }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE I WORK -->
+  <section class="section section--rust">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--light">Where I Work</span>
+        <h2>{{ site.areaServed }} &amp; Surrounding Neighborhoods</h2>
+        <p style="color:rgba(255,255,255,0.85);">I'm based in {{ site.city }} and serve the neighborhoods I know — no long drives, so I can keep prices fair.</p>
+      </div>
+      <ul class="neighborhood-list">
+        {%- for a in areas.list %}
+        <li>{{ a }}</li>
+        {%- endfor %}
+      </ul>
+      <div class="center">
+        <a href="{{ '/service-areas/' | url }}" class="link-arrow" style="color:#fff;">See full coverage area</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

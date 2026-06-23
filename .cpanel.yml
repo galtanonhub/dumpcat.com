@@ -22,5 +22,9 @@ deployment:
     - /bin/mkdir -p ${DEPLOYPATH}samples/template-03/
     - /bin/cp -R samples/template-03/_site/. ${DEPLOYPATH}samples/template-03/
 
+    # --- Template 04 (Warm Personal — handyman reference) ---
+    - /bin/mkdir -p ${DEPLOYPATH}samples/template-04/
+    - /bin/cp -R samples/template-04/_site/. ${DEPLOYPATH}samples/template-04/
+
     # When a sample graduates to its own domain, delete its source folder AND remove
     # its two copy lines above so it stops deploying to dumpcat.com.
