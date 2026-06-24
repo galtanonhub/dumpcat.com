@@ -179,22 +179,22 @@ ul { padding-left: 1.2em; }
 
 /* --- Reviews (stacked, quote-prominent) --- */
 .review-stack { display: flex; flex-direction: column; gap: 20px; max-width: 780px; margin: 0 auto; }
-.review-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; border-left: 4px solid var(--rust); }
+.review-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; border-top: 3px solid var(--rust); box-shadow: var(--shadow); }
 .review-stars { color: var(--rust); letter-spacing: 2px; margin-bottom: 10px; font-size: 1.05rem; }
 .review-text { font-size: 1.04rem; color: var(--text); line-height: 1.75; margin: 0 0 14px; font-style: italic; }
 .review-byline { font-weight: 700; font-size: 0.92rem; color: var(--brown); }
 .review-byline span { color: var(--muted); font-weight: 500; }
 
 /* --- FAQ --- */
-.faq-list { display: flex; flex-direction: column; gap: 0; max-width: 800px; margin: 0 auto; }
-.faq-item { padding: 22px 0; border-bottom: 1px solid var(--border); }
-.faq-item:first-child { border-top: 1px solid var(--border); }
-.faq-q { font-family: var(--display); font-size: 1.2rem; color: var(--brown); margin: 0 0 8px; }
-.faq-a { color: var(--muted); margin: 0; font-size: 0.97rem; line-height: 1.75; }
+.faq-list { display: flex; flex-direction: column; gap: 14px; max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px 30px; border-top: 3px solid var(--rust); box-shadow: var(--shadow); }
+.faq-q { font-family: var(--display); font-size: 1.2rem; color: var(--brown); margin: 0 0 10px; display: flex; align-items: flex-start; gap: 10px; }
+.faq-q::before { content: "Q"; background: var(--rust); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 3px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 3px; font-family: var(--body); letter-spacing: 0.05em; }
+.faq-a { color: var(--muted); margin: 0; font-size: 0.97rem; line-height: 1.75; padding-left: 38px; }
 
 /* --- Area chips --- */
 .neighborhood-list { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.neighborhood-list li { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 50px; padding: 8px 18px; color: rgba(255,255,255,0.95); font-size: 0.92rem; font-weight: 500; }
+.neighborhood-list li { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 0; padding: 8px 18px; color: rgba(255,255,255,0.95); font-size: 0.92rem; font-weight: 500; }
 
 /* --- Page header --- */
 .page-header { background: var(--tan); border-bottom: 1px solid var(--border); padding: 48px 0 40px; }

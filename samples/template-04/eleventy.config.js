@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("isoDate", (d) =>
     (d ? new Date(d) : new Date()).toISOString().slice(0, 10)
   );
+  eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.addPassthroughCopy("src/style.css");

@@ -11,7 +11,7 @@ description: "East Orlando's go-to handyman for home repairs big and small. Dryw
         <div class="container" style="padding-right:0;">
           <span class="hero-greeting">Hi, I'm {{ site.firstName }}.</span>
           <h1>I Fix Things Around Your Home.</h1>
-          <p class="hero-lead">{{ site.yearsExp }} years of repairs, one guy who shows up on time, charges a fair price, and doesn't disappear after the job.</p>
+          <p class="hero-lead">{{ site.yearsExp }} years of repairs, one guy who shows up on time, charges a fair price, and doesn't disappear after the job — because I want repeat business!</p>
           <div class="hero-actions">
             <a href="tel:{{ site.phoneHref }}" class="btn btn--cream btn--lg">Call {{ site.phone }}</a>
             <a href="{{ '/contact/' | url }}" class="btn btn--ghost btn--lg">Send a Message</a>
@@ -35,7 +35,7 @@ description: "East Orlando's go-to handyman for home repairs big and small. Dryw
         </ul>
         <div class="hero-cred">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>Licensed &amp; insured · <strong>{{ site.rating }}★</strong> from {{ site.reviewCount }}+ neighbors</span>
+          <span>All by your friendly, neighborhood Handyman</span>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@ description: "East Orlando's go-to handyman for home repairs big and small. Dryw
     <div class="container stats-inner">
       <div class="stat"><strong>{{ site.yearsExp }} yrs</strong><span>doing this work</span></div>
       <div class="stat"><strong>1</strong><span>person — me, always</span></div>
-      <div class="stat"><strong>{{ site.rating }}★</strong><span>{{ site.reviewCount }}+ neighbor reviews</span></div>
+      <div class="stat"><strong>Very Experienced</strong><span>with most jobs</span></div>
       <div class="stat"><strong>Same week</strong><span>most bookings</span></div>
     </div>
   </div>
@@ -74,7 +74,7 @@ description: "East Orlando's go-to handyman for home repairs big and small. Dryw
         </div>
         {%- endfor %}
       </div>
-      <p class="job-note">Don't see your job on the list? <strong>Give me a call anyway</strong> — the list is a sample, not the limit.</p>
+      <p class="job-note">Don't see your job on the list? <strong><a href="tel:{{ site.phoneHref }}">Give me a call anyway</a></strong> — the list is a sample, not the limit.</p>
     </div>
   </section>
 
@@ -113,10 +113,9 @@ description: "East Orlando's go-to handyman for home repairs big and small. Dryw
       <div class="section-head">
         <span class="eyebrow">Reviews</span>
         <h2>What the Neighbors Say</h2>
-        <p>A {{ site.rating }}-star average from {{ site.reviewCount }}+ East Orlando homeowners.</p>
       </div>
       <div class="review-stack">
-        {%- for r in reviews.list | slice(0, 3) %}
+        {%- for r in reviews.list | limit(3) %}
         <div class="review-item">
           <div class="review-stars" aria-label="{{ r.stars }} out of 5">{% for i in range(0, r.stars) %}★{% endfor %}</div>
           <p class="review-text">"{{ r.text }}"</p>
@@ -124,7 +123,6 @@ description: "East Orlando's go-to handyman for home repairs big and small. Dryw
         </div>
         {%- endfor %}
       </div>
-      <p class="center" style="margin-top:24px;"><a href="{{ '/reviews/' | url }}" class="link-arrow">See all reviews</a></p>
     </div>
   </section>
 
