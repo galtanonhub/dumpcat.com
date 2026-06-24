@@ -17,7 +17,6 @@ description: "Central Florida's trusted screen enclosure company. Pool enclosure
         </div>
         <ul class="hero-badges">
           <li>Permits handled for you</li>
-          <li>{{ site.rating }}★ from {{ site.reviewCount }}+ reviews</li>
           <li>Licensed &amp; insured</li>
           <li>Free estimates</li>
         </ul>
@@ -47,7 +46,7 @@ description: "Central Florida's trusted screen enclosure company. Pool enclosure
             </select>
           </div>
           <button type="submit" class="btn btn--accent btn--block btn--lg">Request Free Estimate</button>
-          <p class="hero-form-note">No obligation · No spam · Just a real call from a local crew</p>
+          <p class="hero-form-note" style="margin-top:6px;">No obligation · No spam · Just a real screen expert</p>
           <p role="status" aria-live="polite" style="text-align:center;color:var(--sky-dark);font-weight:600;min-height:1.5em;margin:0;"></p>
         </form>
       </div>
@@ -58,7 +57,7 @@ description: "Central Florida's trusted screen enclosure company. Pool enclosure
   <div class="trust-strip">
     <div class="container trust-inner">
       <div><strong>20+ yrs</strong><span>Serving Central FL</span></div>
-      <div><strong>{{ site.rating }}★</strong><span>{{ site.reviewCount }}+ Reviews</span></div>
+      <div><strong>Fast</strong><span>and Friendly Service</span></div>
       <div><strong>Permitted</strong><span>Every Job</span></div>
       <div><strong>Licensed</strong><span>&amp; Fully Insured</span></div>
     </div>
@@ -98,22 +97,24 @@ description: "Central Florida's trusted screen enclosure company. Pool enclosure
       <div class="section-head">
         <span class="eyebrow">What We Build</span>
         <h2>Screen Enclosure Services in {{ site.areaServed }}</h2>
-        <p>From a new pool cage to rescreening a single torn panel — all permitted, Florida Building Code compliant.</p>
+        <p>From a new pool cage to rescreening a single torn panel — We Do It All!</p>
       </div>
-      <div class="service-feature-list">
-        {%- for s in services.list %}
-        <div class="service-feature-item {% if loop.index is even %}service-feature-item--flip{% endif %}">
-          <div class="service-feature-visual">
-            <span class="service-feature-icon" aria-hidden="true">{{ s.icon }}</span>
-            <span class="service-feature-num">0{{ loop.index }}</span>
+      <div class="service-feature-wrap">
+        <div class="service-feature-list">
+          {%- for s in services.list %}
+          <div class="service-feature-item {% if loop.index is even %}service-feature-item--flip{% endif %}">
+            <div class="service-feature-visual">
+              <span class="service-feature-icon" aria-hidden="true">{{ s.icon }}</span>
+              <span class="service-feature-num">0{{ loop.index }}</span>
+            </div>
+            <div class="service-feature-body">
+              <h3>{{ s.name }}</h3>
+              <p>{{ s.short }}</p>
+              <a href="{{ '/services/' | url }}#{{ s.slug }}" class="link-arrow">View details</a>
+            </div>
           </div>
-          <div class="service-feature-body">
-            <h3>{{ s.name }}</h3>
-            <p>{{ s.short }}</p>
-            <a href="{{ '/services/' | url }}#{{ s.slug }}" class="link-arrow">View details</a>
-          </div>
+          {%- endfor %}
         </div>
-        {%- endfor %}
       </div>
     </div>
   </section>
@@ -124,10 +125,9 @@ description: "Central Florida's trusted screen enclosure company. Pool enclosure
       <div class="reviews-split">
         <div class="reviews-aggregate">
           <span class="eyebrow">Customer Reviews</span>
-          <div class="aggregate-score">{{ site.rating }}</div>
-          <div class="aggregate-stars" aria-label="4.9 out of 5 stars">★★★★★</div>
-          <p class="aggregate-count">Based on {{ site.reviewCount }}+ reviews<br>across Google &amp; Angi</p>
-          <a href="{{ '/reviews/' | url }}" class="btn btn--accent" style="margin-top:12px;">Read All Reviews</a>
+          <div class="aggregate-score">4.9</div>
+          <div class="aggregate-stars" aria-label="5 stars">★★★★★</div>
+          <p class="aggregate-count">Based on hundreds of reviews<br>over the years</p>
         </div>
         <div class="reviews-stack">
           {%- for r in reviews.list %}
@@ -172,7 +172,10 @@ description: "Central Florida's trusted screen enclosure company. Pool enclosure
       <div class="faq-list">
         {%- for item in faq.list %}
         <div class="faq-item">
-          <h3 class="faq-q">{{ item.q }}</h3>
+          <div class="faq-item-head">
+            <span class="faq-num">0{{ loop.index }}</span>
+            <h3 class="faq-q">{{ item.q }}</h3>
+          </div>
           <p class="faq-a">{{ item.a }}</p>
         </div>
         {%- endfor %}
