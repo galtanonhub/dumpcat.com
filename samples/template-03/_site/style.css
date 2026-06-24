@@ -170,6 +170,38 @@ img { max-width: 100%; display: block; }
 .county-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; border-top: 3px solid var(--sky); }
 .county-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 0.4em; }
 .county-card p { color: var(--muted); font-size: 0.88rem; margin: 0; }
+.county-card--light { background: rgba(255,255,255,0.95); border-color: rgba(255,255,255,0.6); border-top-color: rgba(255,255,255,0.9); }
+.county-card--light h3 { color: var(--navy); }
+.county-card--light p { color: var(--sky-dark); }
+
+/* --- Alternating service feature rows (homepage) --- */
+.service-feature-list { display: flex; flex-direction: column; gap: 0; }
+.service-feature-item { display: grid; grid-template-columns: 220px 1fr; gap: 0; align-items: stretch; border-bottom: 1px solid var(--border); }
+.service-feature-item:first-child { border-top: 1px solid var(--border); }
+.service-feature-item--flip { grid-template-columns: 1fr 220px; }
+.service-feature-item--flip .service-feature-visual { order: 2; }
+.service-feature-item--flip .service-feature-body { order: 1; }
+.service-feature-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: var(--sky-light); padding: 36px 24px; border-right: 1px solid var(--border); position: relative; overflow: hidden; }
+.service-feature-item--flip .service-feature-visual { border-right: 0; border-left: 1px solid var(--border); }
+.service-feature-icon { font-size: 2.8rem; line-height: 1; position: relative; z-index: 1; }
+.service-feature-num { font-family: var(--display); font-size: 5rem; font-weight: 700; color: var(--sky-mid); line-height: 1; position: absolute; bottom: -8px; right: 8px; user-select: none; pointer-events: none; }
+.service-feature-body { padding: 32px 36px; display: flex; flex-direction: column; justify-content: center; }
+.service-feature-body h3 { color: var(--navy); font-size: 1.3rem; margin-bottom: 8px; }
+.service-feature-body p { color: var(--muted); font-size: 0.97rem; margin: 0 0 14px; max-width: 56ch; }
+
+/* --- Reviews: aggregate left + stacked right --- */
+.reviews-split { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+.reviews-aggregate { text-align: center; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 24px; position: sticky; top: 88px; }
+.aggregate-score { font-family: var(--display); font-size: 5.5rem; font-weight: 700; color: var(--navy); line-height: 1; }
+.aggregate-stars { color: var(--sky); font-size: 1.5rem; letter-spacing: 3px; margin: 4px 0 10px; }
+.aggregate-count { font-size: 0.9rem; color: var(--muted); margin: 0; line-height: 1.6; }
+.reviews-stack { display: flex; flex-direction: column; gap: 0; }
+.review-row { padding: 28px 0; border-bottom: 1px solid var(--border); }
+.review-row:first-child { border-top: 1px solid var(--border); }
+.review-row-stars { color: var(--sky); letter-spacing: 2px; font-size: 1rem; margin-bottom: 8px; }
+.review-row-text { color: var(--text); font-size: 1.02rem; line-height: 1.72; margin: 0 0 10px; max-width: 66ch; }
+.review-row-attr { font-weight: 700; color: var(--navy); font-size: 0.92rem; }
+.review-row-attr span { font-weight: 500; color: var(--muted); }
 
 /* --- Page header --- */
 .page-header { background: linear-gradient(135deg, var(--sky-light) 0%, var(--bg-alt) 100%); padding: 54px 0 46px; border-bottom: 1px solid var(--border); }
@@ -289,6 +321,14 @@ img { max-width: 100%; display: block; }
   .process-grid::before { display: none; }
   .trust-inner { grid-template-columns: repeat(2, 1fr); }
   .trust-inner div:nth-child(3) { border-left: 0; }
+  .service-feature-item,
+  .service-feature-item--flip { grid-template-columns: 1fr; }
+  .service-feature-item--flip .service-feature-visual { order: 0; }
+  .service-feature-item--flip .service-feature-body { order: 0; }
+  .service-feature-visual { border-right: 0; border-left: 0 !important; border-bottom: 1px solid var(--border); flex-direction: row; justify-content: flex-start; padding: 20px 24px; gap: 16px; }
+  .service-feature-num { display: none; }
+  .reviews-split { grid-template-columns: 1fr; gap: 32px; }
+  .reviews-aggregate { position: static; }
 }
 
 @media (max-width: 560px) {
@@ -302,4 +342,5 @@ img { max-width: 100%; display: block; }
   .county-grid { grid-template-columns: 1fr 1fr; }
   .process-grid { grid-template-columns: 1fr; gap: 32px; }
   .cta-actions { flex-direction: column; width: 100%; }
+  .service-feature-body { padding: 24px 20px; }
 }
