@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HVACBusiness",
+    "name": "{{ site.name }}",
+    "telephone": "{{ site.phone }}",
+    "url": "{{ site.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.streetAddress }}",
+      "addressLocality": "{{ site.city }}",
+      "addressRegion": "{{ site.state }}",
+      "postalCode": "{{ site.zip }}",
+      "addressCountry": "US"
+    },
+    "areaServed": [{% for city in areas.list %}"{{ city }}"{% if not loop.last %},{% endif %}{% endfor %}],
+    "openingHours": "Mo-Fr 07:00-18:00 Sa 08:00-16:00",
+    "priceRange": "{{ site.priceRange }}"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  {% include "partials/nav.njk" %}
+
+  <main id="main">{{ content | safe }}</main>
+
+  {% include "partials/footer.njk" %}
+
+  <script>
+    /* Sticky nav shadow on scroll */
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* Mobile menu */
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    /* FAQ accordion */
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const body = item.querySelector('.faq-body');
+        const isOpen = item.classList.contains('open');
+        /* close all */
+        document.querySelectorAll('.faq-item.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-body').style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+
+    /* Contact form */
+    document.querySelectorAll('.contact-form').forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const status = form.querySelector('.form-status');
+        if (status) status.textContent = 'Request received — we will call you back within 2 hours.';
+        form.querySelectorAll('input, select, textarea').forEach(el => { el.disabled = true; });
+      });
+    });
+  </script>
+</body>
+</html>

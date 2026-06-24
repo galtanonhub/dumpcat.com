@@ -1,0 +1,51 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="footer-brand-icon" aria-hidden="true">❄️</span>
+          {{ site.name }}
+        </div>
+        <p class="footer-tagline">Licensed residential HVAC serving Central Florida since {{ site.founded }}. AC installation, repair, heating, and maintenance plans. 24/7 emergency dispatch.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          {% for svc in services.list %}
+          <li><a href="{{ ('/services/' + svc.slug + '/') | url }}">{{ svc.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ '/about/' | url }}">About Us</a></li>
+          <li><a href="{{ '/maintenance/' | url }}">Maintenance Plans</a></li>
+          <li><a href="{{ '/service-areas/' | url }}">Where We Work</a></li>
+          <li><a href="{{ '/reviews/' | url }}">Reviews</a></li>
+          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li>{{ site.streetAddress }}<br>{{ site.city }}, {{ site.state }} {{ site.zip }}</li>
+          <li>{{ site.hours }}</li>
+          <li>License: {{ site.license }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+        <p><a href="{{ '/sitemap.xml' | url }}">Sitemap</a></p>
+      </div>
+    </div>
+  </div>
+</footer>

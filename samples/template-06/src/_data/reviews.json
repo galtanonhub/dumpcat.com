@@ -1,0 +1,40 @@
+{
+  "list": [
+    {
+      "name": "Karen S.",
+      "city": "Winter Park",
+      "stars": 5,
+      "text": "Our AC went out on a Saturday in July. They had someone here within three hours and had it fixed before dark. The technician was straightforward about what was wrong, showed me the failed part, and the price matched the quote exactly. Will not call anyone else."
+    },
+    {
+      "name": "Marcus T.",
+      "city": "Lake Mary",
+      "stars": 5,
+      "text": "Replaced our 15-year-old system with a new Carrier unit. From the estimate to the installation it was completely painless. They did the load calculation, explained why we'd been on the wrong size unit for years, and the new system has already cut our electric bill noticeably. Excellent work."
+    },
+    {
+      "name": "Diane W.",
+      "city": "Oviedo",
+      "stars": 5,
+      "text": "Signed up for the maintenance plan two years ago and it's been worth every dollar. Caught a failing capacitor at the spring tune-up before it could strand us in August heat. The techs are always on time, thorough, and professional. Great company."
+    },
+    {
+      "name": "James R.",
+      "city": "Kissimmee",
+      "stars": 5,
+      "text": "Had three companies quote a new heat pump install. These guys were not the cheapest but they were the only ones who actually did a load calculation instead of just looking at what was there and quoting the same size. Whole process was smooth, permits handled, system runs perfectly."
+    },
+    {
+      "name": "Linda M.",
+      "city": "Altamonte Springs",
+      "stars": 5,
+      "text": "Called about a noise in the air handler and they came out next morning. Turned out to be a cracked drain pan that was about to cause a major water leak in my ceiling. Caught it early, fixed it fast. Really glad I called when I did."
+    },
+    {
+      "name": "Tom H.",
+      "city": "Longwood",
+      "stars": 5,
+      "text": "Got the duct sealing done after noticing some rooms were always warmer than others. Before and after test showed we were losing 28% of conditioned air. Now every room is comfortable and our bill dropped. Should have done this years ago."
+    }
+  ]
+}

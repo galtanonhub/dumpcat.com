@@ -1,0 +1,43 @@
+{
+  "list": [
+    {
+      "name": "Basic",
+      "price": "149",
+      "period": "year",
+      "features": [
+        "2 tune-ups per year (spring + fall)",
+        "21-point system inspection each visit",
+        "Filter replacement included",
+        "Priority scheduling",
+        "No diagnostic fees"
+      ],
+      "highlight": false
+    },
+    {
+      "name": "Comfort",
+      "price": "229",
+      "period": "year",
+      "features": [
+        "Everything in Basic",
+        "10% discount on all repairs",
+        "Coil cleaning included",
+        "Drain line treatment",
+        "Annual duct inspection"
+      ],
+      "highlight": true
+    },
+    {
+      "name": "Total Care",
+      "price": "349",
+      "period": "year",
+      "features": [
+        "Everything in Comfort",
+        "15% discount on all repairs",
+        "Free thermostat battery replacement",
+        "Indoor air quality check",
+        "Emergency after-hours priority"
+      ],
+      "highlight": false
+    }
+  ]
+}

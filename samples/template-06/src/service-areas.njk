@@ -1,0 +1,27 @@
+---
+layout: layouts/page.njk
+title: Service Areas
+lead: We serve homeowners across Greater Orlando — Orange, Seminole, Lake, and Osceola counties.
+eyebrow: Where We Work
+permalink: /service-areas/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Cities We Cover</span>
+      <h2>Central Florida Service Area</h2>
+      <p>Not sure if we come to you? Call — if we can get there, we will.</p>
+    </div>
+    <div class="area-grid">
+      {% for city in areas.list %}
+      <div class="area-chip">{{ city }}</div>
+      {% endfor %}
+    </div>
+    <div style="max-width:600px;margin:40px auto 0;background:var(--charcoal);padding:36px;text-align:center;">
+      <h3 style="color:#fff;margin-bottom:8px;">Don't see your city?</h3>
+      <p style="color:rgba(255,255,255,0.65);margin-bottom:24px;">Give us a call — we'll let you know if we can make it out to you.</p>
+      <a href="tel:{{ site.phoneHref }}" class="btn btn--amber btn--lg">Call {{ site.phone }}</a>
+    </div>
+  </div>
+</section>

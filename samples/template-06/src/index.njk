@@ -1,0 +1,228 @@
+---
+layout: layouts/base.njk
+title: Home
+description: Orlando's trusted residential HVAC company. AC installation, repair, heating, heat pumps, duct cleaning, and maintenance plans. Licensed, insured, 24/7 emergency service.
+---
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <span>★ {{ site.rating }} · {{ site.reviewCount }}+ Reviews</span>
+        </div>
+        <h1>Heating &amp; Cooling<br><em>Done Right</em></h1>
+        <p class="hero-lead">Central Florida's trusted residential HVAC company — licensed, insured, and honest about what your home actually needs.</p>
+        <div class="hero-actions">
+          <a href="tel:{{ site.phoneHref }}" class="btn btn--amber btn--lg">Call {{ site.phone }}</a>
+          <a href="{{ '/contact/' | url }}" class="btn btn--outline-white btn--lg">Free Estimate</a>
+        </div>
+        <ul class="hero-badges">
+          <li>{{ site.yearsInBusiness }} Years in Business</li>
+          <li>Licensed CAC Contractor</li>
+          <li>24/7 Emergency Dispatch</li>
+          <li>No Diagnostic Fees for Plan Members</li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-years" aria-hidden="true">{{ site.yearsInBusiness }}</div>
+        <div class="hero-card-content">
+          <div class="hero-card-num">{{ site.yearsInBusiness }}</div>
+          <div class="hero-card-label">Years of Excellence</div>
+          <div class="hero-card-divider"></div>
+          <div class="hero-card-stats">
+            <div>
+              <span class="hero-stat-num">{{ site.reviewCount }}+</span>
+              <span class="hero-stat-label">5-Star Reviews</span>
+            </div>
+            <div>
+              <span class="hero-stat-num">24/7</span>
+              <span class="hero-stat-label">Emergency Line</span>
+            </div>
+            <div>
+              <span class="hero-stat-num">1-Day</span>
+              <span class="hero-stat-label">Install Available</span>
+            </div>
+            <div>
+              <span class="hero-stat-num">100%</span>
+              <span class="hero-stat-label">Permitted Work</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-block">
+        <span class="stat-num">{{ site.yearsInBusiness }}+</span>
+        <span class="stat-label">Years Serving Central Florida</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">{{ site.reviewCount }}+</span>
+        <span class="stat-label">Verified Customer Reviews</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">Emergency HVAC Dispatch</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">{{ site.rating }}★</span>
+        <span class="stat-label">Average Star Rating</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Residential HVAC Services</h2>
+      <p>We handle every heating and cooling need a homeowner has — installation, repair, maintenance, and everything in between.</p>
+    </div>
+    <div class="service-grid">
+      {% for svc in services.list %}
+      <div class="service-card">
+        <span class="service-icon" aria-hidden="true">{{ svc.icon }}</span>
+        <h3>{{ svc.name }}</h3>
+        <p>{{ svc.short }}</p>
+        <a href="{{ ('/services/' + svc.slug + '/') | url }}" class="link-arrow" style="margin-top:auto;">Learn more</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- HEATING / COOLING SPLIT -->
+<div class="hc-split">
+  <div class="hc-panel hc-panel--cool">
+    <span class="hc-icon">❄️</span>
+    <h2>Cooling Services</h2>
+    <p>Florida summers are serious. We keep your AC running efficiently all season — or replace it fast when it's time.</p>
+    <ul class="hc-list">
+      <li>AC Installation &amp; Replacement</li>
+      <li>AC Repair &amp; Diagnostics</li>
+      <li>Refrigerant Recharge</li>
+      <li>Coil Cleaning</li>
+      <li>Thermostat Upgrades</li>
+    </ul>
+    <a href="{{ '/services/' | url }}" class="btn btn--outline-white">Cooling Services</a>
+  </div>
+  <div class="hc-panel hc-panel--warm">
+    <span class="hc-icon">🔥</span>
+    <h2>Heating Services</h2>
+    <p>When temperatures drop, your heating system needs to work. We service all residential heating equipment.</p>
+    <ul class="hc-list">
+      <li>Furnace Repair &amp; Service</li>
+      <li>Heat Pump Installation</li>
+      <li>Electric Strip Heat Service</li>
+      <li>Heating Tune-Ups</li>
+      <li>Carbon Monoxide Testing</li>
+    </ul>
+    <a href="{{ '/services/' | url }}" class="btn btn--charcoal">Heating Services</a>
+  </div>
+</div>
+
+<!-- MAINTENANCE PLANS -->
+<section class="section section--charcoal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Protect Your System</span>
+      <h2>Maintenance Plans</h2>
+      <p>Two tune-ups a year keeps your warranty valid, your efficiency up, and your repair bills down.</p>
+    </div>
+    <div class="plans-grid">
+      {% for plan in plans.list %}
+      <div class="plan-card {% if plan.highlight %}plan-card--highlight{% endif %}">
+        {% if plan.highlight %}<span class="plan-badge">Most Popular</span>{% endif %}
+        <div class="plan-name">{{ plan.name }}</div>
+        <div class="plan-price">
+          <span class="plan-dollar">${{ plan.price }}</span>
+          <span class="plan-period">/ {{ plan.period }}</span>
+        </div>
+        <ul class="plan-features">
+          {% for feat in plan.features %}
+          <li>{{ feat }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/contact/' | url }}" class="btn {% if plan.highlight %}btn--amber{% else %}btn--charcoal{% endif %} btn--block">Sign Up</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Customer Reviews</span>
+      <h2>{{ site.reviewCount }}+ Homeowners Can't Be Wrong</h2>
+      <p>Real reviews from real Central Florida customers.</p>
+    </div>
+    <div class="review-grid">
+      {% for review in reviews.list | slice(0, 3) %}
+      <div class="review-card">
+        <div class="review-stars" aria-label="{{ review.stars }} stars">{% for i in range(0, review.stars) %}★{% endfor %}</div>
+        <p class="review-text">{{ review.text }}</p>
+        <p class="review-attr">{{ review.name }} <span>— {{ review.city }}</span></p>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="{{ '/reviews/' | url }}" class="link-arrow">Read all {{ site.reviewCount }}+ reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Things People Ask Before They Call</h2>
+    </div>
+    <div class="faq-list">
+      {% for item in faq.list %}
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          {{ item.q }}
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">{{ item.a }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="section section--charcoal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Where We Work</span>
+      <h2>Serving Greater Orlando</h2>
+      <p>Orange, Seminole, Lake, and Osceola counties — if you're in the area, we come to you.</p>
+    </div>
+    <div class="area-grid">
+      {% for city in areas.list %}
+      <div class="area-chip">{{ city }}</div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center;">
+      <a href="{{ '/service-areas/' | url }}" class="btn btn--outline-white">Full Service Area</a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

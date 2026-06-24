@@ -1,0 +1,44 @@
+---
+layout: layouts/page.njk
+title: Maintenance Plans
+lead: Two professional tune-ups a year keeps your system running efficiently, your manufacturer warranty valid, and your repair bills lower.
+eyebrow: Protect Your System
+permalink: /maintenance/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="plans-grid">
+      {% for plan in plans.list %}
+      <div class="plan-card {% if plan.highlight %}plan-card--highlight{% endif %}">
+        {% if plan.highlight %}<span class="plan-badge">Most Popular</span>{% endif %}
+        <div class="plan-name">{{ plan.name }}</div>
+        <div class="plan-price">
+          <span class="plan-dollar">${{ plan.price }}</span>
+          <span class="plan-period">/ {{ plan.period }}</span>
+        </div>
+        <ul class="plan-features">
+          {% for feat in plan.features %}
+          <li>{{ feat }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/contact/' | url }}" class="btn {% if plan.highlight %}btn--amber{% else %}btn--charcoal{% endif %} btn--block">Sign Up for {{ plan.name }}</a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div style="max-width:720px;margin:56px auto 0;background:var(--bg-alt);border:1px solid var(--border);border-left:4px solid var(--amber);padding:32px;">
+      <h2 style="font-size:1.6rem;margin-bottom:12px;">What's Included in Every Visit</h2>
+      <p style="color:var(--muted);margin-bottom:20px;">Every tune-up visit — regardless of plan — includes our full 21-point inspection. You'll get a written report at the end of each visit.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        {% set checklist = ["Evaporator coil inspection and cleaning","Condenser coil inspection and cleaning","Refrigerant level check","Capacitor and contactor testing","Electrical connections tightened","Blower motor inspection","Drain line flush and treatment","Filter replacement","Thermostat calibration check","Static pressure reading","Supply and return temperature differential","System performance report"] %}
+        {% for item in checklist %}
+        <div style="display:flex;gap:8px;align-items:flex-start;font-size:0.92rem;color:var(--text);">
+          <span style="color:var(--amber);font-weight:800;flex-shrink:0;">✓</span>
+          {{ item }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

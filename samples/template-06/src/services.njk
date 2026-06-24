@@ -1,0 +1,27 @@
+---
+layout: layouts/page.njk
+title: HVAC Services
+lead: Complete residential heating and cooling services across Central Florida. Licensed, insured, and honest about what your home needs.
+eyebrow: What We Do
+permalink: /services/
+---
+
+<section class="section">
+  <div class="container">
+    {% for svc in services.list %}
+    <div id="{{ svc.slug }}" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding:48px 0;border-bottom:1px solid var(--border);">
+      <div>
+        <span style="font-size:3rem;display:block;margin-bottom:16px;">{{ svc.icon }}</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);">{{ svc.name }}</h2>
+        <p style="color:var(--muted);font-size:1.02rem;line-height:1.8;">{{ svc.long }}</p>
+      </div>
+      <div style="background:var(--bg-alt);border:1px solid var(--border);border-top:4px solid var(--amber);padding:32px;">
+        <h3 style="font-size:1.1rem;margin-bottom:16px;">Ready to get started?</h3>
+        <p style="color:var(--muted);font-size:0.94rem;margin-bottom:20px;">Call us or fill out our quick form — we'll respond within 2 hours during business hours.</p>
+        <a href="{{ '/contact/' | url }}" class="btn btn--amber btn--block" style="margin-bottom:12px;">Request Free Estimate</a>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--outline-amber btn--block">Call {{ site.phone }}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

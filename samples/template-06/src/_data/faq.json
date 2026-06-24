@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "q": "How often should I replace my AC system?",
+      "a": "Most residential AC systems in Florida last 12–15 years with regular maintenance — shorter than the national average because they run almost year-round. If your system is over 10 years old and needs a repair costing more than half the replacement price, replacement usually makes more financial sense. We'll give you an honest comparison, not a sales pitch."
+    },
+    {
+      "q": "What size AC unit do I need?",
+      "a": "Proper sizing requires a Manual J load calculation based on your home's square footage, insulation levels, window area, ceiling height, and sun exposure. A system that's too large will short-cycle, leaving the home humid. One that's too small runs constantly and never fully cools. We calculate the right size — we don't just match what was there before."
+    },
+    {
+      "q": "Why is my electric bill so high if the AC seems to be working?",
+      "a": "A system can cool adequately while running far less efficiently than it should. Common causes: low refrigerant, dirty coils, leaky ductwork, a failing capacitor, or a system that's too large or too old to run efficiently. A diagnostic visit can usually identify the cause quickly, and many issues are inexpensive to fix."
+    },
+    {
+      "q": "Do you offer financing?",
+      "a": "Yes. We offer financing through a third-party lender for system replacements and larger repairs. We can typically get approval decisions same day. Ask us about current promotional rates when you call — we often have 0% interest options for qualified buyers."
+    },
+    {
+      "q": "Do I need a permit for AC replacement in Florida?",
+      "a": "In most cases, yes — Florida requires a permit for AC system replacements, not just repairs. We handle the permit application, coordinate the inspection, and close the permit out when work is complete. Some homeowners don't realize unpermitted work can create problems at resale or with insurance claims."
+    },
+    {
+      "q": "What's included in a maintenance tune-up?",
+      "a": "Our 21-point tune-up includes: cleaning the evaporator and condenser coils, checking refrigerant levels, testing capacitors and contactors, inspecting the drain line and pan, lubricating moving parts, checking thermostat calibration, replacing the filter, and testing overall system performance. You'll get a written report of findings at every visit."
+    }
+  ]
+}

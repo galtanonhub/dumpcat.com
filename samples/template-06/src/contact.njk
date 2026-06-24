@@ -1,0 +1,49 @@
+---
+layout: layouts/page.njk
+title: Contact Us
+lead: Call for fastest response. For non-emergencies, fill out the form and we'll call you back within 2 hours.
+eyebrow: Get in Touch
+permalink: /contact/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Talk to a Real Person</h2>
+        <a href="tel:{{ site.phoneHref }}" class="contact-big-phone">{{ site.phone }}</a>
+        <p class="contact-hours">{{ site.hours }}<br>Emergency: 24/7</p>
+        <ul class="contact-list">
+          <li><span class="contact-label">Phone</span><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li><span class="contact-label">Service Area</span>Orange, Seminole, Lake &amp; Osceola Counties</li>
+          <li><span class="contact-label">License</span>{{ site.license }}</li>
+          <li><span class="contact-label">Estimates</span>Free for new system installs</li>
+        </ul>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h2 style="font-size:1.5rem;margin-bottom:20px;">Request a Callback</h2>
+        <form class="contact-form" novalidate>
+          <div class="field-row">
+            <div class="field"><label for="fname">First Name</label><input type="text" id="fname" name="fname" autocomplete="given-name" required></div>
+            <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" name="lname" autocomplete="family-name" required></div>
+          </div>
+          <div class="field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" autocomplete="tel" required></div>
+          <div class="field"><label for="city">City</label><input type="text" id="city" name="city" autocomplete="address-level2"></div>
+          <div class="field">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select...</option>
+              {% for svc in services.list %}<option value="{{ svc.slug }}">{{ svc.name }}</option>{% endfor %}
+              <option value="maintenance">Maintenance Plan</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="field"><label for="message">Details (optional)</label><textarea id="message" name="message" rows="3" placeholder="Describe what's happening..."></textarea></div>
+          <button type="submit" class="btn btn--amber btn--block btn--lg">Send Request</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

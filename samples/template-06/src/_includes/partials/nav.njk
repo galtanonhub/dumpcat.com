@@ -1,0 +1,53 @@
+<div class="util-bar">
+  <div class="container util-bar-inner">
+    <div class="util-left">
+      <span>Licensed HVAC Contractor · {{ site.license }}</span>
+      <span>{{ site.hours }}</span>
+    </div>
+    <div class="util-right">
+      <a href="tel:{{ site.phoneHref }}">{{ site.phone }} — 24/7 Emergency</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="{{ '/' | url }}" class="brand" aria-label="{{ site.name }} home">
+      <span class="brand-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+      </span>
+      <span class="brand-text">
+        {{ site.name.split(' ')[0] }}
+        <em>HVAC</em>
+      </span>
+    </a>
+
+    <div class="nav-links">
+      <a href="{{ '/services/' | url }}">Our Services</a>
+      <a href="{{ '/maintenance/' | url }}">Maintenance Plans</a>
+      <a href="{{ '/service-areas/' | url }}">Where We Work</a>
+      <a href="{{ '/about/' | url }}">About</a>
+      <a href="{{ '/reviews/' | url }}">Reviews</a>
+      <a href="{{ '/contact/' | url }}">Contact</a>
+    </div>
+
+    <a href="tel:{{ site.phoneHref }}" class="nav-cta">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call Now
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="{{ '/services/' | url }}">Our Services</a>
+    <a href="{{ '/maintenance/' | url }}">Maintenance Plans</a>
+    <a href="{{ '/service-areas/' | url }}">Where We Work</a>
+    <a href="{{ '/about/' | url }}">About</a>
+    <a href="{{ '/reviews/' | url }}">Reviews</a>
+    <a href="{{ '/contact/' | url }}">Contact</a>
+    <a href="tel:{{ site.phoneHref }}" class="btn btn--amber btn--block">Call {{ site.phone }}</a>
+  </div>
+</nav>
