@@ -4,6 +4,7 @@
       "slug": "ac-installation",
       "name": "AC Installation & Replacement",
       "icon": "🌀",
+      "image": "svc-ac-install.webp",
       "short": "New system or replacing aging equipment — we size it right, install it clean, and register the warranty for you.",
       "long": "Whether your current system has finally given out or you're upgrading to a more efficient unit, we handle the full installation. We perform a Manual J load calculation to properly size your system for your home — not just swap in whatever's closest in tonnage. We install Carrier, Trane, and Lennox systems, handle the permit, and register your warranty same day."
     },
@@ -11,6 +12,7 @@
       "slug": "ac-repair",
       "name": "AC Repair & Diagnostics",
       "icon": "❄️",
+      "image": "svc-ac-repair.webp",
       "short": "Not cooling, short-cycling, or making noise? We diagnose fast and carry common parts on the truck.",
       "long": "Florida heat doesn't wait, and neither do we. Our technicians carry the most common capacitors, contactors, motors, and refrigerant on the truck so most repairs happen in one visit. We give you a written quote before any work starts — no surprise charges. If the repair cost approaches replacement cost, we'll tell you honestly."
     },
@@ -18,6 +20,7 @@
       "slug": "heating",
       "name": "Heating & Furnace Services",
       "icon": "🔥",
+      "image": "svc-heating.webp",
       "short": "Gas furnace repair, electric strip heat, and heat pump heating — we service all residential heating systems.",
       "long": "Central Florida winters are mild but they happen. When your heating system isn't working, we diagnose and repair gas furnaces, electric air handlers, and heat strips. We also handle annual heating tune-ups to catch problems before the temperature drops. All work is permitted where required."
     },
@@ -25,6 +28,7 @@
       "slug": "heat-pump",
       "name": "Heat Pump Install & Service",
       "icon": "♨️",
+      "image": "svc-heat-pump.webp",
       "short": "Heat pumps are the smart choice for Florida — efficient year-round. We install, service, and repair all brands.",
       "long": "Heat pumps are increasingly the right choice for Central Florida homes — they handle both cooling and heating efficiently without a separate gas furnace. We install and service single-stage, two-stage, and variable-speed heat pump systems. If you're considering switching from a traditional split system, we'll walk through the options and costs honestly."
     },
@@ -32,6 +36,7 @@
       "slug": "duct-services",
       "name": "Duct Cleaning & Sealing",
       "icon": "💨",
+      "image": "svc-ducts.webp",
       "short": "Leaky or dirty ducts waste 20–30% of conditioned air. We clean, seal, and rebalance your duct system.",
       "long": "Most homes lose a significant portion of their conditioned air through leaks and gaps in ductwork before it ever reaches the living space. We use Aeroseal duct sealing technology and professional HEPA-filtered cleaning equipment — not the leaf blower setups you'll find with coupon companies. We test before and after so you can see the difference."
     },
@@ -39,6 +44,7 @@
       "slug": "maintenance",
       "name": "Maintenance Plans",
       "icon": "🛠️",
+      "image": "svc-maintenance.webp",
       "short": "Two tune-ups a year keeps your system running efficiently, your warranty valid, and your repair bills lower.",
       "long": "Our maintenance plan includes two full system tune-ups per year — one before cooling season, one before heating season. Each visit includes a 21-point inspection, filter change, coil cleaning, refrigerant check, and a written report. Plan members get priority scheduling, discounts on repairs, and never pay diagnostic fees. Plans start at $149/year."
     }

@@ -10,6 +10,7 @@ permalink: /about/
   <div class="container">
     <div class="about-grid">
       <div class="about-prose">
+
         <h2>{{ site.yearsInBusiness }} Years. One Standard.</h2>
         <p>We started this company in {{ site.founded }} with a simple idea: HVAC work shouldn't be confusing or expensive for no good reason. You should know exactly what's wrong, exactly what it costs to fix it, and exactly what you're getting.</p>
         <p>That approach has kept us in business for {{ site.yearsInBusiness }} years on almost entirely referral work. We don't run misleading coupons, we don't upsell maintenance visits into unnecessary repairs, and we don't swap out parts that don't need swapping.</p>
@@ -21,7 +22,11 @@ permalink: /about/
           <div class="cred-item"><strong>In Business Since</strong><span>{{ site.founded }}</span></div>
         </div>
       </div>
-      <div class="about-values">
+      <div class="about-right">
+        <div class="about-photo-rect">
+          <img src="{{ '/about-team.webp' | url }}" alt="{{ site.name }} team" loading="lazy">
+        </div>
+        <div class="about-values">
         <div class="about-value">
           <span class="about-value-icon">🎯</span>
           <div>
@@ -50,6 +55,7 @@ permalink: /about/
             <p>We pull permits for all work that requires them in Florida. Unpermitted HVAC work creates real problems at resale.</p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>

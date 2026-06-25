@@ -10,7 +10,7 @@ description: Orlando's trusted residential HVAC company. AC installation, repair
     <div class="hero-grid">
       <div class="hero-copy">
         <div class="hero-eyebrow">
-          <span>★ {{ site.rating }} · {{ site.reviewCount }}+ Reviews</span>
+          <span>Licensed CAC Contractor · {{ site.yearsInBusiness }} Years in Business</span>
         </div>
         <h1>Heating &amp; Cooling<br><em>Done Right</em></h1>
         <p class="hero-lead">Central Florida's trusted residential HVAC company — licensed, insured, and honest about what your home actually needs.</p>
@@ -34,8 +34,8 @@ description: Orlando's trusted residential HVAC company. AC installation, repair
           <div class="hero-card-divider"></div>
           <div class="hero-card-stats">
             <div>
-              <span class="hero-stat-num">{{ site.reviewCount }}+</span>
-              <span class="hero-stat-label">5-Star Reviews</span>
+              <span class="hero-stat-num">Free</span>
+              <span class="hero-stat-label">Estimates</span>
             </div>
             <div>
               <span class="hero-stat-num">24/7</span>
@@ -65,16 +65,16 @@ description: Orlando's trusted residential HVAC company. AC installation, repair
         <span class="stat-label">Years Serving Central Florida</span>
       </div>
       <div class="stat-block">
-        <span class="stat-num">{{ site.reviewCount }}+</span>
-        <span class="stat-label">Verified Customer Reviews</span>
-      </div>
-      <div class="stat-block">
         <span class="stat-num">24/7</span>
         <span class="stat-label">Emergency HVAC Dispatch</span>
       </div>
       <div class="stat-block">
-        <span class="stat-num">{{ site.rating }}★</span>
-        <span class="stat-label">Average Star Rating</span>
+        <span class="stat-num">1-Day</span>
+        <span class="stat-label">Install Available</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Permitted Work</span>
       </div>
     </div>
   </div>
@@ -91,10 +91,14 @@ description: Orlando's trusted residential HVAC company. AC installation, repair
     <div class="service-grid">
       {% for svc in services.list %}
       <div class="service-card">
-        <span class="service-icon" aria-hidden="true">{{ svc.icon }}</span>
-        <h3>{{ svc.name }}</h3>
-        <p>{{ svc.short }}</p>
-        <a href="{{ ('/services/' + svc.slug + '/') | url }}" class="link-arrow" style="margin-top:auto;">Learn more</a>
+        <div class="service-photo">
+          <img src="{{ ('/' + svc.image) | url }}" alt="{{ svc.name }}" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <h3>{{ svc.name }}</h3>
+          <p>{{ svc.short }}</p>
+          <a href="{{ '/services/' | url }}#{{ svc.slug }}" class="link-arrow" style="margin-top:auto;">Learn more</a>
+        </div>
       </div>
       {% endfor %}
     </div>
@@ -132,7 +136,7 @@ description: Orlando's trusted residential HVAC company. AC installation, repair
 </div>
 
 <!-- MAINTENANCE PLANS -->
-<section class="section section--charcoal">
+<section class="section section--warm">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Protect Your System</span>
@@ -153,55 +157,40 @@ description: Orlando's trusted residential HVAC company. AC installation, repair
           <li>{{ feat }}</li>
           {% endfor %}
         </ul>
-        <a href="{{ '/contact/' | url }}" class="btn {% if plan.highlight %}btn--amber{% else %}btn--charcoal{% endif %} btn--block">Sign Up</a>
+        <a href="{{ '/contact/' | url }}" class="btn btn--amber btn--block">Sign Up</a>
       </div>
       {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Customer Reviews</span>
-      <h2>{{ site.reviewCount }}+ Homeowners Can't Be Wrong</h2>
-      <p>Real reviews from real Central Florida customers.</p>
-    </div>
-    <div class="review-grid">
-      {% for review in reviews.list | slice(0, 3) %}
-      <div class="review-card">
-        <div class="review-stars" aria-label="{{ review.stars }} stars">{% for i in range(0, review.stars) %}★{% endfor %}</div>
-        <p class="review-text">{{ review.text }}</p>
-        <p class="review-attr">{{ review.name }} <span>— {{ review.city }}</span></p>
-      </div>
-      {% endfor %}
-    </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a href="{{ '/reviews/' | url }}" class="link-arrow">Read all {{ site.reviewCount }}+ reviews</a>
     </div>
   </div>
 </section>
 
 <!-- FAQ ACCORDION -->
-<section class="section section--alt">
+<section class="section section--charcoal">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Common Questions</span>
       <h2>Things People Ask Before They Call</h2>
     </div>
-    <div class="faq-list">
-      {% for item in faq.list %}
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
-          {{ item.q }}
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-body">
-          <div class="faq-body-inner">{{ item.a }}</div>
-        </div>
+    <div class="faq-with-arrows">
+      <div class="faq-arrow faq-arrow--left" aria-hidden="true">
+        <svg viewBox="0 0 80 160" xmlns="http://www.w3.org/2000/svg"><polyline points="20,10 70,80 20,150" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      {% endfor %}
+      <div class="faq-list">
+        {% for item in faq.list %}
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            {{ item.q }}
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">{{ item.a }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="faq-arrow faq-arrow--right" aria-hidden="true">
+        <svg viewBox="0 0 80 160" xmlns="http://www.w3.org/2000/svg"><polyline points="60,10 10,80 60,150" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
     </div>
   </div>
 </section>

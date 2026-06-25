@@ -8,20 +8,23 @@ permalink: /services/
 
 <section class="section">
   <div class="container">
-    {% for svc in services.list %}
-    <div id="{{ svc.slug }}" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding:48px 0;border-bottom:1px solid var(--border);">
-      <div>
-        <span style="font-size:3rem;display:block;margin-bottom:16px;">{{ svc.icon }}</span>
-        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);">{{ svc.name }}</h2>
-        <p style="color:var(--muted);font-size:1.02rem;line-height:1.8;">{{ svc.long }}</p>
+    <div class="services-2col">
+      {% for svc in services.list %}
+      <div class="svc-card" id="{{ svc.slug }}">
+        <div class="svc-card-photo">
+          <img src="{{ ('/' + svc.image) | url }}" alt="{{ svc.name }}" loading="lazy">
+        </div>
+        <div class="svc-card-body">
+          <span class="eyebrow eyebrow--dark">Service</span>
+          <h2>{{ svc.name }}</h2>
+          <p style="color:var(--muted);font-size:1.02rem;line-height:1.8;">{{ svc.long }}</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+            <a href="{{ '/contact/' | url }}" class="btn btn--amber">Request Free Estimate</a>
+            <a href="tel:{{ site.phoneHref }}" class="btn btn--outline-amber">Call {{ site.phone }}</a>
+          </div>
+        </div>
       </div>
-      <div style="background:var(--bg-alt);border:1px solid var(--border);border-top:4px solid var(--amber);padding:32px;">
-        <h3 style="font-size:1.1rem;margin-bottom:16px;">Ready to get started?</h3>
-        <p style="color:var(--muted);font-size:0.94rem;margin-bottom:20px;">Call us or fill out our quick form — we'll respond within 2 hours during business hours.</p>
-        <a href="{{ '/contact/' | url }}" class="btn btn--amber btn--block" style="margin-bottom:12px;">Request Free Estimate</a>
-        <a href="tel:{{ site.phoneHref }}" class="btn btn--outline-amber btn--block">Call {{ site.phone }}</a>
-      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>
