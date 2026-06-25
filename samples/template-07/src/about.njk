@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+title: About
+permalink: /about/
+description: "About Your Name Glass — a family-owned residential glass company serving Central Florida since 2008."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">About</span>
+      </nav>
+      <h1>About {{ site.name }}</h1>
+      <p class="page-lead">Family-owned. Residential specialists. Serving {{ site.areaServed }} since {{ site.founded }}.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-photo-wrap">
+          <div class="about-circle about-circle--lg">
+            <span class="ph-icon" aria-hidden="true">🪟</span>
+            <p>Your photo<br>goes here</p>
+          </div>
+        </div>
+        <div class="about-story">
+          <h2>Why We Only Do Residential</h2>
+          <div class="section-rule"></div>
+          <p>When we started in {{ site.founded }}, we made a choice most glass companies don't: focus entirely on homeowners. No storefronts, no commercial contracts, no jobs where you're bidding against a dozen other companies to do work as cheap as possible.</p>
+          <p>Residential glass is different. Your home is where you live. The window we replace matters to you in a way that a storefront pane doesn't. We take that seriously — every measurement is done in person, every piece of glass is cut to exact fit, and we don't leave until it's right.</p>
+          <p>In {{ site.yearsExp }} years, we've replaced thousands of windows, sliding doors, shower enclosures, and mirrors across {{ site.areaServed }}. Most of our work still comes from referrals and repeat customers — which tells us we're doing something right.</p>
+          <div class="cred-chips">
+            <div class="cred-chip">Licensed &amp; Insured</div>
+            <div class="cred-chip">{{ site.yearsExp }}+ Years Experience</div>
+            <div class="cred-chip">Residential Only</div>
+            <div class="cred-chip">Same-Week Scheduling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

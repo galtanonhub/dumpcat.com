@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- PRE-LAUNCH: keeps search engines from indexing this sample. REMOVE when site goes live. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta name="theme-color" content="{{ site.themeColor }}">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title or site.title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "@id": "{{ site.url }}/#business",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.phoneHref }}",
+    "email": "{{ site.email }}",
+    "priceRange": "{{ site.priceRange }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.streetAddress }}",
+      "addressLocality": "{{ site.city }}",
+      "addressRegion": "{{ site.state }}",
+      "postalCode": "{{ site.zip }}",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "{{ site.geo.lat }}",
+      "longitude": "{{ site.geo.lng }}"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "areaServed": [
+      {%- for a in areas.list %}
+      { "@type": "City", "name": "{{ a }}, FL" }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+{% include "partials/nav.njk" %}
+
+  <main id="main">
+{{ content | safe }}
+  </main>
+
+{% include "partials/footer.njk" %}
+
+  <script>
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      const setMenu = (open) => {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open);
+      };
+      toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    }
+
+    document.querySelectorAll('.quote-form').forEach(form => {
+      const status = form.querySelector('[role="status"]');
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        form.reset();
+        if (status) status.textContent = "Got it — this is a demo form. On the live site this goes straight to the team at {{ site.name }}.";
+      });
+    });
+  </script>
+
+</body>
+</html>

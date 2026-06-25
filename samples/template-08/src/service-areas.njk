@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: Service Areas
+permalink: /service-areas/
+description: "Bath and kitchen remodeling serving Tampa, St. Petersburg, Clearwater, Brandon, Wesley Chapel, and surrounding communities."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Service Areas</span>
+      </nav>
+      <h1>Where We Work</h1>
+      <p class="page-lead">We serve the {{ site.areaServed }} area. Staying local lets us schedule tightly and stand behind our work long after the job is done.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="neighborhood-grid">
+        {%- for a in areas.list %}
+        <div class="neighborhood-item">{{ a }}</div>
+        {%- endfor %}
+      </div>
+      <div class="callout">
+        <h3>Don't see your city?</h3>
+        <p>Give us a call — we may be able to help depending on location.</p>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn--dark btn--lg">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+{% include "partials/cta.njk" %}

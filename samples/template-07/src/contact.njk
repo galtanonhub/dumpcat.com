@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+title: Contact
+permalink: /contact/
+description: "Contact Your Name Glass for a free estimate on window glass, sliding doors, shower enclosures, or mirrors. Serving Central Florida."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Contact</span>
+      </nav>
+      <h1>Get a Free Estimate</h1>
+      <p class="page-lead">Call us for the fastest response, or fill out the form and we'll get back to you the same day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div>
+        <div class="contact-panel">
+          <h2>Call or Text Us</h2>
+          <a href="tel:{{ site.phoneHref }}" class="contact-big-phone">{{ site.phone }}</a>
+          <p class="contact-hours">{{ site.hours }}<br>{{ site.hoursNote }}</p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </li>
+            <li>
+              <span class="contact-label">Based in</span>
+              {{ site.city }}, FL {{ site.zip }}
+            </li>
+            <li>
+              <span class="contact-label">Service area</span>
+              {{ site.areaServed }} &amp; surrounding communities
+            </li>
+          </ul>
+          <div class="contact-promise">
+            We respond to all messages the same business day. For broken or exposed glass, call — don't wait for an email reply.
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <!-- FORM ACTION: replace action="#" with your endpoint before launch.
+             Formspree: action="https://formspree.io/f/YOUR_ID" -->
+        <form class="quote-form" method="POST" action="#" novalidate>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <h2 style="font-size:1.5rem;margin-bottom:20px;">Tell us about the job</h2>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Type of glass</label>
+            <select id="service" name="service">
+              <option value="">Select a service…</option>
+              <option>Window glass replacement</option>
+              <option>Sliding door glass</option>
+              <option>Shower enclosure</option>
+              <option>Mirror</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="address">Address / neighborhood</label>
+            <input type="text" id="address" name="address" placeholder="e.g. 123 Main St, Winter Park">
+          </div>
+          <div class="field">
+            <label for="message">Describe the job</label>
+            <textarea id="message" name="message" rows="4" placeholder="What broke or needs replacing? Any measurements you have are helpful."></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold btn--block btn--lg">Send Message</button>
+          <p role="status" aria-live="polite" class="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>

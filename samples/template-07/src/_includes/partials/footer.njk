@@ -1,0 +1,33 @@
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Your Name<em> Glass</em></div>
+        <p class="footer-tagline">{{ site.tagline }}<br>Serving {{ site.areaServed }} since {{ site.founded }}.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="{{ '/services/' | url }}">What We Replace</a></li>
+          <li><a href="{{ '/service-areas/' | url }}">Service Areas</a></li>
+          <li><a href="{{ '/about/' | url }}">About</a></li>
+          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <ul>
+          <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.hours }}</li>
+          <li>{{ site.hoursNote }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+      <p>Licensed &amp; Insured · {{ site.areaServed }}, FL</p>
+    </div>
+  </footer>

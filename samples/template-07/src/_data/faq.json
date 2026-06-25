@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "q": "Do you work on all types of residential window glass?",
+      "a": "Yes — single-pane, double-pane insulated units, tempered safety glass, laminated glass, and high-impact glass. If you're not sure what you have, we'll identify it when we come out to measure."
+    },
+    {
+      "q": "My window is foggy between the panes — is that fixable?",
+      "a": "That fogging means the seal on your insulated unit has failed. The glass itself can't be cleaned — the whole unit needs to be replaced. We cut a new insulated unit to match your existing frame. It's a common job, usually done in a single visit."
+    },
+    {
+      "q": "Do you do emergency or same-day service?",
+      "a": "We do our best for broken or security-compromised situations. Call us directly and we'll tell you honestly how fast we can get there. For standard replacements, we're typically scheduled within 2–4 business days."
+    },
+    {
+      "q": "How do I know what size glass to order?",
+      "a": "You don't need to know — we come out and measure everything before we order. A precise measurement is critical for a proper fit, and we never skip that step."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. We carry general liability and workers' compensation coverage and are happy to provide proof before any job. Most homeowners ask, and we expect it."
+    }
+  ]
+}

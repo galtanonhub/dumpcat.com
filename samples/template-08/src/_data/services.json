@@ -1,0 +1,60 @@
+{
+  "list": [
+    {
+      "slug": "bathroom-remodeling",
+      "name": "Bathroom Remodeling",
+      "icon": "🛁",
+      "tagline": "From a single fixture upgrade to a complete gut renovation — we design and build bathrooms that work the way you live.",
+      "details": [
+        "Full bathroom gut renovations",
+        "Shower & tub replacement or conversion",
+        "Vanity, sink & faucet upgrades",
+        "Tile floors, walls & surrounds",
+        "Lighting, exhaust fan & electrical",
+        "Accessibility & walk-in conversions"
+      ]
+    },
+    {
+      "slug": "kitchen-remodeling",
+      "name": "Kitchen Remodeling",
+      "icon": "🍳",
+      "tagline": "A kitchen remodel is the single biggest return on investment in your home. We make sure it's built to last and built to impress.",
+      "details": [
+        "Full kitchen gut and rebuild",
+        "Cabinet removal, install & refacing",
+        "Countertop replacement — granite, quartz, laminate",
+        "Backsplash tile design & installation",
+        "Sink, faucet & garbage disposal",
+        "Appliance hookups & coordination"
+      ]
+    },
+    {
+      "slug": "tile-flooring",
+      "name": "Tile & Flooring",
+      "icon": "🔲",
+      "tagline": "Precise tile work makes or breaks a remodel. We lay it right the first time — no lippage, no cracked grout six months later.",
+      "details": [
+        "Ceramic, porcelain & natural stone tile",
+        "Large-format tile installation",
+        "Heated floor systems",
+        "Shower pans & waterproofing",
+        "Grout color matching & repair",
+        "LVP & hardwood transitions"
+      ]
+    },
+    {
+      "slug": "custom-cabinetry",
+      "name": "Custom Cabinetry",
+      "icon": "🪵",
+      "tagline": "Stock cabinets leave dead space and dated kitchens. Our custom and semi-custom options fit your space — not the other way around.",
+      "details": [
+        "Semi-custom and fully custom cabinet builds",
+        "Soft-close hinges & drawer systems",
+        "Pull-out shelving & organizers",
+        "Island and peninsula builds",
+        "Bathroom vanity cabinets",
+        "Painted, stained & natural wood finishes"
+      ]
+    }
+  ]
+}

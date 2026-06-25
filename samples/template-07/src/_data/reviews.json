@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "name": "Patricia H.",
+      "city": "Winter Park",
+      "stars": 5,
+      "text": "Called on Monday, they were here Wednesday. The double-pane window in our master bedroom had been foggy for two years. Looks brand new. Fair price, no upsell, done in under an hour."
+    },
+    {
+      "name": "David & Karen S.",
+      "city": "Oviedo",
+      "stars": 5,
+      "text": "We needed a full shower enclosure for our renovation. They came out to measure, gave us options at different price points, and the installation was flawless. Everyone who sees it asks who did the work."
+    },
+    {
+      "name": "Marcus T.",
+      "city": "Lake Mary",
+      "stars": 5,
+      "text": "Sliding door glass shattered on a Saturday afternoon. They had a crew here Monday morning and it was done before noon. Exactly what you want when you have an open panel in your home."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+title: Our Services
+permalink: /services/
+description: "Residential glass replacement services: windows, sliding doors, shower enclosures, and mirrors. Central Florida. Licensed & insured."
+---
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">What We Replace</span>
+      </nav>
+      <h1>What We Replace</h1>
+      <p class="page-lead">Every job is measured in person and cut to exact fit. We handle all residential glass — one call covers everything on the list below.</p>
+    </div>
+  </section>
+
+  {%- for s in services.list %}
+  <section class="section {% if loop.index is even %}section--light{% endif %}" id="{{ s.slug }}">
+    <div class="container">
+      <div class="service-detail">
+        <div class="service-detail-photo">
+          <div class="service-photo service-photo--lg">
+            <span class="service-photo-icon" aria-hidden="true">{{ s.icon }}</span>
+          </div>
+        </div>
+        <div class="service-detail-copy">
+          <span class="eyebrow">Service</span>
+          <h2>{{ s.name }}</h2>
+          <div class="section-rule"></div>
+          <p>{{ s.tagline }}</p>
+          <ul class="detail-list">
+            {%- for d in s.details %}
+            <li>{{ d }}</li>
+            {%- endfor %}
+          </ul>
+          <a href="{{ '/contact/' | url }}" class="btn btn--slate btn--lg" style="margin-top:8px;">Get a Free Estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {%- endfor %}
+
+{% include "partials/cta.njk" %}

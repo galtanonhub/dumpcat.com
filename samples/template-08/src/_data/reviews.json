@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "name": "Jennifer & Mark L.",
+      "city": "Tampa",
+      "stars": 5,
+      "text": "They gutted our master bath and rebuilt it from the floor up. The tile work alone was worth writing a review for — perfectly laid, not a single lippage issue. We've had contractors before who left us with grout cracking in six months. This looks as good today as the day they finished."
+    },
+    {
+      "name": "Robert C.",
+      "city": "Wesley Chapel",
+      "stars": 5,
+      "text": "Kitchen remodel start to finish, on time and within $200 of the estimate. They found a plumbing issue behind the wall that could have been a nightmare — called us before touching it, gave us options. That's the kind of crew you want in your house."
+    },
+    {
+      "name": "Susan T.",
+      "city": "Palm Harbor",
+      "stars": 5,
+      "text": "We converted an old tub/shower combo into a walk-in shower for my husband. The custom tile work is stunning. They kept the house clean every single day — I kept expecting a mess and it never came. Couldn't recommend more highly."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "template-07",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "port": 8089
+    }
+  ]
+}

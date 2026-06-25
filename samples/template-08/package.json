@@ -1,0 +1,12 @@
+{
+  "name": "bath-kitchen-remodel-sample",
+  "version": "1.0.0",
+  "description": "DragonWorkflows sample — bath & kitchen remodeling (Template 08)",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
