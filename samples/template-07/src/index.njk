@@ -57,7 +57,7 @@ description: "Residential glass replacement for windows, sliding doors, shower e
         {%- for s in services.list %}
         <div class="service-card">
           <div class="service-photo">
-            <span class="service-photo-icon" aria-hidden="true">{{ s.icon }}</span>
+            <img src="{{ ('/' + s.image) | url }}" alt="{{ s.name }}" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3>{{ s.name }}</h3>
@@ -81,9 +81,8 @@ description: "Residential glass replacement for windows, sliding doors, shower e
       </div>
       <div class="about-split">
         <div class="about-photo-wrap">
-          <div class="about-circle">
-            <span class="ph-icon" aria-hidden="true">🪟</span>
-            <p>Your photo<br>goes here</p>
+          <div class="about-photo-rect">
+            <img src="{{ '/about-team.webp' | url }}" alt="{{ site.name }} team" loading="lazy">
           </div>
         </div>
         <div class="about-features">
@@ -167,10 +166,10 @@ description: "Residential glass replacement for windows, sliding doors, shower e
       </div>
       <div class="faq-list">
         {%- for item in faq.list %}
-        <div class="faq-item">
-          <h3 class="faq-q">{{ item.q }}</h3>
+        <details class="faq-item">
+          <summary class="faq-q"><span>{{ item.q }}</span><span class="faq-icon" aria-hidden="true"></span></summary>
           <p class="faq-a">{{ item.a }}</p>
-        </div>
+        </details>
         {%- endfor %}
       </div>
     </div>

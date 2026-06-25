@@ -105,7 +105,8 @@ ul { padding-left: 1.2em; }
 
 /* --- Hero --- */
 .hero { position: relative; min-height: 580px; display: flex; align-items: center; overflow: hidden;
-  background: linear-gradient(135deg, #0d1e2c 0%, var(--slate) 60%, var(--slate-mid) 100%); }
+  background: linear-gradient(135deg, #0d1e2c 0%, var(--slate) 60%, var(--slate-mid) 100%);
+  background-image: url('hero.webp'); background-size: cover; background-position: center; }
 /* Subtle window-pane grid overlay */
 .hero-bg { position: absolute; inset: 0; z-index: 1;
   background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
@@ -132,9 +133,10 @@ ul { padding-left: 1.2em; }
 .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .service-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.15s, box-shadow 0.15s; }
 .service-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.service-photo { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--slate-dark) 0%, var(--slate-mid) 100%); display: flex; align-items: center; justify-content: center; }
+.service-photo { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--slate-dark) 0%, var(--slate-mid) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; border: 3px solid var(--gold); }
 .service-photo--lg { aspect-ratio: 3/2; }
 .service-photo-icon { font-size: 3.5rem; opacity: 0.7; }
+.service-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .service-card-body { padding: 24px; }
 .service-card-body h3 { font-size: 1.05rem; font-weight: 700; color: var(--slate-dark); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0; }
 .service-card-body p { color: var(--muted); font-size: 0.93rem; line-height: 1.65; margin-bottom: 14px; }
@@ -146,6 +148,8 @@ ul { padding-left: 1.2em; }
 .about-circle--lg { width: 360px; height: 360px; }
 .about-circle .ph-icon { font-size: 3.5rem; display: block; margin-bottom: 10px; }
 .about-circle p { font-size: 0.85rem; margin: 0; line-height: 1.5; }
+.about-photo-rect { border: 3px solid var(--gold); overflow: hidden; aspect-ratio: 4/5; max-width: 340px; width: 100%; }
+.about-photo-rect img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .about-features { display: flex; flex-direction: column; gap: 32px; }
 .about-feature { display: flex; align-items: flex-start; gap: 20px; }
 .feature-icon { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; color: var(--gold-dark); flex-shrink: 0; }
@@ -172,12 +176,28 @@ ul { padding-left: 1.2em; }
 .neighborhood-list { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .neighborhood-list li { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 0; padding: 8px 18px; color: rgba(255,255,255,0.92); font-size: 0.9rem; font-weight: 500; }
 
-/* --- FAQ cards --- */
-.faq-list { display: flex; flex-direction: column; gap: 14px; max-width: 800px; margin: 0 auto; }
-.faq-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px 30px; border-top: 3px solid var(--gold); box-shadow: var(--shadow); }
-.faq-q { font-family: var(--display); font-size: 1.1rem; color: var(--slate-dark); margin: 0 0 10px; display: flex; align-items: flex-start; gap: 10px; }
-.faq-q::before { content: "Q"; background: var(--slate); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 3px 7px; border-radius: 3px; flex-shrink: 0; margin-top: 3px; font-family: var(--body); letter-spacing: 0.05em; }
-.faq-a { color: var(--muted); margin: 0; font-size: 0.97rem; line-height: 1.75; padding-left: 38px; }
+/* --- FAQ accordion (details/summary) --- */
+.faq-list { display: flex; flex-direction: column; gap: 0; max-width: 800px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.faq-item { background: var(--white); border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: 0; }
+.faq-item[open] { background: var(--gold-light); }
+.faq-q { font-family: var(--display); font-size: 1.05rem; color: var(--slate-dark); margin: 0; padding: 22px 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; list-style: none; border-top: 3px solid transparent; transition: border-color 0.15s, background 0.15s; }
+.faq-item[open] > .faq-q { border-top-color: var(--gold); }
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q span:first-child { flex: 1; }
+.faq-icon { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold-dark); font-size: 1.1rem; font-weight: 700; line-height: 1; transition: transform 0.2s; }
+.faq-icon::before { content: "+"; }
+.faq-item[open] .faq-icon { transform: rotate(45deg); }
+.faq-a { color: var(--muted); margin: 0; font-size: 0.97rem; line-height: 1.75; padding: 0 24px 22px 24px; }
+
+/* --- Map embed + county cards --- */
+.map-embed { border: 3px solid var(--gold); margin-bottom: 32px; }
+.map-embed iframe { width: 100%; height: 400px; display: block; border: 0; }
+.county-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); margin-bottom: 40px; }
+.county-card { padding: 24px 20px; text-align: center; border-right: 1px solid var(--border); border-top: 3px solid var(--gold); background: var(--white); }
+.county-card:last-child { border-right: 0; }
+.county-card strong { display: block; font-family: var(--display); font-size: 1rem; color: var(--slate-dark); margin-bottom: 6px; }
+.county-card p { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.55; }
 
 /* --- CTA band --- */
 .cta-band { background: var(--slate-dark); padding: 68px 0; }
@@ -270,6 +290,8 @@ ul { padding-left: 1.2em; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .neighborhood-grid { grid-template-columns: repeat(2, 1fr); }
+  .county-grid { grid-template-columns: repeat(2, 1fr); }
+  .county-card:nth-child(2) { border-right: 0; }
 }
 
 @media (max-width: 600px) {
@@ -282,5 +304,7 @@ ul { padding-left: 1.2em; }
   .field-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
   .neighborhood-grid { grid-template-columns: 1fr 1fr; }
+  .county-grid { grid-template-columns: 1fr 1fr; }
+  .county-card:nth-child(2) { border-right: 0; }
   .cta-actions { flex-direction: column; width: 100%; }
 }

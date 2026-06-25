@@ -23,7 +23,7 @@ description: "Residential glass replacement services: windows, sliding doors, sh
       <div class="service-detail">
         <div class="service-detail-photo">
           <div class="service-photo service-photo--lg">
-            <span class="service-photo-icon" aria-hidden="true">{{ s.icon }}</span>
+            <img src="{{ ('/' + s.image) | url }}" alt="{{ s.name }}" loading="lazy">
           </div>
         </div>
         <div class="service-detail-copy">

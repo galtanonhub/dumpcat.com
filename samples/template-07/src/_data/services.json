@@ -4,6 +4,7 @@
       "slug": "window-glass",
       "name": "Window Glass Replacement",
       "icon": "🪟",
+      "image": "svc-windows.webp",
       "tagline": "Single-pane, double-pane, insulated, and high-impact — we replace all residential window glass and cut every pane to your exact frame size.",
       "details": [
         "Single-pane and double-pane insulated units",
@@ -17,6 +18,7 @@
       "slug": "sliding-doors",
       "name": "Sliding Door Glass",
       "icon": "🚪",
+      "image": "svc-sliding.webp",
       "tagline": "Cracked, shattered, or scratched sliding glass door? We cut and install replacement glass to fit your existing frame — most jobs done in a single visit.",
       "details": [
         "Standard and oversized sliding door panels",
@@ -30,6 +32,7 @@
       "slug": "shower-enclosures",
       "name": "Shower Enclosures",
       "icon": "🚿",
+      "image": "svc-shower.webp",
       "tagline": "Frameless, semi-frameless, or framed — we measure, cut, and install custom shower glass for any bathroom layout.",
       "details": [
         "Frameless and semi-frameless enclosures",
@@ -43,6 +46,7 @@
       "slug": "mirrors",
       "name": "Mirror Services",
       "icon": "🪞",
+      "image": "svc-mirror.webp",
       "tagline": "Custom-cut mirrors for bathrooms, closets, gyms, and more. We cut to size, bevel edges on request, and install securely.",
       "details": [
         "Bathroom vanity mirrors",
