@@ -24,7 +24,7 @@ description: "Full-service bath and kitchen remodeling serving the Tampa Bay are
         {%- for s in services.list %}
         <div class="service-card">
           <div class="service-photo">
-            <span class="service-photo-icon" aria-hidden="true">{{ s.icon }}</span>
+            <img src="{{ ('/' + s.image) | url }}" alt="{{ s.name }}" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3>{{ s.name }}</h3>
@@ -89,22 +89,32 @@ description: "Full-service bath and kitchen remodeling serving the Tampa Bay are
       </div>
       <div class="gallery-grid">
         <div class="gallery-photo gallery-photo--tall">
+          <img src="{{ '/gallery-bathroom.webp' | url }}" alt="Bathroom Remodel" loading="lazy">
           <span class="gallery-label">Bathroom Remodel</span>
         </div>
         <div class="gallery-photo">
+          <img src="{{ '/gallery-kitchen.webp' | url }}" alt="Kitchen Remodel" loading="lazy">
           <span class="gallery-label">Kitchen Remodel</span>
         </div>
         <div class="gallery-photo">
+          <img src="{{ '/gallery-tile.webp' | url }}" alt="Custom Tile" loading="lazy">
           <span class="gallery-label">Custom Tile</span>
         </div>
         <div class="gallery-photo gallery-photo--tall">
+          <img src="{{ '/gallery-masterbath.webp' | url }}" alt="Master Bath" loading="lazy">
           <span class="gallery-label">Master Bath</span>
         </div>
         <div class="gallery-photo">
+          <img src="{{ '/gallery-cabinets.webp' | url }}" alt="Custom Cabinetry" loading="lazy">
           <span class="gallery-label">Custom Cabinetry</span>
         </div>
         <div class="gallery-photo">
+          <img src="{{ '/gallery-kitchen2.webp' | url }}" alt="Kitchen Renovation" loading="lazy">
           <span class="gallery-label">Kitchen Renovation</span>
+        </div>
+        <div class="gallery-photo">
+          <img src="{{ '/gallery-vanity.webp' | url }}" alt="Vanity &amp; Fixtures" loading="lazy">
+          <span class="gallery-label">Vanity &amp; Fixtures</span>
         </div>
       </div>
       <div class="center" style="margin-top:36px;">
@@ -160,10 +170,13 @@ description: "Full-service bath and kitchen remodeling serving the Tampa Bay are
       </div>
       <div class="faq-list">
         {%- for item in faq.list %}
-        <div class="faq-item">
-          <h3 class="faq-q">{{ item.q }}</h3>
+        <details class="faq-item">
+          <summary class="faq-q">
+            <span>{{ item.q }}</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
           <p class="faq-a">{{ item.a }}</p>
-        </div>
+        </details>
         {%- endfor %}
       </div>
     </div>

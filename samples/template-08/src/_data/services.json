@@ -4,6 +4,8 @@
       "slug": "bathroom-remodeling",
       "name": "Bathroom Remodeling",
       "icon": "🛁",
+      "image": "bathroom-remodel-small-01.webp",
+      "imageLg": "gallery-bathroom.webp",
       "tagline": "From a single fixture upgrade to a complete gut renovation — we design and build bathrooms that work the way you live.",
       "details": [
         "Full bathroom gut renovations",
@@ -18,6 +20,8 @@
       "slug": "kitchen-remodeling",
       "name": "Kitchen Remodeling",
       "icon": "🍳",
+      "image": "kitchen-remodel-small-01.webp",
+      "imageLg": "svc-kitchen.webp",
       "tagline": "A kitchen remodel is the single biggest return on investment in your home. We make sure it's built to last and built to impress.",
       "details": [
         "Full kitchen gut and rebuild",
@@ -32,6 +36,8 @@
       "slug": "tile-flooring",
       "name": "Tile & Flooring",
       "icon": "🔲",
+      "image": "tile-remodel-small-01.webp",
+      "imageLg": "svc-tile.webp",
       "tagline": "Precise tile work makes or breaks a remodel. We lay it right the first time — no lippage, no cracked grout six months later.",
       "details": [
         "Ceramic, porcelain & natural stone tile",
@@ -46,6 +52,8 @@
       "slug": "custom-cabinetry",
       "name": "Custom Cabinetry",
       "icon": "🪵",
+      "image": "cabinet-remodel-small-01.webp",
+      "imageLg": "svc-cabinets.webp",
       "tagline": "Stock cabinets leave dead space and dated kitchens. Our custom and semi-custom options fit your space — not the other way around.",
       "details": [
         "Semi-custom and fully custom cabinet builds",

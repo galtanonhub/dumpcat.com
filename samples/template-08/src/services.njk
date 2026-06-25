@@ -17,30 +17,30 @@ description: "Bath and kitchen remodeling services: bathroom renovation, kitchen
     </div>
   </section>
 
-  {%- for s in services.list %}
-  <section class="section {% if loop.index is even %}section--light{% endif %}" id="{{ s.slug }}">
+  <section class="section">
     <div class="container">
-      <div class="service-detail">
-        <div class="service-detail-photo">
-          <div class="service-photo service-photo--lg">
-            <span class="service-photo-icon service-photo-icon--lg" aria-hidden="true">{{ s.icon }}</span>
+      <div class="services-2col">
+        {%- for s in services.list %}
+        <div class="svc-card" id="{{ s.slug }}">
+          <div class="svc-card-photo">
+            <img src="{{ ('/' + s.imageLg) | url }}" alt="{{ s.name }}" loading="lazy">
+          </div>
+          <div class="svc-card-body">
+            <span class="eyebrow">Service</span>
+            <h2>{{ s.name }}</h2>
+            <div class="section-rule" style="margin:12px 0 20px;"></div>
+            <p>{{ s.tagline }}</p>
+            <ul class="detail-list">
+              {%- for d in s.details %}
+              <li>{{ d }}</li>
+              {%- endfor %}
+            </ul>
+            <a href="{{ '/contact/' | url }}" class="btn btn--dark btn--lg" style="margin-top:8px;">Get a Free Estimate</a>
           </div>
         </div>
-        <div class="service-detail-copy">
-          <span class="eyebrow">Service</span>
-          <h2>{{ s.name }}</h2>
-          <div class="section-rule" style="margin:12px 0 20px;"></div>
-          <p>{{ s.tagline }}</p>
-          <ul class="detail-list">
-            {%- for d in s.details %}
-            <li>{{ d }}</li>
-            {%- endfor %}
-          </ul>
-          <a href="{{ '/contact/' | url }}" class="btn btn--dark btn--lg" style="margin-top:8px;">Get a Free Estimate</a>
-        </div>
+        {%- endfor %}
       </div>
     </div>
   </section>
-  {%- endfor %}
 
 {% include "partials/cta.njk" %}
