@@ -1,0 +1,333 @@
+{
+  "business": {
+    "name": "Summit Garage Door Co.",
+    "phone": "(407) 555-0142",
+    "email": "hello@summitgaragedoor.com",
+    "address": "Orlando, FL",
+    "area": "Central Florida",
+    "hours": "Mon–Sat 7am–7pm",
+    "social": {
+      "facebook": "https://facebook.com/",
+      "instagram": "https://instagram.com/",
+      "x": "",
+      "youtube": "",
+      "linkedin": "",
+      "tiktok": ""
+    }
+  },
+  "theme": {
+    "skin": "warm-residential",
+    "mode": "multi",
+    "nav": {
+      "home": "Home",
+      "services": "What We Do",
+      "service-areas": "Where We Work",
+      "about": "Our Story",
+      "contact": "Get a Quote"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Licensed & Insured · 20+ Years",
+      "headline": "Garage door problems? We fix them fast.",
+      "sub": "Broken springs, jammed doors, full replacements — most repairs done same day across Central Florida.",
+      "cta_primary": "Get a Free Estimate",
+      "image": "https://picsum.photos/seed/garagedoor/1600/900",
+      "badges": ["Same-Day Service", "Free Written Estimates", "Financing Available", "2-Yr Warranty"],
+      "gallery": [
+        "https://picsum.photos/seed/garagedoor/800/1000",
+        "https://picsum.photos/seed/svc1/800/520",
+        "https://picsum.photos/seed/svc2/800/520",
+        "https://picsum.photos/seed/svc3/1200/520"
+      ]
+    },
+    "proof": {
+      "stats": [
+        { "value": "20+",    "label": "Years in Business" },
+        { "value": "1,200+", "label": "Doors Fixed" },
+        { "value": "Free",   "label": "Written Estimates" },
+        { "value": "2-Yr",   "label": "Workmanship Warranty" }
+      ]
+    },
+    "process": {
+      "eyebrow": "How It Works",
+      "heading": "Simple, start to finish",
+      "steps": [
+        { "title": "Call or Book Online", "text": "Tell us what's happening. We'll get you scheduled — often same day." },
+        { "title": "We Come to You",      "text": "A tech arrives on time, diagnoses the problem, and gives you a written quote before touching anything." },
+        { "title": "Fix It Right",        "text": "We carry the most common parts on every truck. Most repairs are done in a single visit." },
+        { "title": "Leave It Better",     "text": "We balance, lubricate, and safety-test the full door before we leave — not just the broken part." }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Our Work",
+      "heading": "See the Difference",
+      "intro": "Real jobs, real results — a few recent transformations.",
+      "items": [
+        { "before": "https://picsum.photos/seed/gal-before-1/900/700", "after": "https://picsum.photos/seed/gal-after-1/900/700", "caption": "Cracked panel replacement — Winter Park" },
+        { "before": "https://picsum.photos/seed/gal-before-2/900/700", "after": "https://picsum.photos/seed/gal-after-2/900/700", "caption": "Full door + opener upgrade — Orlando" },
+        { "before": "https://picsum.photos/seed/gal-before-3/900/700", "after": "https://picsum.photos/seed/gal-after-3/900/700", "caption": "Spring & cable repair — Lake Mary" }
+      ]
+    },
+    "cta": {
+      "heading": "Ready to get started?",
+      "text": "Get your free, no-obligation estimate today — we respond within one business day.",
+      "button": "Get a Free Quote"
+    }
+  },
+
+  "services": {
+    "teaser": {
+      "eyebrow": "What We Do",
+      "heading": "Garage door service, done right the first time",
+      "intro": "Repairs, new installs, and tune-ups for homeowners across Central Florida — most jobs done same day."
+    },
+    "page": {
+      "eyebrow": "Our Services",
+      "heading": "Everything we do for your garage door",
+      "intro": "From a snapped spring at 6am to a full new-door install, here is the complete range of work we handle — and exactly what you can expect from each.",
+      "image": "https://picsum.photos/seed/svcheader/1600/700",
+      "book_cta": "Book This Service"
+    },
+    "items": [
+      {
+        "id": "repair",
+        "name": "Garage Door Repair",
+        "icon": "🔧",
+        "tag": "Most Popular",
+        "blurb": "Fast fixes for broken springs, cables, rollers, and openers.",
+        "description": "A broken spring or snapped cable can leave your door stuck and your car trapped. We carry the common parts on every truck, so most repairs are finished in a single visit — safely tensioned, balance-tested, and backed by our workmanship warranty.",
+        "image": "https://picsum.photos/seed/svc1/600/450",
+        "bullets": [
+          "Broken spring & cable replacement",
+          "Opener troubleshooting & repair",
+          "Off-track and noisy-door fixes"
+        ],
+        "features": [
+          { "icon": "⚙️", "title": "Springs & cables",    "text": "Broken spring or snapped cable? We carry the most common sizes on every truck." },
+          { "icon": "🕐", "title": "Same-day service",    "text": "Most repair calls are scheduled and completed the same day you call." },
+          { "icon": "🚚", "title": "Parts on the truck",  "text": "No waiting on orders — we stock the parts that break most often." },
+          { "icon": "✅", "title": "2-yr warranty",       "text": "Every repair is backed by our 2-year workmanship guarantee." }
+        ]
+      },
+      {
+        "id": "install",
+        "name": "New Door Installation",
+        "icon": "🚪",
+        "tag": "Full-Service Upgrade",
+        "blurb": "Modern, insulated doors that boost curb appeal and efficiency.",
+        "description": "Ready for an upgrade? We help you choose the right style, insulation, and finish for your home, then handle the full removal and installation. New doors come with manufacturer warranties and a smoother, quieter operation you will notice every day.",
+        "image": "https://picsum.photos/seed/svc2/600/450",
+        "bullets": [
+          "Free in-home style consultation",
+          "Old door haul-away included",
+          "Insulated & smart-opener options"
+        ],
+        "features": [
+          { "icon": "🎨", "title": "Free style consult",  "text": "We help you pick the right door for your home, budget, and curb appeal." },
+          { "icon": "🏠", "title": "Full removal & install", "text": "We handle everything — old door haul-away is always included." },
+          { "icon": "🔇", "title": "Quiet & insulated",   "text": "Modern insulated doors run quieter and keep your garage more comfortable." },
+          { "icon": "📋", "title": "Manufacturer warranty", "text": "New doors come with the full manufacturer warranty plus our workmanship guarantee." }
+        ]
+      },
+      {
+        "id": "maintenance",
+        "name": "Tune-Ups & Maintenance",
+        "icon": "🔩",
+        "tag": "Preventive Care",
+        "blurb": "Annual service that prevents the breakdowns before they happen.",
+        "description": "Most garage door failures are preventable. Our multi-point tune-up lubricates moving parts, re-balances the door, tightens hardware, and catches worn components before they fail — extending the life of your system and keeping it quiet.",
+        "image": "https://picsum.photos/seed/svc3/600/450",
+        "bullets": [
+          "23-point safety inspection",
+          "Spring & roller lubrication",
+          "Hardware tightening & balancing"
+        ],
+        "features": [
+          { "icon": "🔍", "title": "23-point inspection", "text": "We check every component — springs, cables, rollers, tracks, opener, sensors." },
+          { "icon": "🛢️", "title": "Full lubrication",    "text": "Proper lubrication is the single biggest thing you can do to extend door life." },
+          { "icon": "🔧", "title": "Hardware tightening", "text": "Loose bolts and hinges cause noise and premature wear — we tighten everything." },
+          { "icon": "📅", "title": "Annual plan available", "text": "Ask about our annual tune-up plan — one call and we schedule the rest." }
+        ]
+      },
+      {
+        "id": "opener",
+        "name": "Smart Opener Installation",
+        "icon": "📡",
+        "tag": "Popular Upgrade",
+        "blurb": "Wi-Fi openers you can check, open, and share from your phone.",
+        "description": "Swap a noisy old chain-drive opener for a quiet belt-drive smart opener you can control from anywhere. We handle the full install, pair it to your phone, and walk you through sharing access with family or guests before we leave.",
+        "image": "https://picsum.photos/seed/svc4/600/450",
+        "bullets": [
+          "Quiet belt-drive motors",
+          "Phone app setup included",
+          "Battery backup available"
+        ],
+        "features": [
+          { "icon": "📱", "title": "Control from anywhere", "text": "Open, close, and check your door's status from your phone, wherever you are." },
+          { "icon": "🔇", "title": "Whisper-quiet belt drive", "text": "No more middle-of-the-night garage rattling — belt drives run near-silent." },
+          { "icon": "🔋", "title": "Battery backup option", "text": "Keep working through a power outage with an optional battery backup unit." },
+          { "icon": "👨‍👩‍👧", "title": "Easy guest access", "text": "Share temporary or permanent access with family, guests, or dog walkers." }
+        ]
+      },
+      {
+        "id": "emergency",
+        "name": "Emergency Same-Day Service",
+        "icon": "🚨",
+        "tag": "24/7 Available",
+        "blurb": "Door stuck open or shut? We get someone out fast, day or night.",
+        "description": "A garage door that won't open or close is a security risk and a hassle. Our emergency line is answered around the clock, and most calls get a tech on-site the same day — often within a couple of hours.",
+        "image": "https://picsum.photos/seed/svc5/600/450",
+        "bullets": [
+          "24/7 phone line",
+          "Most calls seen same day",
+          "Fully stocked emergency trucks"
+        ],
+        "features": [
+          { "icon": "☎️", "title": "24/7 answered line", "text": "A real person answers any time, day or night — no automated runaround." },
+          { "icon": "⏱️", "title": "Fast response", "text": "Most emergency calls get a tech on-site within a couple of hours." },
+          { "icon": "🚚", "title": "Fully stocked trucks", "text": "Our emergency trucks carry the parts needed to fix most issues in one visit." },
+          { "icon": "🔒", "title": "Secure it same-day", "text": "We won't leave your home or shop insecure — the door gets fixed or safely secured." }
+        ]
+      },
+      {
+        "id": "commercial",
+        "name": "Commercial Garage Doors",
+        "icon": "🏢",
+        "tag": "Business Accounts",
+        "blurb": "Repair and installs for warehouses, shops, and fleet bays.",
+        "description": "From single-bay shop doors to high-cycle warehouse rollups, we service the commercial equipment homeowners' trucks don't carry parts for. Ask about maintenance plans and priority response for business accounts.",
+        "image": "https://picsum.photos/seed/svc6/600/450",
+        "bullets": [
+          "High-cycle commercial doors",
+          "Maintenance plans for fleets",
+          "Priority response for businesses"
+        ],
+        "features": [
+          { "icon": "🏭", "title": "Built for commercial doors", "text": "High-cycle springs and industrial track systems, not just residential parts." },
+          { "icon": "📋", "title": "Maintenance plans", "text": "Scheduled service plans keep multi-door properties running without surprises." },
+          { "icon": "⚡", "title": "Priority response", "text": "Business accounts get priority scheduling — downtime costs you money." },
+          { "icon": "🧾", "title": "Invoicing & accounts", "text": "Net-30 invoicing available for established business accounts." }
+        ]
+      }
+    ]
+  },
+
+  "areas": {
+    "teaser": {
+      "eyebrow": "Where We Work",
+      "heading": "Serving Greater Orlando",
+      "intro": "If you're in the area, we come to you. A few of the communities we serve:"
+    },
+    "page": {
+      "eyebrow": "Service Area",
+      "heading": "Garage door service across Central Florida",
+      "intro": "We cover a wide stretch of Orange, Seminole, Osceola, and Lake counties — and we come to you.",
+      "image": "https://picsum.photos/seed/areasheader/1600/700"
+    },
+    "list": ["Orlando", "Winter Park", "Maitland", "Apopka", "Altamonte Springs", "Lake Mary", "Sanford", "Oviedo", "Winter Garden", "Clermont", "Kissimmee", "Casselberry"],
+    "regions": [
+      { "region": "Orange County", "cities": ["Orlando", "Winter Park", "Maitland", "Apopka", "Winter Garden"] },
+      { "region": "Seminole County", "cities": ["Altamonte Springs", "Lake Mary", "Sanford", "Oviedo", "Casselberry"] },
+      { "region": "Osceola County", "cities": ["Kissimmee"] },
+      { "region": "Lake County", "cities": ["Clermont"] }
+    ]
+  },
+
+  "about": {
+    "teaser": {
+      "eyebrow": "Why Homeowners Choose Us",
+      "heading": "20 years fixing garage doors. We know what matters.",
+      "text": "We started Summit Garage Door because we kept seeing homeowners get burned by slow response times and inflated quotes. Every truck is stocked, every tech is licensed, and every estimate is written before a single bolt is touched.",
+      "image": "https://picsum.photos/seed/team7/900/700",
+      "checklist": [
+        "Written quote before any work starts",
+        "Same tech from first call to final check",
+        "Parts on the truck — no waiting on orders",
+        "Licensed, insured & warrantied"
+      ],
+      "cta": "Our story"
+    },
+    "page": {
+      "eyebrow": "Our Story",
+      "heading": "Built on showing up and doing it right",
+      "intro": "Family-run, licensed, and committed to treating every home like our own — here's a bit about how we got started.",
+      "image": "https://picsum.photos/seed/aboutheader/1600/700"
+    },
+    "story": [
+      "Summit Garage Door was founded in 2004 by two techs who got tired of watching homeowners wait a week for a spring replacement. We started with one truck and a promise: same-day service, honest quotes, and no upsell games.",
+      "Twenty years later we're still a family operation — just with more trucks. Every tech on our crew has been with us for at least three years. That matters because it means the person who shows up knows what they're doing, doesn't cut corners, and treats your home like a job site worth caring about."
+    ],
+    "values": [
+      { "title": "On time or we call",  "text": "If we're going to be late, we tell you — and we mean it." },
+      { "title": "Written before we touch it", "text": "You approve the quote before we pick up a single tool." },
+      { "title": "One visit, done",     "text": "We stock parts on every truck so most jobs don't require a return trip." }
+    ]
+  },
+
+  "contact": {
+    "page": {
+      "heading": "Get a free estimate",
+      "intro": "Fill out the form and we'll get back to you within one business day — usually much faster.",
+      "image": "https://picsum.photos/seed/contactheader/1600/700",
+      "button": "Send My Request"
+    }
+  },
+
+  "reviews": {
+    "heading": "What our customers say",
+    "items": [
+      {
+        "quote": "Spring snapped at 7am on a Monday. They had someone here by noon, fixed it in 45 minutes, and the price matched the quote exactly. Couldn't ask for more.",
+        "name": "David R.",
+        "role": "Homeowner, Winter Park FL",
+        "image": "https://picsum.photos/seed/rev-a/900/700"
+      },
+      {
+        "quote": "Got three quotes. Summit was mid-range on price but the only one who explained exactly what was wrong and why. Easy choice. Door's been perfect ever since.",
+        "name": "Maria T.",
+        "role": "Homeowner, Lake Mary FL",
+        "image": "https://picsum.photos/seed/rev-b/900/700"
+      },
+      {
+        "quote": "Annual tune-up — they found two rollers about to go and swapped them on the spot. Saved me from the exact same emergency call I had two years ago.",
+        "name": "James K.",
+        "role": "Homeowner, Oviedo FL",
+        "image": "https://picsum.photos/seed/rev-c/900/700"
+      }
+    ]
+  },
+
+  "faq": {
+    "heading": "Common questions",
+    "items": [
+      { "q": "How fast can you get here?",     "a": "Most calls are scheduled same day. We keep slots open for urgent repairs, so call early and we'll do our best to be there today." },
+      { "q": "Do you offer free estimates?",   "a": "Yes — every estimate is free and comes in writing, with no obligation and no pressure." },
+      { "q": "Are you licensed and insured?",  "a": "Fully licensed and insured in Florida. We're happy to provide documentation before any work begins." },
+      { "q": "What if the repair costs more than quoted?", "a": "We call you first — always. Nothing beyond the quoted scope gets done without your approval." }
+    ]
+  },
+
+  "legal": {
+    "privacy": {
+      "heading": "Privacy Policy",
+      "updated": "January 2026",
+      "paragraphs": [
+        "When you fill out our contact form, we collect the information you provide — your name, phone or email, and your message — so we can respond to your request and, if you choose to move forward, schedule your service.",
+        "We don't sell, rent, or share your information with third parties for their own marketing purposes. We use it only to communicate with you about your inquiry or service.",
+        "This site may use basic analytics to understand how visitors use it (pages viewed, general location, device type). This data is aggregate and isn't used to identify you personally.",
+        "If you have questions about this policy or want your information removed from our records, reach out using the contact information on this site."
+      ]
+    },
+    "terms": {
+      "heading": "Terms of Service",
+      "updated": "January 2026",
+      "paragraphs": [
+        "By using this website, you agree to these terms. If you don't agree, please don't use the site.",
+        "The content on this site is provided for general information about our services. Submitting the contact form or requesting an estimate doesn't by itself create a binding service agreement — actual work is governed by the written estimate or agreement provided separately.",
+        "We aim to keep information on this site accurate and up to date, but we make no guarantees about its completeness and may update or correct it at any time without notice.",
+        "These terms may be updated periodically. Continuing to use the site after a change means you accept the updated terms."
+      ]
+    }
+  }
+}

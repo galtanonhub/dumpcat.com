@@ -1,0 +1,73 @@
+/* ============================================================
+   PERSONALITY — Warm Residential
+   For: interior design, boutique cleaning, florists, bakeries,
+        med-spa, in-home care, organizing, event planning —
+        businesses that sell comfort, warmth & taste.
+
+   Tells: cream + terracotta + sage, generous radius, elegant
+   serif display, soft long shadows, airy whitespace, pill buttons.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+:root {
+  /* Color — warm cream base, terracotta brand, sage accent, espresso dark */
+  --c-bg:          #faf6f0;
+  --c-bg-alt:      #f1e8dc;
+  --c-bg-deep:     #3a3027;
+  --c-surface:     #fffdf9;
+  --c-ink:         #2e2922;
+  --c-ink-soft:    #756c61;
+  --c-ink-invert:  #fdf8f1;
+  --c-ink-invert-soft: rgba(253,248,241,0.74);
+  --c-brand:       #bf6a45;   /* terracotta */
+  --c-brand-deep:  #a3552f;
+  --c-brand-ink:   #fffdf9;
+  --c-accent:      #7c8a64;   /* sage */
+  --c-line:        #e8ddcf;
+  --c-line-strong: #d6c7b4;
+
+  /* Type — elegant serif display, soft humanist sans body */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Nunito Sans', system-ui, sans-serif;
+  --font-accent:  'Nunito Sans', system-ui, sans-serif;
+  --fw-normal: 400;
+  --fw-medium: 600;
+  --fw-bold:   600;
+  --fw-heavy:  500;          /* serifs read better lighter */
+  --tracking-display: 0;
+  --tracking-eyebrow:  0.22em;
+  --leading-tight: 1.12;
+
+  /* Shape — soft & generous */
+  --radius:    14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --border-weight: 1px;
+  --rule-weight:   1px;
+
+  /* Buttons — pill, gentle */
+  --btn-radius:    999px;
+  --btn-transform: none;
+  --btn-weight:    700;
+  --btn-pad-y:     0.9em;
+  --btn-pad-x:     1.9em;
+
+  /* Elevation — soft, warm, long */
+  --shadow:    0 6px 20px rgba(58,48,39,0.07);
+  --shadow-lg: 0 24px 56px rgba(58,48,39,0.16);
+  --card-border: 1px solid var(--c-line);
+
+  /* Rhythm — airier */
+  --section-pad: clamp(64px, 5vw + 48px, 120px);
+  --gap: 32px;
+
+  --eyebrow-transform: uppercase;
+}
+
+/* Signature flourishes */
+h1, h2 { font-style: normal; }
+.display em, h1 em, h2 em { font-style: italic; color: var(--c-brand); font-weight: 400; }
+.eyebrow { color: var(--c-accent); }
+.card { transition: transform var(--transition), box-shadow var(--transition); }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.btn--brand:hover { transform: translateY(-2px); }

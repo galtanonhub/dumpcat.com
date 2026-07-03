@@ -34,5 +34,10 @@ deployment:
     - /bin/mkdir -p ${DEPLOYPATH}samples/template-06/
     - /bin/cp -R samples/template-06/_site/. ${DEPLOYPATH}samples/template-06/
 
+    # --- kit-test: template-kit real-cPanel-hosting proof (PHP, not Eleventy —
+    #     ships as-is, no _site/ build step) ---
+    - /bin/mkdir -p ${DEPLOYPATH}kit-test/
+    - /bin/cp -R kit-test/. ${DEPLOYPATH}kit-test/
+
     # When a sample graduates to its own domain, delete its source folder AND remove
     # its two copy lines above so it stops deploying to dumpcat.com.
