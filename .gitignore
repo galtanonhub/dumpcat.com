@@ -12,6 +12,13 @@ samples/*/node_modules/
 kit-test/content.json
 kit-test/uploads/
 
+# Same live/mutable-data rule for any template-kit stamp under demos/ —
+# uploads/ + a live-edited content.json shouldn't ship in the repo, and
+# lib/.rate-limit.json is contact-form runtime state, not stamp output.
+demos/*/content.json
+demos/*/uploads/
+**/lib/.rate-limit.json
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
