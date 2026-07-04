@@ -53,7 +53,13 @@ function kit_send_mail($subject, $body, $replyToEmail = '', $replyToName = '') {
 
   $fromName = c('business.name', 'Website');
   $smtpFrom = $cfg['smtp']['from'] ?? '';
-  $fromAddr = $smtpFrom !== '' ? $smtpFrom : $to;
+  /* Never fall back to $to here — a message "From" a mailbox but not
+     actually sent by that mailbox's mail server is exactly what DMARC
+     exists to catch, and providers with a strict reject policy (Proton,
+     Gmail) will silently drop it instead of just spam-folder it. Use the
+     sending server's own hostname instead — same domain the SMTP EHLO
+     already identifies as, so it's at least consistent. */
+  $fromAddr = $smtpFrom !== '' ? $smtpFrom : ('noreply@' . ($_SERVER['SERVER_NAME'] ?? 'localhost'));
 
   $replyValid = $replyToEmail !== '' && filter_var($replyToEmail, FILTER_VALIDATE_EMAIL);
   $replyEmail = $replyValid ? $replyToEmail : '';
