@@ -14,10 +14,15 @@ kit-test/uploads/
 
 # Same live/mutable-data rule for any template-kit stamp under demos/ —
 # uploads/ + a live-edited content.json shouldn't ship in the repo, and
-# lib/.rate-limit.json is contact-form runtime state, not stamp output.
+# lib/.rate-limit.json + lib/.login-attempts.json are runtime state
+# (contact-form throttling, edit-login lockout), not stamp output.
+# demos/*/.kit-stamp.json IS committed on purpose — it's what lets
+# scaffold/update-stamp.js re-stamp a demo later, not secret or mutable.
 demos/*/content.json
 demos/*/uploads/
+demos/*/backups/
 **/lib/.rate-limit.json
+**/lib/.login-attempts.json
 
 # OS / editor cruft
 .DS_Store
