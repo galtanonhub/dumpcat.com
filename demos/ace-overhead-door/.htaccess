@@ -1,0 +1,4 @@
+# Custom 404 page. Path is root-relative — if this site is deployed in a
+# subdirectory instead of a domain root, change this to that subdirectory's
+# path (e.g. /mysite/404.php).
+ErrorDocument 404 /404.php

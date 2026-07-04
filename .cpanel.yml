@@ -39,5 +39,11 @@ deployment:
     - /bin/mkdir -p ${DEPLOYPATH}kit-test/
     - /bin/cp -R kit-test/. ${DEPLOYPATH}kit-test/
 
+
+    # --- demos/: per-prospect template-kit stamps (cold-outreach demo links).
+    #     Copies the whole folder — no per-demo edit needed here as new ones are added. ---
+    - /bin/mkdir -p ${DEPLOYPATH}demos/
+    - /bin/cp -R demos/. ${DEPLOYPATH}demos/
+
     # When a sample graduates to its own domain, delete its source folder AND remove
     # its two copy lines above so it stops deploying to dumpcat.com.
