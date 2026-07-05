@@ -6,6 +6,7 @@
     <div class="svc-detail-list">
       <?php foreach (c('services.items', []) as $i => $item): ?>
       <article class="svc-detail" id="<?= e($item['id'] ?? '') ?>">
+        <?= kit_list_remove_btn('services.items', $i) ?>
         <div class="svc-detail__media">
           <img src="<?= e($item['image'] ?? '') ?>" alt="<?= e($item['name'] ?? '') ?>" data-edit-img="services.items.<?= $i ?>.image">
         </div>
@@ -21,5 +22,6 @@
       </article>
       <?php endforeach; ?>
     </div>
+    <?= kit_list_add_btn('services.items', '+ Add a service') ?>
   </div>
 </section>

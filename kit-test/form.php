@@ -8,22 +8,24 @@ require __DIR__ . '/lib/mail.php';
    server-side validation is the only real guard.
 
    Honeypot: hp_website (see the .contact-form partials) is a field real
-   visitors never see or fill; a bot filling every input trips it. We still
-   redirect to the normal "sent" success page either way — never reveal to
-   the bot that it was caught, just silently drop the submission instead of
-   sending it.
+   visitors never see or fill; a bot filling every input trips it. Same for
+   an IP that's over the rate limit — both are silently dropped (still
+   redirect to the normal "sent" success page) rather than told what
+   happened, since telling an abuser exactly why just invites tuning the
+   next attempt. A CSRF mismatch is treated as ordinary invalid input
+   instead (redirect back to the un-sent form) — that's the expected
+   failure mode for a stale tab/expired session, not abuse. */
 
-   TODO before delivery: CSRF token, rate-limiting. */
-
-$isSpam  = !empty($_POST['hp_website']);
-$name    = trim((string) ($_POST['name'] ?? ''));
-$contact = trim((string) ($_POST['contact'] ?? ''));
-$message = trim((string) ($_POST['message'] ?? ''));
+$isSpam    = !empty($_POST['hp_website']);
+$csrfOk    = kit_csrf_valid($_POST['csrf'] ?? '');
+$name      = trim((string) ($_POST['name'] ?? ''));
+$contact   = trim((string) ($_POST['contact'] ?? ''));
+$message   = trim((string) ($_POST['message'] ?? ''));
 
 /* strlen (byte length), not mb_strlen — mbstring isn't guaranteed to be
    enabled on every buyer's hosting, and a byte-length upper bound is fine
    for a sanity/spam guard that never displays or truncates the text. */
-$valid = $name !== '' && $contact !== '' && $message !== ''
+$valid = $csrfOk && $name !== '' && $contact !== '' && $message !== ''
       && strlen($name) <= 120 && strlen($contact) <= 120 && strlen($message) <= 4000;
 
 $params = edit_mode() ? ['edit' => '1'] : [];
@@ -33,7 +35,9 @@ if (!$valid) {
   exit;
 }
 
-if (!$isSpam) {
+$rateLimited = kit_rate_limited($_SERVER['REMOTE_ADDR'] ?? 'unknown');
+
+if (!$isSpam && !$rateLimited) {
   $subject = 'New website inquiry from ' . $name;
   $body    = "Name: $name\nContact: $contact\n\nMessage:\n$message\n";
   kit_send_mail($subject, $body, $contact, $name);

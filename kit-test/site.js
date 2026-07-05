@@ -103,16 +103,19 @@ document.addEventListener('click', function (e) {
     return;
   }
 
-  /* stories spotlight — thumbnail picker */
+  /* stories spotlight — thumbnail picker. Every item is its own real panel
+     (see stories-spotlight.php), so switching just toggles which panel/thumb
+     is active — no text copying, so every item stays fully editable. */
   var thumb = e.target.closest('.stories--spotlight__thumb');
   if (thumb) {
-    var sec = thumb.closest('.stories');
-    sec.querySelector('.js-spotlight-img').src       = thumb.dataset.img;
-    sec.querySelector('.js-spotlight-quote').textContent = thumb.dataset.quote;
-    sec.querySelector('.js-spotlight-name').textContent  = thumb.dataset.name;
-    sec.querySelector('.js-spotlight-role').textContent  = thumb.dataset.role;
-    sec.querySelectorAll('.stories--spotlight__thumb').forEach(function (x) { x.classList.remove('is-active'); });
-    thumb.classList.add('is-active');
+    var sec = thumb.closest('.stories--spotlight');
+    var idx = thumb.getAttribute('data-spotlight-thumb');
+    sec.querySelectorAll('.stories--spotlight__thumb').forEach(function (t) {
+      t.classList.toggle('is-active', t.getAttribute('data-spotlight-thumb') === idx);
+    });
+    sec.querySelectorAll('.stories--spotlight__panel').forEach(function (p) {
+      p.classList.toggle('is-active', p.getAttribute('data-spotlight-panel') === idx);
+    });
     return;
   }
 

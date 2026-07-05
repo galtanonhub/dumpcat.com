@@ -57,21 +57,55 @@ function kit_favicon_data_uri() {
   return 'data:image/svg+xml,' . rawurlencode($svg);
 }
 
+/* Turns a stored image value into an absolute URL. Uploaded images are
+   stored as a path relative to the site root (e.g. "uploads/img_x.jpg",
+   see save.php) — fine for an <img src>, but og:image and JSON-LD's `image`
+   require an absolute URL, and the site isn't always at the domain root
+   (e.g. dumpcat.com/demos/<slug>/), so a fixed "https://host/" prefix would
+   be wrong. Build the prefix from the current script's own directory
+   instead — that's correct at any nesting depth. External URLs (the
+   picsum.photos demo placeholders, or a buyer's own CDN link) pass through
+   unchanged. */
+function kit_absolute_url($path) {
+  if ($path === '') return '';
+  if (preg_match('#^https?://#i', $path)) return $path;
+  $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+  $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
+  $dir    = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+  return $scheme . '://' . $host . $dir . '/' . ltrim($path, '/');
+}
+
 /* Open Graph + Twitter card tags — so a shared link gets a real title/
-   description/image instead of a blank preview. Reuses the exact same
-   title/description fields already in <title>/<meta name="description">
-   (see head.php) plus home.hero.image, so there's nothing new for the
-   buyer to fill in. */
-function kit_og_tags() {
-  $title = c('business.name', 'Your Business');
-  $desc  = c('home.hero.sub', c('services.teaser.intro', ''));
-  $image = c('home.hero.image', '');
+   description/image instead of a blank preview. $title/$desc default to
+   the same business.name/hero.sub used before per-page <title> existed;
+   head.php now passes the current page's own title/description so a
+   shared services/about/contact link previews correctly instead of always
+   showing the homepage's. Image is always home.hero.image — a per-page
+   image would need new schema, and social platforms don't weight it as
+   heavily as the title/description. */
+function kit_og_tags($title = null, $desc = null) {
+  $title = $title ?? c('business.name', 'Your Business');
+  $desc  = $desc  ?? c('home.hero.sub', c('services.teaser.intro', ''));
+  $image = kit_absolute_url(c('home.hero.image', ''));
   $tags  = '<meta property="og:type" content="website">' . "\n"
          . '<meta property="og:title" content="' . e($title) . '">' . "\n"
          . '<meta property="og:description" content="' . e($desc) . '">' . "\n";
   if ($image !== '') $tags .= '<meta property="og:image" content="' . e($image) . '">' . "\n";
   $tags .= '<meta name="twitter:card" content="summary_large_image">';
   return $tags;
+}
+
+/* CSRF token for public forms (contact form) — session already exists for
+   every visitor (auth.php starts one unconditionally, since edit-mode needs
+   it too), so this just needs a random value stashed there once and echoed
+   into a hidden field. Not tied to edit-mode auth; this protects the mail
+   relay from being POSTed to from another origin, nothing more. */
+function kit_csrf_token() {
+  if (empty($_SESSION['kit_csrf'])) $_SESSION['kit_csrf'] = bin2hex(random_bytes(16));
+  return $_SESSION['kit_csrf'];
+}
+function kit_csrf_valid($token) {
+  return is_string($token) && $token !== '' && hash_equals($_SESSION['kit_csrf'] ?? '', $token);
 }
 
 /* has the buyer asked for edit mode? (?edit=1 in the URL) — may still be locked */
@@ -114,7 +148,7 @@ function kit_local_business_ldjson() {
     '@context'   => 'https://schema.org',
     '@type'      => 'LocalBusiness',
     'name'       => c('business.name', ''),
-    'image'      => c('home.hero.image', ''),
+    'image'      => kit_absolute_url(c('home.hero.image', '')),
     'telephone'  => c('business.phone', ''),
     'email'      => c('business.email', ''),
     'address'    => c('business.address', ''),

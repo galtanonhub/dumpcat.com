@@ -9,15 +9,45 @@ $SOCIAL = kit_social_roster();
   <div class="container">
 
     <?php if (edit_mode()): ?>
+    <?php
+    /* Business details editor: the fields a buyer is most likely to need to
+       change after delivery (new phone number, updated hours) but that had
+       no data-edit anywhere — contact partials render them read-only, and
+       the only editable business.* field before this was social links. Same
+       data-edit-field + editor.js "Save changes" flow as the social editor
+       below, just a different field list. */
+    $DETAILS_FIELDS = [
+      'business.name'    => 'Business name',
+      'business.phone'   => 'Phone',
+      'business.email'   => 'Email',
+      'business.address' => 'Address',
+      'business.city'    => 'City',
+      'business.area'    => 'Service area',
+      'business.hours'   => 'Hours',
+    ];
+    ?>
+    <div class="field-editor details-editor">
+      <p class="field-editor__hint">Business details — shown across the site (contact page, footer, emails).</p>
+      <div class="field-editor__rows">
+        <?php foreach ($DETAILS_FIELDS as $path => $label): ?>
+        <label class="field-editor__row">
+          <span class="field-editor__name"><?= e($label) ?></span>
+          <input type="text" class="field-editor__input"
+                 data-edit-field="<?= e($path) ?>"
+                 value="<?= e(c($path, '')) ?>">
+        </label>
+        <?php endforeach; ?>
+      </div>
+    </div>
     <!-- social editor: fill a URL to show that icon on the site; clear it to hide -->
-    <div class="social-editor">
-      <p class="social-editor__hint">Social links — paste your page URL to show an icon, leave blank to hide it.</p>
-      <div class="social-editor__rows">
+    <div class="field-editor social-editor">
+      <p class="field-editor__hint">Social links — paste your page URL to show an icon, leave blank to hide it.</p>
+      <div class="field-editor__rows">
         <?php foreach ($SOCIAL as $key => $meta): ?>
-        <label class="social-editor__row">
-          <span class="social-editor__icon"><?= $meta['icon'] ?></span>
-          <span class="social-editor__name"><?= e($meta['label']) ?></span>
-          <input type="url" class="social-editor__input"
+        <label class="field-editor__row">
+          <span class="field-editor__icon"><?= $meta['icon'] ?></span>
+          <span class="field-editor__name"><?= e($meta['label']) ?></span>
+          <input type="url" class="field-editor__input"
                  data-edit-field="business.social.<?= $key ?>"
                  value="<?= e(c('business.social.' . $key, '')) ?>"
                  placeholder="https://…">

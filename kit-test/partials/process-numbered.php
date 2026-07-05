@@ -9,11 +9,13 @@
     <ol class="process--numbered__grid">
       <?php foreach (c('home.process.steps', []) as $i => $step): ?>
       <li>
+        <?= kit_list_remove_btn('home.process.steps', $i) ?>
         <span class="process__num"><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
         <h3 data-edit="home.process.steps.<?= $i ?>.title"><?= e($step['title'] ?? '') ?></h3>
         <p data-edit="home.process.steps.<?= $i ?>.text"><?= e($step['text'] ?? '') ?></p>
       </li>
       <?php endforeach; ?>
     </ol>
+    <?= kit_list_add_btn('home.process.steps', '+ Add a step') ?>
   </div>
 </section>

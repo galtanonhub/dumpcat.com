@@ -1,14 +1,27 @@
 <?php /* shared page shell. Expects $PAGE set before include. */ ?>
-<?php $eq = edit_mode() ? '?edit=1' : ''; ?>
+<?php
+$eq = edit_mode() ? '?edit=1' : '';
+$bizName = c('business.name', "kit-test");
+$PAGE_META = [
+  'home'          => ['title' => $bizName, 'desc' => c('home.hero.sub', c('services.teaser.intro', ''))],
+  'services'      => ['title' => c('services.page.heading', '') . ' | ' . $bizName, 'desc' => c('services.page.intro', '')],
+  'service-areas' => ['title' => c('areas.page.heading', '') . ' | ' . $bizName, 'desc' => c('areas.page.intro', '')],
+  'about'         => ['title' => c('about.page.heading', '') . ' | ' . $bizName, 'desc' => c('about.page.intro', '')],
+  'contact'       => ['title' => c('contact.page.heading', '') . ' | ' . $bizName, 'desc' => c('contact.page.intro', '')],
+];
+$pageMeta = $PAGE_META[$PAGE] ?? $PAGE_META['home'];
+$pageFile = $PAGE === 'home' ? 'index.php' : $PAGE . '.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?= e(c('business.name', "kit-test")) ?></title>
-<meta name="description" content="<?= e(c('home.hero.sub', c('services.teaser.intro', ''))) ?>">
+<title><?= e($pageMeta['title']) ?></title>
+<meta name="description" content="<?= e($pageMeta['desc']) ?>">
+<link rel="canonical" href="<?= e(kit_absolute_url($pageFile)) ?>">
 <link rel="icon" href="<?= kit_favicon_data_uri() ?>">
-<?= kit_og_tags() ?>
+<?= kit_og_tags($pageMeta['title'], $pageMeta['desc']) ?>
 <script type="application/ld+json"><?= kit_local_business_ldjson() ?></script>
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/sections.css">

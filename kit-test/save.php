@@ -18,9 +18,18 @@ $body = json_decode(file_get_contents('php://input'), true);
 
 /* ---- login / logout (the only unauthenticated actions) ---- */
 if (is_array($body) && ($body['action'] ?? '') === 'login') {
+  $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+  if (kit_login_locked($ip)) {
+    http_response_code(429);
+    echo json_encode(['ok' => false, 'error' => 'too many attempts, try again in a few minutes']);
+    exit;
+  }
   if (kit_edit_login($body['password'] ?? '')) {
+    kit_login_attempt_reset($ip);
     echo json_encode(['ok' => true, 'unlocked' => true]);
   } else {
+    kit_login_attempt_failed($ip);
+    sleep(1); // slow down brute-force attempts beyond what the lockout alone does
     http_response_code(401);
     echo json_encode(['ok' => false, 'error' => 'wrong password']);
   }
@@ -60,9 +69,30 @@ function &get_path(array &$data, $path) {
   return $node;
 }
 
+/* Read-only dot-path lookup — unlike get_path() above, never creates missing
+   keys as a side effect, so it's safe to use purely for validation (see the
+   patch handler below). Sets $found so "doesn't exist" and "exists but is
+   null" aren't confused. */
+function path_get(array $data, $path, &$found) {
+  $node = $data;
+  foreach (explode('.', $path) as $key) {
+    if (!is_array($node) || !array_key_exists($key, $node)) { $found = false; return null; }
+    $node = $node[$key];
+  }
+  $found = true;
+  return $node;
+}
+
+/* Write to a temp file and rename into place rather than overwriting
+   content.json directly — content.json is the buyer's entire site, and a
+   request that dies mid-write (or two saves racing each other) would
+   otherwise leave truncated/corrupt JSON that kit_load_content() can't
+   parse, silently falling everything back to placeholder content. */
 function write_content(array $data) {
-  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-  return file_put_contents(CONTENT_LIVE, $json . "\n") !== false;
+  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n";
+  $tmp  = CONTENT_LIVE . '.tmp';
+  if (file_put_contents($tmp, $json, LOCK_EX) === false) return false;
+  return rename($tmp, CONTENT_LIVE);
 }
 
 function fail($msg) { http_response_code(400); echo json_encode(['ok' => false, 'error' => $msg]); exit; }
@@ -88,6 +118,12 @@ if (!empty($_FILES['image'])) {
 
   $url = 'uploads/' . $name;
   $data = kit_load_content();
+  /* Same rule the text patch enforces below: the target path must already
+     resolve to a scalar. Without this, an authenticated buyer's devtools
+     could point an upload at an arbitrary new/array path and pollute
+     content.json with fields no template expects. */
+  $existing = path_get($data, $path, $found);
+  if (!$found || is_array($existing)) fail('invalid image path: ' . $path);
   set_path($data, $path, $url);
   if (!write_content($data)) fail('could not write content.json');
   echo json_encode(['ok' => true, 'url' => $url]);
@@ -143,9 +179,22 @@ if (($body['action'] ?? '') === 'remove_item') {
   exit;
 }
 
+/* ---- text patch: buyer edits ONE field's value, never structure. Reject any
+   path that doesn't already resolve to a scalar (string/number/bool/null) in
+   the current content — that's the difference between "buyer typed new text
+   into a field the template declared" and "buyer's devtools sent a path that
+   overwrites a whole section." A path that doesn't exist yet, or currently
+   holds an array, is refused rather than silently created/clobbered. Newly
+   add_item'd entries are fine here: add_item derives a blank item with all
+   the same (scalar) keys as the last item, so those paths already exist and
+   are already scalars the moment the item is created. ---- */
 $patch = $body['patch'] ?? null;
 if (!is_array($patch)) fail('no patch');
 $data = kit_load_content();
+foreach ($patch as $path => $value) {
+  $existing = path_get($data, (string)$path, $found);
+  if (!$found || is_array($existing)) fail('invalid patch path: ' . $path);
+}
 foreach ($patch as $path => $value) {
   set_path($data, (string)$path, is_string($value) ? trim($value) : $value);
 }

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# No Sitemap: line here on purpose — the domain isn't known until this site
+# is actually deployed, so a stamp-time guess would likely be wrong. Submit
+# sitemap.php directly in Google Search Console / Bing Webmaster Tools
+# instead once the site is live at its real domain.

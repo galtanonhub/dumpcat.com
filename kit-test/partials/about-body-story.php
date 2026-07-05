@@ -20,11 +20,13 @@
       <div class="about-values__grid">
         <?php foreach ($values as $i => $v): ?>
         <div class="about-values__item">
+          <?= kit_list_remove_btn('about.values', $i) ?>
           <h3 data-edit="about.values.<?= $i ?>.title"><?= e($v['title'] ?? '') ?></h3>
           <p data-edit="about.values.<?= $i ?>.text"><?= e($v['text'] ?? '') ?></p>
         </div>
         <?php endforeach; ?>
       </div>
+      <?= kit_list_add_btn('about.values', '+ Add a value') ?>
     </div>
     <?php endif; ?>
   </div>

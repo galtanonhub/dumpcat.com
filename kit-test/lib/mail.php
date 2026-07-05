@@ -12,6 +12,37 @@
    methods is a one-file edit — lib/mail-config.php — never a code change.
    ------------------------------------------------------------------ */
 
+/* Minimal file-based per-IP rate limit for the contact form — there's no
+   database on typical shared hosting to lean on, so a small JSON file next
+   to this one (gitignored like auth-secret.php/mail-config.php — it's
+   runtime-generated state, not something to ship or commit) tracks the last
+   submission time per IP. This protects the mail relay from being hammered
+   (each submission is a real email send); a genuine visitor never submits
+   the same form twice within a few seconds anyway. */
+function kit_rate_limited($key, $minIntervalSeconds = 20) {
+  /* Exclusive flock() around the whole read-modify-write: two form
+     submissions from the same IP landing within the same tick would
+     otherwise both read the same pre-update timestamp and race each
+     other's write, letting more than one through inside the interval. */
+  $fp = fopen(__DIR__ . '/.rate-limit.json', 'c+');
+  if (!$fp) return false;
+  flock($fp, LOCK_EX);
+  $raw  = stream_get_contents($fp);
+  $data = $raw !== '' ? (json_decode($raw, true) ?: []) : [];
+  if (!is_array($data)) $data = [];
+  $now = time();
+  $data = array_filter($data, fn($t) => $now - $t < 3600); // prune stale entries
+  $limited = isset($data[$key]) && ($now - $data[$key]) < $minIntervalSeconds;
+  $data[$key] = $now;
+  ftruncate($fp, 0);
+  rewind($fp);
+  fwrite($fp, json_encode($data));
+  fflush($fp);
+  flock($fp, LOCK_UN);
+  fclose($fp);
+  return $limited;
+}
+
 /* per-site config if delivered, else the zero-setup default */
 function kit_mail_config() {
   $file = __DIR__ . '/mail-config.php';
@@ -28,6 +59,20 @@ function kit_mail_config() {
    skip it for user-submitted values. */
 function kit_mail_header_safe($s) {
   return str_replace(["\r", "\n"], '', (string) $s);
+}
+
+/* Best available hostname for a noreply@ From address / SMTP EHLO.
+   SERVER_NAME isn't guaranteed to be set on every host (some CGI/reverse-
+   proxy setups leave it blank), and an empty result here means "noreply@"
+   with nothing after the @ — silently rejected by every mail provider's
+   DMARC check, which is worse than the invalid-From problem this was
+   meant to avoid in the first place. Fall through to HTTP_HOST (strip
+   a port if present, since a host header's port has no place in an email
+   domain) before finally giving up on 'localhost'. */
+function kit_mail_from_host() {
+  $host = $_SERVER['SERVER_NAME'] ?? '';
+  if ($host === '') $host = explode(':', $_SERVER['HTTP_HOST'] ?? '')[0];
+  return $host !== '' ? $host : 'localhost';
 }
 
 function kit_build_headers($fromName, $fromAddr, $replyEmail, $replyName) {
@@ -59,7 +104,7 @@ function kit_send_mail($subject, $body, $replyToEmail = '', $replyToName = '') {
      Gmail) will silently drop it instead of just spam-folder it. Use the
      sending server's own hostname instead — same domain the SMTP EHLO
      already identifies as, so it's at least consistent. */
-  $fromAddr = $smtpFrom !== '' ? $smtpFrom : ('noreply@' . ($_SERVER['SERVER_NAME'] ?? 'localhost'));
+  $fromAddr = $smtpFrom !== '' ? $smtpFrom : ('noreply@' . kit_mail_from_host());
 
   $replyValid = $replyToEmail !== '' && filter_var($replyToEmail, FILTER_VALIDATE_EMAIL);
   $replyEmail = $replyValid ? $replyToEmail : '';
@@ -115,7 +160,7 @@ function kit_smtp_send($cfg, $to, $subject, $body, $fromName, $fromAddr, $replyE
   $code  = function ($resp) { return (int) substr($resp, 0, 3); };
   $ok    = function ($resp, $expected) use ($code) { return in_array($code($resp), (array) $expected, true); };
   $write = function ($cmd) use ($fp) { @fwrite($fp, $cmd . "\r\n"); };
-  $ehloName = $_SERVER['SERVER_NAME'] ?? 'localhost';
+  $ehloName = kit_mail_from_host();
 
   if (!$ok($read(), 220)) { fclose($fp); return false; }
 

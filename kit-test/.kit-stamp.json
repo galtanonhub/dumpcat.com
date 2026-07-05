@@ -1,0 +1,96 @@
+{
+  "name": "kit-test",
+  "mode": "multi",
+  "skin": "warm-residential",
+  "sections": [
+    {
+      "slot": "hero",
+      "variant": "overlay"
+    },
+    {
+      "slot": "proof",
+      "variant": "stat-bar"
+    },
+    {
+      "slot": "services",
+      "variant": "cards-3"
+    },
+    {
+      "slot": "process",
+      "variant": "numbered"
+    },
+    {
+      "slot": "gallery",
+      "variant": "before-after"
+    },
+    {
+      "slot": "about",
+      "variant": "split-photo"
+    },
+    {
+      "slot": "areas",
+      "variant": "chips"
+    },
+    {
+      "slot": "faq",
+      "variant": "accordion"
+    },
+    {
+      "slot": "stories",
+      "variant": "quote-cards"
+    },
+    {
+      "slot": "social",
+      "variant": "buttons"
+    },
+    {
+      "slot": "cta",
+      "variant": "band"
+    }
+  ],
+  "pages": {
+    "services": [
+      {
+        "slot": "services-header",
+        "variant": "standard"
+      },
+      {
+        "slot": "services-detail",
+        "variant": "rows"
+      }
+    ],
+    "service-areas": [
+      {
+        "slot": "areas-header",
+        "variant": "standard"
+      },
+      {
+        "slot": "areas-body",
+        "variant": "grid"
+      }
+    ],
+    "about": [
+      {
+        "slot": "about-header",
+        "variant": "standard"
+      },
+      {
+        "slot": "about-body",
+        "variant": "story"
+      }
+    ],
+    "contact": [
+      {
+        "slot": "contact-header",
+        "variant": "standard"
+      },
+      {
+        "slot": "contact-body",
+        "variant": "split"
+      }
+    ]
+  },
+  "contentSrc": "_slice\\content.original.json",
+  "prospect": null,
+  "stampedAt": "2026-07-05T12:48:35.000Z"
+}

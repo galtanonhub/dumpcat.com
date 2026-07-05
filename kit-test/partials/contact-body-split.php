@@ -35,6 +35,7 @@
           <label>Best way to reach you<input type="text" name="contact" required placeholder="Phone or email"></label>
           <label>How can we help?<textarea name="message" rows="5" required placeholder="Describe what's happening, or ask anything…"></textarea></label>
           <div class="hp-field" aria-hidden="true"><label>Leave this field blank<input type="text" name="hp_website" tabindex="-1" autocomplete="off"></label></div>
+          <input type="hidden" name="csrf" value="<?= e(kit_csrf_token()) ?>">
           <button class="btn btn--brand btn--lg" type="submit" data-edit="contact.page.button"><?= e(c('contact.page.button', 'Send My Request')) ?></button>
         </form>
       </div>

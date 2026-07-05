@@ -43,16 +43,17 @@ body.is-editing { padding-bottom: 64px; }
 /* don't let the status push buttons when both present */
 .editor-bar__status:not(:empty) + .editor-bar__btn { margin-left: 0; }
 
-/* social-link editor (footer, edit mode only) */
-.social-editor { max-width: 560px; margin: 0 auto 24px; text-align: left; }
-.social-editor__hint { font-size: 13px; color: var(--c-ink-invert-soft); margin-bottom: 14px; text-align: center; }
-.social-editor__rows { display: flex; flex-direction: column; gap: 8px; }
-.social-editor__row { display: flex; align-items: center; gap: 12px; }
-.social-editor__icon { font-size: 1.1rem; width: 24px; text-align: center; flex: none; }
-.social-editor__name { width: 96px; flex: none; font-size: 13px; font-weight: 600; }
-.social-editor__input { flex: 1; padding: 8px 10px; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; background: rgba(255,255,255,.06); color: inherit; font-size: 13px; font-family: inherit; }
-.social-editor__input::placeholder { color: rgba(255,255,255,.4); }
-.social-editor__input:focus { outline: none; border-color: var(--c-brand); background: rgba(255,255,255,.1); }
+/* shared row styling for any data-edit-field panel in the footer editor
+   (social links, business details, ...) — same input look, different fields */
+.field-editor { max-width: 560px; margin: 0 auto 24px; text-align: left; }
+.field-editor__hint { font-size: 13px; color: var(--c-ink-invert-soft); margin-bottom: 14px; text-align: center; }
+.field-editor__rows { display: flex; flex-direction: column; gap: 8px; }
+.field-editor__row { display: flex; align-items: center; gap: 12px; }
+.field-editor__icon { font-size: 1.1rem; width: 24px; text-align: center; flex: none; }
+.field-editor__name { width: 96px; flex: none; font-size: 13px; font-weight: 600; }
+.field-editor__input { flex: 1; padding: 8px 10px; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; background: rgba(255,255,255,.06); color: inherit; font-size: 13px; font-family: inherit; }
+.field-editor__input::placeholder { color: rgba(255,255,255,.4); }
+.field-editor__input:focus { outline: none; border-color: var(--c-brand); background: rgba(255,255,255,.1); }
 
 /* list add/remove controls (edit mode only — helpers already gate this
    server-side, so no [data-edit] the-css-hides-it trick needed here) */
